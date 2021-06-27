@@ -1,0 +1,123 @@
+<?php require TEMPLATEPATH . "/template-parts/component/content-header.php";?>
+<main class="l-main">
+<div class="l-container">
+<?php
+$paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
+$args = array(
+  "post_type"=> tsbk_glb_cr_pt()
+	,'posts_per_page'  => 12
+  ,'orderby' => array( 'date' => 'DESC', 'menu_order' => 'ASC' )
+  ,'paged' => $paged
+);
+
+//更新履歴
+if(is_page('archives')) {
+    $args_archives = array(
+      "post_type"=>"post"
+    );
+    $args = array_merge($args , $args_archives);
+}
+
+//テンプレート
+if(is_post_type_archive('template')) {
+    $args_template = array(
+      'orderby' => array( 'menu_order' => 'ASC' , 'date' => 'DESC')
+    );
+    $args = array_merge($args , $args_template);
+}
+
+//カテゴリーアーカイブ
+if(is_category()) {
+  $cat = get_query_var('cat');
+  if($cat) {
+    $args_cat = array(
+      "cat" => $cat
+    );
+    $args = array_merge($args , $args_cat);
+  }
+}
+
+//タグアーカイブ
+if(is_tag()) {
+  $tag = get_query_var('tag');
+  if($tag) {
+    $args_tag = array(
+      "tag" => $tag
+    );
+    $args = array_merge($args , $args_tag);
+  }
+}
+
+//タクソノミーアーカイブ
+if(is_tax()) {
+  $term = get_query_var('term');
+  $tax = get_query_var('taxonomy');
+  if($term) {
+    $args_term = array(
+      "tax_query" => array(
+        array(
+          'taxonomy' =>$tax,
+          "field"=>"slug",
+          "terms"=>$term
+        )
+      )
+      ,'orderby' => array( 'menu_order' => 'ASC' , 'date' => 'DESC')
+    );
+    $args = array_merge($args , $args_term);
+  }
+}
+
+//年別・月別アーカイブ
+$year = get_query_var('year');
+if($year) {
+  $args_year = array(
+    "year"=> $year
+  );
+  $args =  array_merge($args , $args_year);
+}
+$month = get_query_var('monthnum');
+if($month) {
+  $args_month = array(
+    "monthnum"=> $month
+  );
+  $args =  array_merge($args , $args_month);
+}
+$day = get_query_var('day');
+if($day) {
+  $args_day = array(
+    "day"=> $day
+  );
+  $args =  array_merge($args , $args_day);
+}
+?>
+<?php $the_query = new WP_Query($args);?>
+<?php if($the_query->have_posts()):?>
+<?php
+  $post_type  = $wp_obj->post_type;
+  if( $post_type == 'post'  || is_page('archives') || is_category() || is_tag()): ?>
+  <nav>
+    <ul class="p-cat-nav">
+      <li class="p-cat-nav__item"><a href="/archives">すべて</a></li>
+      <?php
+        $args = array(
+          'parent' => 0,
+          'orderby' => 'term_order',
+          'order' => 'ASC'
+        );
+        $categories = get_categories( $args );
+      ?>
+      <?php foreach( $categories as $category ) : ?>
+      <li class="p-cat-nav__item">
+        <a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a>
+      </li>
+    <?php endforeach; ?>
+    </ul>
+  </nav>
+<?php require TEMPLATEPATH . "/template-parts/module/loop-archive.php"; ?>
+<?php else: ?>
+<?php require TEMPLATEPATH . "/template-parts/module/loop-archive-thumb.php"; ?>
+<?php endif; ?>
+<?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
+<?php endif;?>
+</div>
+</main>
