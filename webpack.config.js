@@ -58,7 +58,7 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin({
 			// 抽出する CSS のファイル名
-			filename: "style.css",
+			filename: "css/style.css",
 		}),
 	],
 	//source-map タイプのソースマップを出力

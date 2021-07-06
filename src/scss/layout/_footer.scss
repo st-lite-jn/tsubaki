@@ -1,6 +1,7 @@
 @use '../foundation/import';
 
-.l-header {
+.l-footer {
     display: block;
     background-color: import.$gray;
+    color: import.$white;
 }
