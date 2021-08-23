@@ -1,0 +1,7 @@
+@use '../../foundation/import';
+.c-btn {
+    background-color: import.$colorBtnBody;
+    color: import.$colorBtnFont;
+    padding: 8px 16px;
+    border-radius: 8px;
+}

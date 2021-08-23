@@ -1,6 +1,103 @@
 @use '../foundation/import';
-
 .l-header {
-    display: block;
-    background-color: import.$gray;
+    transition: .5s;
+    background-color: import.$colorMainBody;
+    width: 100%;
+    z-index: 9900;
+    @include import.mqMax(import.$colorMainBody) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    @include import.mqMax(import.$smart) {
+        padding-top: import.spvw(8);
+        padding-bottom: import.spvw(8);
+    }
+    &.is-scrolled {
+        position: fixed;
+        top: 0;
+        background-color: transparent;
+    }
+	.l-container {
+		display: flex;
+		justify-content:space-between;
+		align-items: center;
+	}
+	&__heading {
+		width: 200px;
+		transition: .5s;
+		&.is-invalid {
+			opacity: 0;
+			pointer-events: none;
+		}
+		@include import.mqMax(import.$colorMainBody) {
+			width: 160px;
+		}
+		@include import.mqMax(import.$smart) {
+			width: import.spvw(200);
+		}
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+	}
 }
+
+.l-header-utility {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background-color: import.$colorMainBody;
+		text-align: center;
+		@include import.mqMin(import.$tabletSmall) {
+			width: 44px;
+			height: 44px;
+			margin-left: 12px;
+		}
+		@include import.mqMax(import.$smart) {
+			width: import.spvw(40);
+			height: import.spvw(40);
+			margin-left: import.spvw(10);
+		}
+		&--search {
+			z-index: 9800;
+		}
+		&--gnav {
+			z-index: 9999;
+		}
+		&.is-opened {
+			background-color: import.$colorMainFont;
+			.l-header-utility-ico {
+				display: none;
+			}
+			.l-header-utility-ico--close {
+				display: block;
+			}
+		}
+	}
+}
+
+.l-header-utility-ico , .l-header-utility-ico--close {
+	@include import.mqMin(import.$tabletSmall) {
+		width: 17.6px;
+		height: 17.6px;
+	}
+	@include import.mqMax(import.$smart) {
+		width: import.spvw(17.6);
+		height: import.spvw(17.6);
+	}
+}
+.l-header-utility-ico {
+	fill:import.$colorMainFont !important;
+	stroke:import.$colorMainFont !important;
+}
+.l-header-utility-ico--close {
+    display: none;
+	stroke: import.$colorMainBody !important;
+}
+
+

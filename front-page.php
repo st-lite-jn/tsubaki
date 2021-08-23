@@ -5,7 +5,7 @@
 */
 ?>
 <?php get_header();?>
-<main class="l-main l-main--home">
-<?php the_content();?>
-</main>
+    <div class="l-container p-article">
+        <?php the_content();?>
+    </div>
 <?php get_footer(); ?>

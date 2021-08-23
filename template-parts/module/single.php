@@ -17,7 +17,7 @@
       </div>
       <?php
         if(is_single()) {
-          require TEMPLATEPATH .'/templates/component/prev-next.php';
+          require TEMPLATEPATH .'/template-parts/component/prev-next.php';
         }
       ?>
     </div>

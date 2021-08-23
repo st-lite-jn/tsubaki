@@ -1,0 +1,17 @@
+@use '../../foundation/import';
+
+.p-article {
+    > *:first-child {
+        margin-top: 0;
+    }
+    h1,h2,h3,h4,h5,h6,p,table,ul,dl,ol,figure,hr {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+    h1 + p,h2 + p,h3 + p,h4 + p,h5 + p, h6 + p {
+       margin-top:8px;
+    }
+    .wp-block-gallery  {
+        margin-bottom: -1em;
+    }
+}

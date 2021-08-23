@@ -1,0 +1,23 @@
+@use '../foundation/import';
+//検索フォーム
+.l-search {
+	position: fixed;
+    display: none;
+	z-index: 9100;
+	@include import.mqMin(import.$tabletSmall) {
+		width: 360px;
+		right: 0;
+	}
+	@include import.mqMin(1200px) {
+		right:calc((100% - 1160px) / 2);
+	}
+	@include import.mqMax(1199px) {
+		right: import.spvw(import.$padding);
+	}
+	@include import.mqMax(import.$smart) {
+		left: import.spvw(16);
+	}
+	&.is-opened {
+		display: block;
+	}
+}

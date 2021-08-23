@@ -1,5 +1,6 @@
 <?php
-	$cat_terms = tsbk_get_pt_terms(tsbk_glb_cr_pt(),true);
+	global $tsbk_post_type;
+	$cat_terms = tsbk_get_pt_terms($tsbk_post_type,true);
 	$cat_partents = array();
 	$cat_children = array();
 ?>
@@ -36,7 +37,7 @@
 </div>
 <?php endif;?>
 <?php
-	$tag_terms = tsbk_get_pt_terms(tsbk_glb_cr_pt(),false);
+	$tag_terms = tsbk_get_pt_terms($tsbk_post_type , false);
 ?>
 <?php if($tag_terms):?>
 <div class="c-sidebar">

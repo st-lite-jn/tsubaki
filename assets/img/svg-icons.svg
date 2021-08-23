@@ -1,0 +1,19 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-search" viewBox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+</symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+</symbol>
+<symbol id="icon-chevron-left" viewBox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+</symbol>
+<symbol id="icon-chevron-right" viewBox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+</symbol>
+</defs>
+</svg>

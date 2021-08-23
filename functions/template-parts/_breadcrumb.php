@@ -67,9 +67,6 @@ function tsbk_breadcrumb($wp_obj = null) {
 					'</li>';
 
 		} else {
-			echo '<li class="p-breadcrumb-list__item">'.
-					'<a href="/archives/">更新履歴</a>'.
-					'</li>';
 			$the_tax = 'category';  //通常の投稿の場合、カテゴリーを表示
 		}
 		// タクソノミーが紐づいていれば表示

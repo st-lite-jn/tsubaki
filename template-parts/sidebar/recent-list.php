@@ -1,6 +1,7 @@
 <?php
+	global $tsbk_post_type;
 	$recent_args = array(
-		"post_type" => tsbk_glb_cr_pt(),
+		"post_type" => $tsbk_post_type,
 		'posts_per_page'=> 5
 	);
 	$recent_posts = get_posts($recent_args);

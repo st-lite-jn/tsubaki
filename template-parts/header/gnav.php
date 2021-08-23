@@ -12,6 +12,6 @@ $gnav_args = array(
 	'items_wrap' => '<ul class="%2$s">%3$s</ul>',
 );
 ?>
-<nav class="l-gnav">
-<?php wp_nav_menu($gnav_args); ?>
+<nav id="gnav" class="l-gnav" role="navigation" aria-hidden="true">
+<?php wp_nav_menu($args_gnav); ?>
 </nav>

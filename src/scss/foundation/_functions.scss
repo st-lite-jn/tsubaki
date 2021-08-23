@@ -1,0 +1,6 @@
+// スマートフォン用のVWの計算
+// デザインに合わせて$referenceValueを編集
+$referenceValue:375;
+@function spvw($value) {
+	@return ($value / $referenceValue * 100)+vw;
+}

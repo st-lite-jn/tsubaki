@@ -1,9 +1,9 @@
-
 <?php
+	global $tsbk_post_type;
 	$monthly_format = wp_get_archives(
 		array(
 			'type' => "monthly",
-			'post_type' => tsbk_glb_cr_pt(),
+			'post_type' => $tsbk_post_type,
 			'limit' => '',
 			'format'=>'html',
 			'before' => '',
