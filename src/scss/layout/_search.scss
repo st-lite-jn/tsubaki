@@ -4,20 +4,26 @@
 	position: fixed;
     display: none;
 	z-index: 9100;
-	@include import.mqMin(import.$tabletSmall) {
-		width: 360px;
-		right: 0;
-	}
-	@include import.mqMin(1200px) {
-		right:calc((100% - 1160px) / 2);
-	}
-	@include import.mqMax(1199px) {
-		right: import.spvw(import.$padding);
-	}
-	@include import.mqMax(import.$smart) {
-		left: import.spvw(16);
-	}
-	&.is-opened {
+    width: 100%;
+    padding-top: import.spvw(8);
+    @include import.mqMin(import.$tabletSmall) {
+        padding-top: 16px;
+    }
+    &.is-opened {
 		display: block;
 	}
+    .l-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .c-input-txt {
+            flex:1;
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+        }
+        .c-btn {
+            border-radius: 0 8px 8px 0;
+        }
+    }
 }

@@ -2,23 +2,36 @@
 
 .l-footer {
 	margin-top: auto;
+    padding-top: import.spvw(16);
+    padding-bottom: import.spvw(16);
+    background-color: import.$colorSubBody;
+    @include import.mqMin(import.$tabletSmall) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    > * {
+        color: import.$colorSubFont;
+    }
+    &__copyright {
+        margin-top: import.spvw(8);
+        text-align: center;
+        font-size: import.spvw(12);
+        @include import.mqMin(import.$tabletSmall) {
+            margin-top: 8px;
+            font-size: 12px;
+        }
+    }
 }
 
-.l-footer-nav {
+.l-fnav {
 	text-align: center;
-	@include import.mqMin(import.$tabletSmall) {
-		margin-top: 8px;
-	}
-	@include import.mqMax(import.$smart) {
-		margin-top: import.spvw(8);
-	}
 	&__item {
 		display: inline-block;
-
+        color: import.$colorSubFont;
 		@include import.mqMin(import.$tabletSmall) {
 			margin-right: 8px;
 			margin-left: 8px;
-			font-size:12px;
+			font-size: 12px;
 		}
 		@include import.mqMax(import.$smart) {
 			margin-right:import.spvw(8);

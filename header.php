@@ -10,9 +10,8 @@
                 include TEMPLATEPATH .'/template-parts/header/utility.php';
             ?>
         </div>
-        <?php include TEMPLATEPATH .'/template-parts/header/gnav.php'; ?>
+        <?php require_once TEMPLATEPATH .'/template-parts/header/gnav.php'; ?>
         <?php get_search_form();?>
     </header>
-
 <?php echo $_SERVER['REMOTE_HOST']; ?>
-    <main>
+    <main class="l-main">

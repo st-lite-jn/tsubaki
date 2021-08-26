@@ -1,6 +1,22 @@
 @use '../../foundation/import';
 
-.p-article {
+.p-singular-ttl {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 52.5%;
+    img {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__label {
+        font-size: 36px;
+    }
+}
+.p-singular-content {
     > *:first-child {
         margin-top: 0;
     }

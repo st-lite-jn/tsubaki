@@ -9,6 +9,7 @@ register_nav_menus( array(
 	'global_navigation' => 'グローバルナビゲーション',
 	'footer_navigation' => 'フッターナビゲーション'
 ));
+
 //メニューが空の場合はfalseを返す
 function tsbk_empty_menu(){
 	return false;
@@ -103,7 +104,7 @@ class Tsbk_Footer_Nav_Menu extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$attributes .= ' class="l-footer-nav__item"';
+		$attributes .= ' class="l-fnav__item"';
 
 		  $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
 			  $args->before,

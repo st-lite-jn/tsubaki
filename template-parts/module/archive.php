@@ -1,22 +1,14 @@
 <?php require TEMPLATEPATH . "/template-parts/component/content-header.php";?>
-<main class="l-main">
 <div class="l-container">
 <?php
+
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
 $args = array(
-  "post_type"=> tsbk_glb_cr_pt()
-	,'posts_per_page'  => 12
-  ,'orderby' => array( 'date' => 'DESC', 'menu_order' => 'ASC' )
-  ,'paged' => $paged
+    "post_type"=> $tsbk_post_type
+    ,'posts_per_page'  => 12
+    ,'orderby' => array( 'date' => 'DESC', 'menu_order' => 'ASC' )
+    ,'paged' => $paged
 );
-
-//更新履歴
-if(is_page('archives')) {
-    $args_archives = array(
-      "post_type"=>"post"
-    );
-    $args = array_merge($args , $args_archives);
-}
 
 //テンプレート
 if(is_post_type_archive('template')) {
@@ -70,27 +62,27 @@ if(is_tax()) {
 //年別・月別アーカイブ
 $year = get_query_var('year');
 if($year) {
-  $args_year = array(
-    "year"=> $year
-  );
-  $args =  array_merge($args , $args_year);
+    $args_year = array(
+      "year"=> $year
+    );
+    $args =  array_merge($args , $args_year);
 }
 $month = get_query_var('monthnum');
 if($month) {
-  $args_month = array(
-    "monthnum"=> $month
-  );
-  $args =  array_merge($args , $args_month);
+    $args_month = array(
+      "monthnum"=> $month
+    );
+    $args =  array_merge($args , $args_month);
 }
 $day = get_query_var('day');
 if($day) {
-  $args_day = array(
-    "day"=> $day
-  );
-  $args =  array_merge($args , $args_day);
+    $args_day = array(
+        "day"=> $day
+    );
+    $args = array_merge($args , $args_day);
 }
+$the_query = new WP_Query($args);
 ?>
-<?php $the_query = new WP_Query($args);?>
 <?php if($the_query->have_posts()):?>
 <?php
   $post_type  = $wp_obj->post_type;
@@ -120,4 +112,3 @@ if($day) {
 <?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
 <?php endif;?>
 </div>
-</main>

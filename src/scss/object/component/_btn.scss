@@ -1,7 +1,13 @@
 @use '../../foundation/import';
 .c-btn {
     background-color: import.$colorBtnBody;
+    border : solid 1px import.$colorBtnBody;
     color: import.$colorBtnFont;
-    padding: 8px 16px;
+    padding: import.spvw(8) import.spvw(16);
     border-radius: 8px;
+    font-size: import.spvw(16);
+    @include import.mqMin(import.$tabletSmall) {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
 }

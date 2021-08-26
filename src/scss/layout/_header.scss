@@ -4,7 +4,7 @@
     background-color: import.$colorMainBody;
     width: 100%;
     z-index: 9900;
-    @include import.mqMax(import.$colorMainBody) {
+    @include import.mqMin(import.$tabletSmall) {
         padding-top: 8px;
         padding-bottom: 8px;
     }
@@ -29,7 +29,7 @@
 			opacity: 0;
 			pointer-events: none;
 		}
-		@include import.mqMax(import.$colorMainBody) {
+		@include import.mqMin(import.$tabletSmall) {
 			width: 160px;
 		}
 		@include import.mqMax(import.$smart) {
