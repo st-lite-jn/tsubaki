@@ -32,7 +32,7 @@
 		width: 360px;
 		right: - 360px;
 	}
-	@include import.mqMax(import.$smart) {
+	@include import.mqMax(import.$smartPortrait) {
 		padding-right: import.spvw(24);
 		padding-left: import.spvw(24);
 		right: -74.66%;
@@ -52,7 +52,7 @@
 		@media screen and (min-width: 768px) and (max-width: 1365px) {
 			animation: openMedium .3s linear 1 forwards;
 		}
-		@include import.mqMax(import.$smart) {
+		@include import.mqMax(import.$smartPortrait) {
 			animation: openSmart .3s linear 1 forwards;
 		}
 		a {
@@ -72,7 +72,7 @@
 			right: - 360px;
 			animation: closeMedium .3s linear 1 forwards;
 		}
-		@include import.mqMax(import.$smart) {
+		@include import.mqMax(import.$smartPortrait) {
 			right: -74.66%;
 			animation: closeSmart .3s linear 1 forwards;
 		}
@@ -80,7 +80,7 @@
 	.l-gnav-main {
 		display: block;
 		height: auto;
-		@include import.mqMin(import.$tabletSmall){
+		@include import.mqMin(import.$tabletPortrait){
 			padding-bottom:74px;
 		}
 		@media screen and (min-width: 1366px) {
@@ -89,7 +89,7 @@
 		@media screen and (min-width: 768px) and (max-width: 1365px) {
 			width: 234px;
 		}
-		@include import.mqMax(import.$smart){
+		@include import.mqMax(import.$smartPortrait){
 			width: 100%;
 			padding-bottom: import.spvw(74);
 		}
@@ -100,22 +100,22 @@
 				line-height: 1.33;
 				color: import.$colorMainFont;
 				font-weight: 600;
-				@include import.mqMin(import.$tabletSmall){
+				@include import.mqMin(import.$tabletPortrait){
 					padding-top: 16px;
 					padding-bottom: 16px;
 					font-size: 20px;
 				}
-				@include import.mqMax(import.$smart){
+				@include import.mqMax(import.$smartPortrait){
 					padding-top: import.spvw(16);
 					padding-bottom: import.spvw(8);
 					font-size: import.spvw(20);
 				}
 			}
 			.l-gnav-sub {
-				@include import.mqMin(import.$tabletSmall){
+				@include import.mqMin(import.$tabletPortrait){
 					margin-left: 32px;
 				}
-				@include import.mqMax(import.$smart){
+				@include import.mqMax(import.$smartPortrait){
 					margin-left: import.spvw(16);
 				}
 			}

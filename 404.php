@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php require TEMPLATEPATH . "/template-parts/component/content-header.php";?>
+<?php require TEMPLATEPATH . "/template-parts/component/singular-header.php";?>
 <main class="l-main">
   <div class="l-container">
     <p>お探しのページが見つかりません。</p>

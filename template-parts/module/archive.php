@@ -1,7 +1,6 @@
-<?php require TEMPLATEPATH . "/template-parts/component/content-header.php";?>
+<?php require TEMPLATEPATH . "/template-parts/component/archive-header.php";?>
 <div class="l-container">
 <?php
-
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
 $args = array(
     "post_type"=> $tsbk_post_type
@@ -84,31 +83,9 @@ if($day) {
 $the_query = new WP_Query($args);
 ?>
 <?php if($the_query->have_posts()):?>
-<?php
-  $post_type  = $wp_obj->post_type;
-  if( $post_type == 'post'  || is_page('archives') || is_category() || is_tag()): ?>
-  <nav>
-    <ul class="p-cat-nav">
-      <li class="p-cat-nav__item"><a href="/archives">すべて</a></li>
-      <?php
-        $args = array(
-          'parent' => 0,
-          'orderby' => 'term_order',
-          'order' => 'ASC'
-        );
-        $categories = get_categories( $args );
-      ?>
-      <?php foreach( $categories as $category ) : ?>
-      <li class="p-cat-nav__item">
-        <a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a>
-      </li>
-    <?php endforeach; ?>
-    </ul>
-  </nav>
-<?php require TEMPLATEPATH . "/template-parts/module/loop-archive.php"; ?>
-<?php else: ?>
+
 <?php require TEMPLATEPATH . "/template-parts/module/loop-archive-thumb.php"; ?>
-<?php endif; ?>
+
 <?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
 <?php endif;?>
 </div>

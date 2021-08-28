@@ -1,0 +1,52 @@
+@use '../../foundation/import';
+@use "sass:math";
+//グリッドレイアウト
+
+// grid
+$grid: 4;
+
+// column
+$column1: math.div(100% , math.div($grid , 1));
+$column2: math.div(100% , math.div($grid , 2));
+$column3: math.div(100% , math.div($grid , 3));
+$column4: math.div(100% , math.div($grid , 4));
+
+
+.p-row {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: - import.spvw(8);
+  margin-left: - import.spvw(8);
+  @include import.mqMin(import.$tabletPortrait) {
+    margin-right: -8px;
+    margin-left: -8px;
+  }
+}
+
+.col,.col-1,.col-2,.col-3,.col-4 {
+  flex: 0 0 auto;
+  padding-right: import.spvw(8);
+  padding-left: import.spvw(8);
+}
+.col    { flex-grow: 1;flex-basis: 0;max-width: 100%;}
+.col-1  { flex-basis: $column1; max-width: $column1;}
+.col-2  { flex-basis: $column2; max-width: $column2;}
+.col-3  { flex-basis: $column3; max-width: $column3;}
+.col-4  { flex-basis: $column4; max-width: $column4;}
+
+// Midium
+@include import.mqMin(import.$tabletPortrait) {
+  .col-lg,.col-1-lg,.col-2-lg,.col-3-lg,.col-4-lg {
+    flex: 0 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  .col-lg    { flex-grow: 1;flex-basis: 0;max-width: 100%;}
+  .col-1-lg  { flex-basis: $column1; max-width: $column1;}
+  .col-2-lg  { flex-basis: $column2; max-width: $column2;}
+  .col-3-lg  { flex-basis: $column3; max-width: $column3;}
+  .col-4-lg  { flex-basis: $column4; max-width: $column4;}
+}
+

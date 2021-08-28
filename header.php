@@ -13,5 +13,4 @@
         <?php require_once TEMPLATEPATH .'/template-parts/header/gnav.php'; ?>
         <?php get_search_form();?>
     </header>
-<?php echo $_SERVER['REMOTE_HOST']; ?>
     <main class="l-main">

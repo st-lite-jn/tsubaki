@@ -7,7 +7,6 @@ const headerFixed = () => {
     let headerHeight = $header.offsetHeight;
     let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
-    console.log($gnav.classList.contains("is-opened"));
     if(!$gnav.classList.contains("is-opened")) {
         if( scrollPosition >= headerHeight) {
             $header.classList.add("is-scrolled");

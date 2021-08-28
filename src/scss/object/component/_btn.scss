@@ -6,7 +6,7 @@
     padding: import.spvw(8) import.spvw(16);
     border-radius: 8px;
     font-size: import.spvw(16);
-    @include import.mqMin(import.$tabletSmall) {
+    @include import.mqMin(import.$tabletPortrait) {
         padding: 8px 16px;
         font-size: 16px;
     }

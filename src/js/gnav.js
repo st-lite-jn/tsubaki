@@ -8,12 +8,18 @@ const gnavToggle = () => {
     const $gnavBtn = document.getElementById("gnavBtn");
     const $gnav = document.getElementById("gnav");
 
-    $gnavBtn.addEventListener( "click", (e) => {
+    $gnavBtn.addEventListener('click', (e) => {
         let $bgLayer = document.querySelector(".l-bg-layer");
         if($bgLayer) {
             $bgLayer.parentNode.removeChild(document.querySelector(".l-bg-layer"));
         }
         bgElement(e.currentTarget);
+        if(!e.currentTarget.classList.contains("is-opened")) {
+            let $targets = document.querySelectorAll(".is-opened");
+            $targets.forEach(($target) => {
+                $target.classList.remove("is-opened");
+            });
+        }
         e.currentTarget.classList.toggle("is-opened");
         $gnav.classList.toggle("is-opened");
         if($gnav.classList.contains("is-opened")) {

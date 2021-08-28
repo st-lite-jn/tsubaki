@@ -1,6 +1,6 @@
 <?php if ( have_posts() ): ?>
 <?php while( have_posts() ): the_post(); ?>
-<?php require TEMPLATEPATH . "/template-parts/component/content-header.php";?>
+<?php require TEMPLATEPATH . "/template-parts/component/singular-header.php";?>
 
 <div class="l-container">
 <div class="p-singular-content">

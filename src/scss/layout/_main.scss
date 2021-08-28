@@ -2,7 +2,7 @@
 
 .l-main {
     padding-bottom: import.spvw(32);
-    @include import.mqMin(import.$tabletSmall){
+    @include import.mqMin(import.$tabletPortrait){
         padding-bottom: 40px;
     }
 }

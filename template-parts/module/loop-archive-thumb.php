@@ -4,29 +4,28 @@
 * $the_query : WP_Queryオブジェクト
 */
 ?>
-<div class="p-archive">
+<div class="p-row">
 	<?php while ( $the_query->have_posts()) :$the_query->the_post(); ?>
 	<?php
 		$thumbnail = tsbk_get_featured_img(get_the_ID());
 		//POST IDからタクソノミーを取得
 		list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
 	?>
-	<article class="p-archive-article">
-		<a href="<?php echo get_the_permalink(get_the_ID());?>">
-			<figure class="p-archive-article__thumb"><img src="<?php echo $thumbnail["medium"];?>" width="<?php echo $thumbnail["medium-width"];?>" height="<?php echo $thumbnail["medium-height"];?>" alt="<?php echo $thumbnail["alt"];?>"></figure>
-			<p class="p-archive-article__date">更新日：<?php echo get_the_time('Y.m.d',get_the_ID());?></p>
-			<p class="p-archive-article__title"><?php echo get_the_title(get_the_ID());?></p>
-			<p class="p-archive-article__description"><?php echo get_the_excerpt(get_the_ID());?></p>
+	<article class="p-card">
+		<a class="p-card__header" href="<?php echo get_the_permalink(get_the_ID());?>">
+			<figure class="p-card__header__img"><img src="<?php echo $thumbnail["medium"];?>" width="<?php echo $thumbnail["medium-width"];?>" height="<?php echo $thumbnail["medium-height"];?>" alt="<?php echo $thumbnail["alt"];?>"></figure>
+			<p class="p-card__header__ttl"><?php echo get_the_title(get_the_ID());?></p>
 		</a>
-		<div class="p-archive-article__property">
-			<?php if($cat_terms):?>
-			<nav class="p-archive-article__property__cat">
-			<?php foreach($cat_terms as $cat_term):?>
-				<a href="<?php echo get_term_link($cat_term->term_id);?>"><?php echo $cat_term->name;?></a>
-			<?php break; endforeach; ?>
-			</nav>
-			<?php endif;?>
-		</div>
+        <div class="p-card__body">
+            <p class="p-card__body__date">更新日：<?php echo get_the_time('Y.m.d',get_the_ID());?></p>
+            <p class="p-card__body__txt"><?php echo get_the_excerpt(get_the_ID());?></p>
+        <?php if($cat_terms):?>
+        <nav class="p-card__body__cats">
+            <?php foreach($cat_terms as $cat_term):?>
+                <a class="p-card__body__cats__item" href="<?php echo get_term_link($cat_term->term_id);?>"><?php echo $cat_term->name;?></a>
+            <?php break; endforeach; ?>
+        </nav>
+        <?php endif;?>
 	</article>
 <?php endwhile;wp_reset_postdata();?>
 </div>

@@ -6,7 +6,7 @@
     border:solid 1px import.$brayBright;
     border-radius: 8px;
     font-size: import.spvw(16);
-    @include import.mqMin(import.$tabletSmall) {
+    @include import.mqMin(import.$tabletPortrait) {
         padding: 8px;
         font-size: 16px;
     }

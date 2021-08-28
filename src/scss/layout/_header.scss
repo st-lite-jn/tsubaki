@@ -4,11 +4,11 @@
     background-color: import.$colorMainBody;
     width: 100%;
     z-index: 9900;
-    @include import.mqMin(import.$tabletSmall) {
+    @include import.mqMin(import.$tabletPortrait) {
         padding-top: 8px;
         padding-bottom: 8px;
     }
-    @include import.mqMax(import.$smart) {
+    @include import.mqMax(import.$smartPortrait) {
         padding-top: import.spvw(8);
         padding-bottom: import.spvw(8);
     }
@@ -29,10 +29,10 @@
 			opacity: 0;
 			pointer-events: none;
 		}
-		@include import.mqMin(import.$tabletSmall) {
+		@include import.mqMin(import.$tabletPortrait) {
 			width: 160px;
 		}
-		@include import.mqMax(import.$smart) {
+		@include import.mqMax(import.$smartPortrait) {
 			width: import.spvw(200);
 		}
 	}
@@ -53,12 +53,12 @@
 		border-radius: 50%;
 		background-color: import.$colorMainBody;
 		text-align: center;
-		@include import.mqMin(import.$tabletSmall) {
+		@include import.mqMin(import.$tabletPortrait) {
 			width: 44px;
 			height: 44px;
 			margin-left: 12px;
 		}
-		@include import.mqMax(import.$smart) {
+		@include import.mqMax(import.$smartPortrait) {
 			width: import.spvw(40);
 			height: import.spvw(40);
 			margin-left: import.spvw(10);
@@ -82,11 +82,11 @@
 }
 
 .l-header-utility-ico , .l-header-utility-ico--close {
-	@include import.mqMin(import.$tabletSmall) {
+	@include import.mqMin(import.$tabletPortrait) {
 		width: 17.6px;
 		height: 17.6px;
 	}
-	@include import.mqMax(import.$smart) {
+	@include import.mqMax(import.$smartPortrait) {
 		width: import.spvw(17.6);
 		height: import.spvw(17.6);
 	}
