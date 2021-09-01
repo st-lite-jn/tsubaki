@@ -37,14 +37,17 @@ function tsbk_breadcrumb($wp_obj = null) {
 		echo '<li><b class="is-current">'. $wp_obj->post_title .'</b>';
 
 	} elseif ( is_single() ) {
-		/**
-		* 投稿ページ
-		* $wp_obj : WP_Post
-		*/
-		$post_id    = $wp_obj->ID;
-		$post_type  = $wp_obj->post_type;
-		$post_title = $wp_obj->post_title;
+        /**
+        * 投稿ページ
+        * $wp_obj : WP_Post
+        */
+        $post_id    = $wp_obj->ID;
+        $post_type  = $wp_obj->post_type;
+        $post_title = $wp_obj->post_title;
 
+        echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'.
+        get_post_type_object( $post_type )->label .
+        '</a>';
 		// カスタム投稿タイプかどうか
 		if ( $post_type !== 'post' ) {
 

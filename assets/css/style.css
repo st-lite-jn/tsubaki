@@ -1003,34 +1003,160 @@ a:hover {
   }
 }
 
-.p-singular-ttl {
+.p-sg-header {
+  padding-top: 4.2666666667vw;
+  padding-bottom: 4.2666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.p-sg-header-props__ttl {
+  font-size: 8.5333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-header-props__ttl {
+    font-size: 36px;
+  }
+}
+.p-sg-header-props__date {
+  font-size: 2.6666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-header-props__date {
+    font-size: 14px;
+  }
+}
+
+.p-sg-header-visual {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 52.5%;
+  margin-top: 4.2666666667vw;
 }
-.p-singular-ttl img {
+@media screen and (min-width: 768px) {
+  .p-sg-header-visual {
+    margin-top: 16px;
+  }
+}
+.p-sg-header-visual img {
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.p-singular-ttl__label {
-  font-size: 36px;
-}
 
-.p-singular-content > *:first-child {
+.p-sg-content {
+  padding-bottom: 8.5333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content {
+    padding-bottom: 40px;
+  }
+}
+.p-sg-content > *:first-child {
   margin-top: 0;
 }
-.p-singular-content h1, .p-singular-content h2, .p-singular-content h3, .p-singular-content h4, .p-singular-content h5, .p-singular-content h6, .p-singular-content p, .p-singular-content table, .p-singular-content ul, .p-singular-content dl, .p-singular-content ol, .p-singular-content figure, .p-singular-content hr {
-  margin-top: 16px;
+.p-sg-content > * {
+  margin-top: 4.2666666667vw;
   margin-bottom: 0;
 }
-.p-singular-content h1 + p, .p-singular-content h2 + p, .p-singular-content h3 + p, .p-singular-content h4 + p, .p-singular-content h5 + p, .p-singular-content h6 + p {
-  margin-top: 8px;
+@media screen and (min-width: 768px) {
+  .p-sg-content > * {
+    margin-top: 16px;
+  }
 }
-.p-singular-content .wp-block-gallery {
+.p-sg-content h1 + p, .p-sg-content h2 + p, .p-sg-content h3 + p, .p-sg-content h4 + p, .p-sg-content h5 + p, .p-sg-content h6 + p {
+  margin-top: spvw(8);
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h1 + p, .p-sg-content h2 + p, .p-sg-content h3 + p, .p-sg-content h4 + p, .p-sg-content h5 + p, .p-sg-content h6 + p {
+    margin-top: 8px;
+  }
+}
+.p-sg-content h1 {
+  font-size: 8.5333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h1 {
+    font-size: 36px;
+  }
+}
+.p-sg-content h2 {
+  font-size: 7.4666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h2 {
+    font-size: 32px;
+  }
+}
+.p-sg-content h3 {
+  font-size: 6.4vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h3 {
+    font-size: 28px;
+  }
+}
+.p-sg-content h4 {
+  font-size: 5.3333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h4 {
+    font-size: 24px;
+  }
+}
+.p-sg-content h5 {
+  font-size: 4.2666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h5 {
+    font-size: 16px;
+  }
+}
+.p-sg-content h6 {
+  font-size: 4.2666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content h6 {
+    font-size: 16px;
+  }
+}
+.p-sg-content .wp-block-image {
+  text-align: center;
+}
+.p-sg-content .wp-block-image figcaption {
+  text-align: center;
+  font-size: 2.1333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content .wp-block-image figcaption {
+    font-size: 12px;
+  }
+}
+.p-sg-content .wp-block-table.is-style-stripes table th, .p-sg-content .wp-block-table.is-style-stripes table td {
+  padding: 2.1333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content .wp-block-table.is-style-stripes table th, .p-sg-content .wp-block-table.is-style-stripes table td {
+    padding: 8px;
+  }
+}
+.p-sg-content .wp-block-table.is-style-stripes figcaption {
+  text-align: center;
+  font-size: 2.1333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-sg-content .wp-block-table.is-style-stripes figcaption {
+    font-size: 12px;
+  }
+}
+.p-sg-content .wp-block-gallery {
   margin-bottom: -1em;
 }
 
