@@ -1,4 +1,4 @@
-<?php require TEMPLATEPATH . "/template-parts/component/archive-header.php";?>
+<?php require __DIR__ . "/header.php";?>
 <div class="l-container">
 <?php
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
@@ -84,7 +84,7 @@ $the_query = new WP_Query($args);
 ?>
 <?php if($the_query->have_posts()):?>
 
-<?php require TEMPLATEPATH . "/template-parts/module/loop-archive-thumb.php"; ?>
+<?php require __DIR__ . "/loop.php"; ?>
 
 <?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
 <?php endif;?>

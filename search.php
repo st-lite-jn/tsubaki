@@ -20,7 +20,7 @@
 	?>
       <?php if ($the_query->have_posts()): ?>
         <?php $the_query = new WP_Query($args);?>
-        <?php require TEMPLATEPATH ."/template-parts/module/loop-archive-thumb.php";?>
+        <?php require TEMPLATEPATH ."/template-parts/archive/loop.php";?>
         <?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
       <?php else:?>
         <p>該当する記事がありません。</p>
