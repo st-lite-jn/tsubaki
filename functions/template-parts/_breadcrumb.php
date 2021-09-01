@@ -12,30 +12,29 @@ function tsbk_breadcrumb($wp_obj = null) {
 	$home_url =  home_url();
 	$dom_class = array(
 		'container' => "p-breadcrumb",
-		'parent' => "p-breadcrumb-list l-container",
-		'child' => "p-breadcrumb-list__item",
+		'parent' => "p-breadcrumb l-container",
+		'child' => "p-breadcrumb__item",
 		'item' => "p-breadcrumb",
 	);
 	//そのページのWPオブジェクトを取得
 	$wp_obj = $wp_obj ?: get_queried_object();
 
-	echo '<nav class="p-breadcrumb">'.
-			'<ul class="p-breadcrumb-list l-container">'.
-			'<li class="p-breadcrumb-list__item">'.
-				'<a href="'. home_url() .'">Home</a>'.
-			'</li>';
+	echo '<div class="p-breadcrumb-wrapper">'.
+			'<nav class="p-breadcrumb l-container">'.
+            '<a class="p-breadcrumb__item" href="'. home_url() .'">Home</a>';
+
 	if(is_home()) {
 		/**
 		* 投稿のアーカイブ
 		* $wp_obj : WP_Post
 		*/
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">'. $wp_obj->post_title .'</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->post_title .'</b>';
 	} elseif ( is_attachment() ) {
 		/**
 		* 添付ファイルページ ( $wp_obj : WP_Post )
 		* ※ 添付ファイルページでは is_single() も true になるので先に分岐
 		*/
-		echo '<li><b class="is-current">'. $wp_obj->post_title .'</b></li>';
+		echo '<li><b class="is-current">'. $wp_obj->post_title .'</b>';
 
 	} elseif ( is_single() ) {
 		/**
@@ -60,12 +59,7 @@ function tsbk_breadcrumb($wp_obj = null) {
 				}
 			}
 			//カスタム投稿タイプ名の表示
-			echo '<li class="p-breadcrumb-list__item">'.
-					'<a href="'. get_post_type_archive_link( $post_type ) .'">'.
-						get_post_type_object( $post_type )->label .
-					'</a>'.
-					'</li>';
-
+			echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'. get_post_type_object( $post_type )->label .'</a>';
 		} else {
 			$the_tax = 'category';  //通常の投稿の場合、カテゴリーを表示
 		}
@@ -98,26 +92,19 @@ function tsbk_breadcrumb($wp_obj = null) {
 						foreach ( $parent_array as $parent_id ) {
 							$parent_term = get_term( $parent_id, $the_tax );
 
-							echo '<li class="p-breadcrumb-list__item">'.
-									'<a href="'. get_term_link( $parent_id, $the_tax ) .'">'.
-									$parent_term->name.
-									'</a>'.
-								'</li>';
+							echo '<a href="'. get_term_link( $parent_id, $the_tax ) .'">'.$parent_term->name.'</a>';
 						}
 					}
 
 					// 最下層のタームを表示
-					echo '<li class="p-breadcrumb-list__item">'.
-							'<a href="'. get_term_link( $term->term_id, $the_tax ). '">'.
-							$term->name .
-							'</a>'.
-						'</li>';
+					echo '<a class="p-breadcrumb__item" href="'. get_term_link( $term->term_id, $the_tax ). '">'. $term->name. '</a>';
+
 				endif;
 			}
 		}
 
 		// 投稿自身の表示
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">'. $post_title .'</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">'. $post_title .'</b>';
 
 	} elseif ( is_page() ) {
 		/**
@@ -129,15 +116,11 @@ function tsbk_breadcrumb($wp_obj = null) {
 		if ( $wp_obj->post_parent !== 0 ) {
 			$parent_array = array_reverse( get_post_ancestors( $wp_obj->ID) );
 			foreach( $parent_array as $parent_id ) {
-				echo '<li class="p-breadcrumb-list__item">'.
-						'<a href="'. get_permalink( $parent_id ).'">'.
-							get_the_title( $parent_id ).
-						'</a>'.
-						'</li>';
+				echo '<a class="p-breadcrumb__item" href="'. get_permalink( $parent_id ).'">'.	get_the_title( $parent_id ).'</a>';
 			}
 		}
 		// 投稿自身の表示
-		echo '<li class="p-breadcrumb-list__item"><span>'.  $wp_obj->post_title .'</span></li>';
+		echo '<b class="p-breadcrumb__item is-current">'.  $wp_obj->post_title .'</b>';
 	} elseif ( is_date() ) {
 		/**
 		 * 日付アーカイブ
@@ -145,33 +128,33 @@ function tsbk_breadcrumb($wp_obj = null) {
 		 */
 		if(get_post_type() == "post") {
 			$post_obj = get_post_type_object("post");
-			echo '<li class="p-breadcrumb-list__item"><a href="'. get_post_type_archive_link("post").'">'. $post_obj->label .'</a></li>';
+			echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link("post").'">'. $post_obj->label .'</a>';
 		} else {
-			echo '<li class="p-breadcrumb-list__item"><a href="/'.$wp_obj->rewrite["slug"].'">'. $wp_obj->label .'</a></li>';
+			echo '<a class="p-breadcrumb__item" href="/'.$wp_obj->rewrite["slug"].'">'. $wp_obj->label .'</a>';
 		}
 		$year  = get_query_var('year');
 		$month = get_query_var('monthnum');
 		$day   = get_query_var('day');
 		if ( $day !== 0 ) {
 			//日別アーカイブ
-			echo '<li class="p-breadcrumb-list__item"><a href="'. get_year_link( $year ).'">'. $year .'年</a></li>'.
-					'<li class="p-breadcrumb-list__item"><a href="'. get_month_link( $year, $month ). '">'. $month .'月</a></li>'.
-					'<li class="p-breadcrumb-list__item"><b>'. $day .'日</b></li>';
+			echo '<a class="p-breadcrumb__item" href="'. get_year_link( $year ).'">'. $year .'年</a>'.
+					'<a class="p-breadcrumb__item" href="'. get_month_link( $year, $month ). '">'. $month .'月</a>'.
+					'<b class="p-breadcrumb__item is-current">'. $day .'日</b>';
 
 		} elseif ( $month !== 0 ) {
 			//月別アーカイブ
-			echo '<li class="p-breadcrumb-list__item"><b class="is-current">'.$year.'年'.$month.'月</b></li>';
+			echo '<b class="p-breadcrumb__item is-current">'.$year.'年'.$month.'月</b>';
 
 		} else {
 			//年別アーカイブ
-			echo '<li class="p-breadcrumb-list__item"><b class="is-current">'.$year.'年</b></li>';
+			echo '<b class="p-breadcrumb__item is-current">'.$year.'年</b>';
 		}
 	} elseif ( is_author() ) {
 		/**
 		 * 投稿者アーカイブ
 		 * $wp_obj : WP_User
 		 */
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">'. $wp_obj->display_name .' の執筆記事</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->display_name .' の執筆記事</b>';
 	} elseif ( is_tax() || is_category() || is_tag()) {
 		/**
 		 * カテゴリーアーカイブ・タクソノミーアーカイブ・タグアーカイブ
@@ -180,54 +163,44 @@ function tsbk_breadcrumb($wp_obj = null) {
 		$term_id   = $wp_obj->term_id;
 		$term_name = $wp_obj->name;
 		$tax_name  = $wp_obj->taxonomy;
-		$post_type = tsbk_glb_cr_pt();
-		echo '<li class="p-breadcrumb-list__item">'.
-			'<a href="'. get_post_type_archive_link( $post_type ) .'">'.
+		$post_type = get_post_type();
+		echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'.
 				get_post_type_object( $post_type )->label .
-			'</a>'.
-		'</li>';
+			'</a>';
 		// 親ターム（カテゴリー）があれば順番に表示
 		if ( $wp_obj->parent !== 0 ) {
 			$parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
 			foreach( $parent_array as $parent_id ) {
 				$parent_term = get_term( $parent_id, $tax_name );
-				echo '<li class="p-breadcrumb-list__item">'.
-						'<a href="'. get_term_link( $parent_id, $tax_name ) .'">'.
-							$parent_term->name .
-						'</a>'.
-						'</li>';
+				echo '<a class="p-breadcrumb__item href="'. get_term_link( $parent_id, $tax_name ) .'">'.$parent_term->name .'</a>';
 			}
 		}
 		// ターム自身の表示
-		echo '<li class="p-breadcrumb-list__item">'.
-				'<b class="is-current">'. $term_name .'</b>'.
-			'</li>';
+		echo '<b class="p-breadcrumb__item is-current">'. $term_name .'</b>';
 	} elseif ( is_archive() ) {
 		/**
 		 * アーカイブ ( $wp_obj : WP_Term )
 		 */
-		echo '<li class="p-breadcrumb-list__item">'.
-			'<b class="is-current">'. $wp_obj->label .'</b>'.
-		'</li>';
+		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->label .'</b>';
 	} elseif ( is_search() ) {
 		/**
 		 * 検索結果ページ
 		 */
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">検索結果:'. get_search_query() .'</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">検索結果:'. get_search_query() .'</b>';
 	} elseif ( is_404() ) {
 		/**
 		 * 404ページ
 		 */
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">404 Not Found</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">404 Not Found</b>';
 
 	} else {
 		/**
 		 * その他のページ（無いと思うが一応）
 		 */
-		echo '<li class="p-breadcrumb-list__item"><b class="is-current">'. get_the_title() .'</b></li>';
+		echo '<b class="p-breadcrumb__item is-current">'. get_the_title() .'</b>';
 	}
 
-	echo '</ul>'.
-	'</nav>';  // 冒頭に合わせて閉じタグ
+	echo '</nav>
+        </div>';  // 冒頭に合わせて閉じタグ
 }
 endif;

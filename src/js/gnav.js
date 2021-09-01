@@ -1,10 +1,9 @@
 import { ScreenFixed } from "./screen-fixed";
-import { headerFixed } from "./header-fixed";
+import { headerFixed } from "./header";
 
 //グローバルナビゲーションの開閉処理
-const screenFixed = new ScreenFixed();
-
 const gnavToggle = () => {
+    const screenFixed = new ScreenFixed();
     const $gnavBtn = document.getElementById("gnavBtn");
     const $gnav = document.getElementById("gnav");
 
@@ -34,7 +33,10 @@ const gnavToggle = () => {
 const gnavPosition = () => {
     const $gnav = document.getElementById("gnav");
     const headerHeight = document.getElementById("header").offsetHeight;
-    $gnav.style.paddingTop = headerHeight + "px";
+    //WordPressの管理バーが表示されている場合は高さを取得
+    //表示されていない場合は0を代入
+    const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
+    $gnav.style.paddingTop = headerHeight + wpadminbarHeight + "px";
 }
 const bgElement = (e) => {
     if(e) {

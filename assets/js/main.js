@@ -67,14 +67,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "bgElement": () => (/* binding */ bgElement)
 /* harmony export */ });
 /* harmony import */ var _screen_fixed__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./screen-fixed */ "./src/js/screen-fixed.js");
-/* harmony import */ var _header_fixed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header-fixed */ "./src/js/header-fixed.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
 
 
 
 //グローバルナビゲーションの開閉処理
-const screenFixed = new _screen_fixed__WEBPACK_IMPORTED_MODULE_0__.ScreenFixed();
-
 const gnavToggle = () => {
+    const screenFixed = new _screen_fixed__WEBPACK_IMPORTED_MODULE_0__.ScreenFixed();
     const $gnavBtn = document.getElementById("gnavBtn");
     const $gnav = document.getElementById("gnav");
 
@@ -94,17 +93,20 @@ const gnavToggle = () => {
         $gnav.classList.toggle("is-opened");
         if($gnav.classList.contains("is-opened")) {
            screenFixed.fixed();
-           (0,_header_fixed__WEBPACK_IMPORTED_MODULE_1__.headerFixed)();
+           (0,_header__WEBPACK_IMPORTED_MODULE_1__.headerFixed)();
         } else {
            screenFixed.reset();
-           (0,_header_fixed__WEBPACK_IMPORTED_MODULE_1__.headerFixed)();
+           (0,_header__WEBPACK_IMPORTED_MODULE_1__.headerFixed)();
         }
     });
 }
 const gnavPosition = () => {
     const $gnav = document.getElementById("gnav");
     const headerHeight = document.getElementById("header").offsetHeight;
-    $gnav.style.paddingTop = headerHeight + "px";
+    //WordPressの管理バーが表示されている場合は高さを取得
+    //表示されていない場合は0を代入
+    const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
+    $gnav.style.paddingTop = headerHeight + wpadminbarHeight + "px";
 }
 const bgElement = (e) => {
     if(e) {
@@ -126,10 +128,10 @@ const bgElement = (e) => {
 
 /***/ }),
 
-/***/ "./src/js/header-fixed.js":
-/*!********************************!*\
-  !*** ./src/js/header-fixed.js ***!
-  \********************************/
+/***/ "./src/js/header.js":
+/*!**************************!*\
+  !*** ./src/js/header.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -142,15 +144,23 @@ const headerFixed = () => {
     const $wrapper = document.getElementById("wrapper");
     const $gnav = document.getElementById("gnav");
 
+    //WordPressの管理バーが表示されている場合は高さを取得
+    //表示されていない場合は0を代入
+    const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
+
+
     let headerHeight = $header.offsetHeight;
     let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
     if(!$gnav.classList.contains("is-opened")) {
         if( scrollPosition >= headerHeight) {
             $header.classList.add("is-scrolled");
+            $header.style.top = wpadminbarHeight + "px";
             $wrapper.style.paddingTop = headerHeight + "px";
+
         } else {
             $header.classList.remove("is-scrolled");
+            $header.style.top = null;
             $wrapper.style.paddingTop = null;
         }
     }
@@ -169,7 +179,7 @@ const headerFixed = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gnav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gnav */ "./src/js/gnav.js");
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ "./src/js/search.js");
-/* harmony import */ var _header_fixed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header-fixed */ "./src/js/header-fixed.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
 /* harmony import */ var _carousels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousels */ "./src/js/carousels.js");
 
 
@@ -353,10 +363,10 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_carousels__WEBPACK_IMPORTED_MODULE_3__.carousels)();
     (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavToggle)();
     (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchToggle)();
-    (0,_header_fixed__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
+    (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
     //スクロール時に実行
     window.addEventListener( 'scroll' , () => {
-        (0,_header_fixed__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
+        (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
     });
 });
 
@@ -375,22 +385,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ScreenFixed": () => (/* binding */ ScreenFixed)
 /* harmony export */ });
-//画面を固定化する処理
+/**
+ * 画面の高さを固定化する処理
+ */
 class ScreenFixed {
     constructor(scrollPosition) {
         this.scrollPosition = scrollPosition;
     }
-
     fixed () {
-
+        //WordPressの管理バーが表示されている場合は高さを取得
+        const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
         this.scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
         document.getElementById("wrapper").style.position = "fixed";
         document.getElementById("wrapper").style.width = "100%";
         document.getElementById("wrapper").style.zIndex = "1";
-        document.getElementById("wrapper").style.top = "-" + this.scrollPosition + "px";
+        document.getElementById("wrapper").style.top = "-" + (this.scrollPosition - wpadminbarHeight) + "px";
     }
     reset () {
-        const $wrapper = document.getElementById("wrapper");
         //スタイルシートを削除
         document.getElementById("wrapper").style.position = null;
         document.getElementById("wrapper").style.width = null;

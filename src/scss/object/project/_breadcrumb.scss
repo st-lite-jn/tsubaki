@@ -1,0 +1,35 @@
+@use '../../foundation/import';
+
+.p-breadcrumb {
+    list-style: none;
+    display: flex;
+    justify-self: start;
+    padding-top: import.spvw(8);
+    padding-bottom: import.spvw(8);
+    background-color: import.$mineShaft;
+    @include import.mqMin(import.$tabletPortrait) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    &__item {
+        text-decoration: none;
+        color: import.$white;
+        font-size: import.spvw(8);
+        @include import.mqMin(import.$tabletPortrait) {
+            font-size: 12px;
+        }
+        &::after {
+            content: ">";
+            margin: 0 import.spvw(8);
+            @include import.mqMin(import.$tabletPortrait) {
+                margin: 0 8px;
+            }
+        }
+        &:last-child {
+            &::after {
+                display: none;
+                content: "";
+            }
+        }
+    }
+}

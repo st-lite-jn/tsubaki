@@ -1,6 +1,6 @@
 import {gnavToggle , gnavPosition} from "./gnav";
 import {searchToggle , searchPosition} from "./search";
-import {headerFixed} from "./header-fixed";
+import {headerFixed} from "./header";
 
 import {carousels} from "./carousels";
 
