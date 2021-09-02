@@ -23,7 +23,7 @@
         <?php if($cat_terms):?>
             <nav class="p-card__body__cats">
             <?php foreach($cat_terms as $cat_term):?>
-                <a class="p-card__body__cats__item" href="<?php echo get_term_link($cat_term->term_id);?>"><?php echo $cat_term->name;?></a>
+                <a class="c-btn--mini" href="<?php echo get_term_link($cat_term->term_id);?>"><?php echo $cat_term->name;?></a>
             <?php break; endforeach; ?>
         </nav>
         <?php endif;?>

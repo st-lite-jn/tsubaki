@@ -4,7 +4,7 @@
 ?>
 <?php if($prev_post || $next_post):?>
 <div class="l-container">
-<nav class="p-prev-next">
+<nav class="p-pagination">
 	<?php if ($prev_post):?>
 	<a href="<?php echo get_the_permalink($prev_post->ID);?>" rel="prev" class="c-btn">前の記事</a>
 	<?php endif;?>

@@ -4,6 +4,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: -2%;
+    padding-top: import.spvw(40);
+    @include import.mqMin(import.$tabletPortrait) {
+        padding-top:40px;
+    }
     .p-card {
         width: 49%;
         margin-top: 2%;
@@ -65,20 +69,6 @@
                 margin-top: import.spvw(16);
                 @include import.mqMin(import.$tabletPortrait) {
                     margin-top: 16px;
-                    font-size: 14px;
-                }
-                &__item {
-                    padding : import.spvw(2) import.spvw(16);
-                    background-color: import.$colorSubBody;
-                    border-radius: import.spvw(8);
-                    text-decoration: none;
-                    color: import.$colorSubFont;
-                    font-size: import.spvw(8);
-                    @include import.mqMin(import.$tabletPortrait) {
-                        padding : 2px 16px;
-                        border-radius: 8px;
-                        font-size: 12px;
-                    }
                 }
             }
         }

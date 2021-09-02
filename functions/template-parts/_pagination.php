@@ -41,13 +41,13 @@ class Tsbk_Custom_Pagenation {
         $paged = $paged ?: 1;       //get_query_var('paged')をそのまま投げても大丈夫なように
 		$last_range = $pages - $range;
 		//表示テキスト
-        $text_first   = "first";
-        $text_before  = "&lt; Prev";
-        $text_next    = "Next &gt;";
-       	$text_last    = "last";
+        $text_first   = "最新";
+        $text_before  = "&lt; 前へ";
+        $text_next    = "次へ &gt;";
+       	$text_last    = "最後";
         if ( $show_only && $pages === 1 ):
             // 1ページのみで表示設定が true の時
-            echo '<div class="pagination"><span class="current pager">1</span></div>';
+            echo '<div class="p-pagination"><span class="c-btn">1</span></div>';
             return;
         endif;
 
@@ -56,20 +56,20 @@ class Tsbk_Custom_Pagenation {
         if ( 1 !== $pages ) {
 			//2ページ以上の時
 			$pagenation .= <<< EOM
-				<div class="p-pagenation">
+				<div class="p-pagination">
 
 EOM;
 		   if ( $paged > 1 ) {
 				$before_page_link = get_pagenum_link( $paged - 1 );
 
 				// 「最初」 の表示
-// 				$first_page_link = get_pagenum_link(1);
-// 				$pagenation .= <<< EOM
-// 				<a href="{$first_page_link}" class="page-numbers first">{$text_first}</a>
-// EOM;
+				$first_page_link = get_pagenum_link(1);
+				$pagenation .= <<< EOM
+				<a href="{$first_page_link}" class="c-btn first">{$text_first}</a>
+EOM;
 
 				$pagenation .= <<< EOM
-					<a href="{$before_page_link}" class="p-pagenation__item">{$text_before}</a>
+					<a href="{$before_page_link}" class="c-btn">{$text_before}</a>
 EOM;
 		}
             for ( $i = 1; $i <= $pages; $i++ ) {
@@ -77,12 +77,12 @@ EOM;
                     // $paged +- $range 以内であればページ番号を出力
                     if ( $paged === $i ) {
 						$pagenation .= <<< EOM
-						<span class="p-pagenation__item is-current">{$i}</span>
+						<span class="c-btn--reverse">{$i}</span>
 EOM;
                     } else {
 						$number_page_link = get_pagenum_link( $i );
 						$pagenation .= <<< EOM
-						<a href="{$number_page_link}" class="p-pagenation__item">{$i}</a>
+						<a href="{$number_page_link}" class="c-btn">{$i}</a>
 EOM;
                     }
                 }
@@ -92,14 +92,14 @@ EOM;
                 // 「次へ」 のリンクを表示
                 $next_page_link = get_pagenum_link( $paged + 1 );
                 $pagenation .= <<< EOM
-						<a href="{$next_page_link}" class="p-pagenation__item">{$text_next}</a>
+						<a href="{$next_page_link}" class="c-btn">{$text_next}</a>
 EOM;
 				}
 				// 「最後」のリンクを表示
-// 				$last_page_link = get_pagenum_link( $pages );
-// 				$pagenation .= <<< EOM
-// 				<a href="{$last_page_link}" class="page-numbers last">{$text_last}</a>
-// EOM;
+				$last_page_link = get_pagenum_link( $pages );
+				$pagenation .= <<< EOM
+				<a href="{$last_page_link}" class="c-btn last">{$text_last}</a>
+EOM;
 			}
 
 			$pagenation .= <<< EOM

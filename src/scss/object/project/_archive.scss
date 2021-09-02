@@ -4,8 +4,8 @@
     padding-bottom: import.spvw(16);
     background-color: import.$colorSubBody;
     @include import.mqMin(import.$tabletPortrait) {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     &__label {
         text-align: center;

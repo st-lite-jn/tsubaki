@@ -5,9 +5,39 @@
     color: import.$colorBtnFont;
     padding: import.spvw(8) import.spvw(16);
     border-radius: 8px;
+    text-decoration: none;
     font-size: import.spvw(16);
+    font-weight: bold;
     @include import.mqMin(import.$tabletPortrait) {
         padding: 8px 16px;
         font-size: 16px;
+    }
+    &--reverse {
+        background-color: import.$colorBtnFont;
+        border : solid 1px import.$colorBtnBody;
+        color: import.$colorBtnBody;
+        padding: import.spvw(8) import.spvw(16);
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: import.spvw(16);
+        font-weight: bold;
+        @include import.mqMin(import.$tabletPortrait) {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    }
+    &--mini {
+        background-color: import.$colorSubBody;
+        border : solid 1px import.$colorSubBody;
+        color: import.$colorSubFont;
+        padding: import.spvw(4) import.spvw(8);
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: import.spvw(8);
+        font-weight: bold;
+        @include import.mqMin(import.$tabletPortrait) {
+            padding: 8px 12px;
+            font-size: 8px;
+        }
     }
 }

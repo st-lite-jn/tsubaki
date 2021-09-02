@@ -11,21 +11,7 @@
 		padding-right: calc((100% - 1160px) / 2);
 	}
 	@include import.mqMax(import.$smartPortrait) {
-		padding-right: import.spvw(24);
-		padding-left: import.spvw(24);
-	}
-	&--narrow {
-		@include import.mqMin(import.$tabletPortrait) {
-			padding-left: 24px;
-			padding-right: 24px;
-		}
-		@include import.mqMin(998px) {
-			padding-left: calc((100% - 958px) / 2);
-			padding-right: calc((100% - 958px) / 2);
-		}
-		@include import.mqMax(import.$smartPortrait) {
-			padding-right: import.spvw(24);
-			padding-left: import.spvw(24);
-		}
+		padding-right: import.spvw(16);
+		padding-left: import.spvw(16);
 	}
 }

@@ -1,5 +1,6 @@
 
 </main>
+<?php tsbk_breadcrumb();?>
 <footer class="l-footer">
 <?php
     include TEMPLATEPATH . '/template-parts/footer/fnav.php';
