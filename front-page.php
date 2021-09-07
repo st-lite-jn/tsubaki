@@ -5,7 +5,5 @@
 */
 ?>
 <?php get_header();?>
-<div class="l-container p-singular-content">
-    <?php the_content();?>
-</div>
+<div class="p-block-body"><?php the_content();?></div>
 <?php get_footer(); ?>

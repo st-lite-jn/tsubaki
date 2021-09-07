@@ -1,0 +1,19 @@
+@use '../foundation/import';
+
+
+@include import.mqMin(import.$tabletPortrait) {
+    .is-col-2 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        .l-content-main {
+            flex:1;
+            margin-top: 16px;
+            margin-right: 24px;
+        }
+        .l-content-sidebar {
+            margin-top: 16px;
+            width: 300px;
+        }
+    }
+}

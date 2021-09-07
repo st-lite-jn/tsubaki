@@ -180,7 +180,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gnav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gnav */ "./src/js/gnav.js");
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ "./src/js/search.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
-/* harmony import */ var _carousels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousels */ "./src/js/carousels.js");
+/* harmony import */ var _over_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./over-container */ "./src/js/over-container.js");
+/* harmony import */ var _carousels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousels */ "./src/js/carousels.js");
 
 
 
@@ -352,15 +353,17 @@ let queue = null,
 window.addEventListener( 'resize', function() {
     clearTimeout( queue );
     queue = setTimeout(function() {
+        (0,_over_container__WEBPACK_IMPORTED_MODULE_3__.overContainer)();
         (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
         (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
     }, wait);
 },false);
 
 window.addEventListener("DOMContentLoaded",()=>{
+    (0,_over_container__WEBPACK_IMPORTED_MODULE_3__.overContainer)();
     (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
     (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
-    (0,_carousels__WEBPACK_IMPORTED_MODULE_3__.carousels)();
+    (0,_carousels__WEBPACK_IMPORTED_MODULE_4__.carousels)();
     (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavToggle)();
     (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchToggle)();
     (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
@@ -370,6 +373,41 @@ window.addEventListener("DOMContentLoaded",()=>{
     });
 });
 
+
+
+
+/***/ }),
+
+/***/ "./src/js/over-container.js":
+/*!**********************************!*\
+  !*** ./src/js/over-container.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "overContainer": () => (/* binding */ overContainer)
+/* harmony export */ });
+/**
+ * l-containerクラス内の要素の横幅を
+ * 画面幅まで拡大する処理
+ */
+const overContainer = () => {
+    const containerStyles = getComputedStyle(document.querySelector(".l-container"));
+    const containerPaddingRightLeft = parseInt(containerStyles.getPropertyValue("padding-left")) + parseInt(containerStyles.getPropertyValue("padding-right"));
+    //console.log(containerPaddingRightLeft);
+    const windwoWidth = window.innerWidth;
+    // console.log(windwoWidth);
+    const $overContainers = document.querySelectorAll(".is-over-container");
+    // console.log($overContainers);
+    if($overContainers) {
+        $overContainers.forEach($overContainer => {
+            //console.log($overContainer);
+            $overContainer.style.marginRight = (windwoWidth - containerPaddingRightLeft) / 2 * -1 + "px";
+            $overContainer.style.marginLeft = (windwoWidth - containerPaddingRightLeft) / 2 * -1 + "px";
+        });
+    }
+}
 
 
 

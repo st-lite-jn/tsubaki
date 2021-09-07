@@ -1,0 +1,34 @@
+@use '../../foundation/import';
+$num: 4;
+@for $i from 0 through 20 {
+    .u-mt--#{$i * $num} {
+        margin-top : import.spvw($i*$num);
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top : #{$i * $num}px;
+        }
+    }
+    .u-pt--#{$i * $num} {
+        padding-top : import.spvw($i*$num);
+        @include import.mqMin(import.$tabletPortrait) {
+            padding-top : #{$i * $num}px;
+        }
+    }
+    .u-pr--#{$i * $num} {
+        padding-right : import.spvw($i*$num);
+        @include import.mqMin(import.$tabletPortrait) {
+            padding-right : #{$i * $num}px;
+        }
+    }
+    .u-pb--#{$i * $num} {
+        padding-bottom : import.spvw($i*$num);
+        @include import.mqMin(import.$tabletPortrait) {
+            padding-bottom : #{$i * $num}px;
+        }
+    }
+    .u-pl--#{$i * $num} {
+        padding-left : import.spvw($i*$num);
+        @include import.mqMin(import.$tabletPortrait) {
+            padding-left : #{$i * $num}px;
+        }
+    }
+}

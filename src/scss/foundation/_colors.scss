@@ -1,21 +1,25 @@
-//コンテンツエリア
-$colorContentBody : #fff;
-$colorContentFont : #333;
+//ベースカラー
+$baseColorBg : #fdfdfd;
+$baseColorText : #020202;
 
 //メインカラー
-$colorMainBody:#8C272B;
-$colorMainFont: #fff;
+$mainColorBg:#8C272B;
+$mainColorText: #fffffb;
 
 //サブカラー
-$colorSubBody: #FDFDCE;
-$colorSubFont: #000;
+$subColorBg: #f0dad8;
+$subColorText: #0f2527;
+
+//アクセントカラー
+$accColorBg: #4a6956;
+$accColorText: #fef9fb;
 
 //ボタンカラー
-$colorBtnBody :#3251ad;
-$colorBtnFont: #fff;
+$btnColorBg :#618bad;
+$btnColorTetx: #fff;
 
-//リンクテキスト
-$colorLinkFont : #3251ad;
+//リンクテキストカラー
+$linkColor : #618bad;
 
 //Colors
 $white:#fff;
@@ -27,3 +31,4 @@ $azure: #3251ad;
 $gray :#666;
 $brayBright: #ccc;
 $silver: #ddd;
+$silverSpree :#c2bdb0;

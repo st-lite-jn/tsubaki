@@ -39,11 +39,16 @@ function tsbk_global_var_title() {
 		$ttl_arr[] = "404 Not Found";
 		$content_name = "404 Not Found";
 	} elseif(is_search()) {
+        $searchLabel = "検索結果";
 		/**
 		* 検索結果ページ
 		*/
-		$ttl_arr[] = "検索結果";
-		$content_name = "検索結果";
+        global $wp_query;
+        if($wp_query->query['s']) {
+            $searchLabel .= ":" . $wp_query->query['s'];
+        }
+		$ttl_arr[] = $searchLabel;
+		$content_name = $searchLabel;
 	} elseif ( is_single() ) {
 		/**
 		* 投稿ページ ( $wp_obj : WP_Post )

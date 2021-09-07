@@ -1,7 +1,7 @@
 import {gnavToggle , gnavPosition} from "./gnav";
 import {searchToggle , searchPosition} from "./search";
 import {headerFixed} from "./header";
-
+import {overContainer} from "./over-container";
 import {carousels} from "./carousels";
 
 //
@@ -169,12 +169,14 @@ let queue = null,
 window.addEventListener( 'resize', function() {
     clearTimeout( queue );
     queue = setTimeout(function() {
+        overContainer();
         gnavPosition();
         searchPosition();
     }, wait);
 },false);
 
 window.addEventListener("DOMContentLoaded",()=>{
+    overContainer();
     gnavPosition();
     searchPosition();
     carousels();

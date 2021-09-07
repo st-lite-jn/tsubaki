@@ -7,11 +7,11 @@
 	$recent_posts = get_posts($recent_args);
 ?>
 <?php if($recent_posts):?>
-<div class="c-sidebar">
-<p class="c-sidebar__heading">最近の記事</p>
-<ul class="c-sidebar-list">
+<div class="p-sidebar">
+<p class="p-sidebar-heading">最近の記事</p>
+<ul class="p-sidebar-list">
 <?php foreach($recent_posts as $recent_post):?>
-<li class="c-sidebar-list__item"><a href="<?php echo get_the_permalink($recent_post->ID);?>"><?php echo get_the_title($recent_post->ID);?></a></li>
+<li class="p-sidebar-list__item"><a href="<?php echo get_the_permalink($recent_post->ID);?>"><?php echo get_the_title($recent_post->ID);?></a></li>
 <?php endforeach;?>
 </ul>
 </div>

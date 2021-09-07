@@ -6,14 +6,14 @@
     justify-self: start;
     padding-top: import.spvw(8);
     padding-bottom: import.spvw(8);
-    background-color: import.$colorContentBody;
+    background-color: import.$baseColorBg;
     @include import.mqMin(import.$tabletPortrait) {
         padding-top: 8px;
         padding-bottom: 8px;
     }
     &__item {
         text-decoration: none;
-        color:import.$colorContentFont;
+        color:import.$baseColorText;
         font-size: import.spvw(8);
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 12px;

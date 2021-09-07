@@ -8,13 +8,13 @@
     <?php while ( $the_query->have_posts()) :$the_query->the_post(); ?>
     <?php
         //サムネイル画像を取得
-        $thumbnail = wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ) , 'medium', false , array('class'=>'') );
+        $thumbnail = get_post_thumbnail_id( get_the_ID()) ? wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ) , 'medium', false , array('class'=>'')) : false;
         //POST IDからタクソノミーを取得
         list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
     ?>
     <article class="p-card">
         <a class="p-card__header" href="<?php echo get_the_permalink(get_the_ID());?>">
-            <figure class="p-card__header__img"><?php echo $thumbnail;?></figure>
+            <figure class="p-card__header__img <?php if(!$thumbnail) echo 'no-image'; ?>"><?php echo $thumbnail;?></figure>
             <p class="p-card__header__ttl"><?php echo get_the_title(get_the_ID());?></p>
         </a>
         <div class="p-card__body">

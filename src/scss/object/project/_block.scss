@@ -1,14 +1,12 @@
 @use '../../foundation/import';
-
-.p-sg-header {
-    padding-top:import.spvw(16);
+// コンテンツヘッダー
+.p-block-header {
     padding-bottom: import.spvw(16);
     @include import.mqMin(import.$tabletPortrait) {
-        padding-top: 16px;
         padding-bottom: 16px;
     }
 }
-.p-sg-header-props {
+.p-block-header-props {
     &__ttl {
         font-size: import.spvw(32);
         @include import.mqMin(import.$tabletPortrait) {
@@ -22,7 +20,7 @@
         }
     }
 }
-.p-sg-header-visual {
+.p-block-header-visual {
     position: relative;
     width: 100%;
     height: 0;
@@ -39,8 +37,8 @@
         object-fit: cover;
     }
 }
-
-.p-sg-content {
+// コンテンツのブロックエディタ
+.p-block-body {
     padding-bottom: import.spvw(32);
     @include import.mqMin(import.$tabletPortrait) {
         padding-bottom: 40px;
