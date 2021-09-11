@@ -95,7 +95,7 @@ function tsbk_breadcrumb($wp_obj = null) {
 						foreach ( $parent_array as $parent_id ) {
 							$parent_term = get_term( $parent_id, $the_tax );
 
-							echo '<a href="'. get_term_link( $parent_id, $the_tax ) .'">'.$parent_term->name.'</a>';
+							echo '<a class="p-breadcrumb__item" href="'. get_term_link( $parent_id, $the_tax ) .'">'.$parent_term->name.'</a>';
 						}
 					}
 
