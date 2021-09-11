@@ -175,7 +175,7 @@ function tsbk_breadcrumb($wp_obj = null) {
 			$parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
 			foreach( $parent_array as $parent_id ) {
 				$parent_term = get_term( $parent_id, $tax_name );
-				echo '<a class="p-breadcrumb__item href="'. get_term_link( $parent_id, $tax_name ) .'">'.$parent_term->name .'</a>';
+				echo '<a class="p-breadcrumb__item" href="'. get_term_link( $parent_id, $tax_name ) .'">'.$parent_term->name .'</a>';
 			}
 		}
 		// ターム自身の表示
