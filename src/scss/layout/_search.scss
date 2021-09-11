@@ -10,13 +10,12 @@
         padding-top: 16px;
     }
     &.is-opened {
-		display: block;
-	}
+        display: block;
+    }
     .l-container {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
         .c-input-txt {
             flex:1;
             border-right: none;

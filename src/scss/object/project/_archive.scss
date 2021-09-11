@@ -1,14 +1,17 @@
 @use '../../foundation/import';
 
 .p-archive-ttl {
-    padding-top: import.spvw(16);
-    padding-bottom: import.spvw(16);
+    position: relative;
+    min-height: import.spvw(80);
     @include import.baseColorBlock(import.$subColorBg, import.$white, import.$subColorText);
     @include import.mqMin(import.$tabletPortrait) {
-        padding-top: 24px;
-        padding-bottom: 24px;
+        min-height: 96px;
     }
     &__label {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% ,-50%);
         text-align: center;
     }
 }
