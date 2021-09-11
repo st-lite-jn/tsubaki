@@ -3,21 +3,7 @@
 .p-archive-ttl {
     padding-top: import.spvw(16);
     padding-bottom: import.spvw(16);
-    background: repeating-linear-gradient(
-        90deg,
-        import.$subColorBg ,
-        import.$subColorBg 1px,
-        transparent 1px,
-        transparent 3px
-      ),
-      repeating-linear-gradient(
-        0deg,
-        import.$subColorBg ,
-        import.$subColorBg 1px,
-        import.$white 1px,
-        import.$white 3px
-      );
-    color: import.$subColorText;
+    @include import.baseColorBlock(import.$subColorBg, import.$white, import.$subColorText);
     @include import.mqMin(import.$tabletPortrait) {
         padding-top: 24px;
         padding-bottom: 24px;

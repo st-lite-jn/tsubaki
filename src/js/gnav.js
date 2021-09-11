@@ -41,7 +41,17 @@ const gnavPosition = () => {
 const bgElement = (e) => {
     if(e) {
         let $bgLayer = document.createElement('div');
-        $bgLayer.className ="l-bg-layer animate__animated animate__fadeIn";
+        $bgLayer.className ="l-bg-layer";
+        anime({
+            targets: $bgLayer,
+            keyframes:[
+                {opacity:0},
+                {opacity:.4},
+                {opacity:1}
+            ],
+            duration: 300,
+            easing: 'linear'
+        })
         if(!e.classList.contains("is-opened")) {
             document.getElementById("wrapper").insertBefore($bgLayer , document.getElementById("header"));
         } else {

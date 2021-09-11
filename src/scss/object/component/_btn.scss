@@ -1,5 +1,6 @@
 @use '../../foundation/import';
 .c-btn {
+    display: inline-block;
     background-color: import.$btnColorBg;
     border : solid 1px import.$btnColorBg;
     color: import.$btnColorTetx;

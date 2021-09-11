@@ -18,7 +18,7 @@
             <p class="p-card__header__ttl"><?php echo get_the_title(get_the_ID());?></p>
         </a>
         <div class="p-card__body">
-            <p class="p-card__body__date">更新日：<?php echo get_the_time('Y.m.d',get_the_ID());?></p>
+            <time class="p-card__body__date">更新日：<?php echo get_the_time('Y.m.d',get_the_ID());?></time>
             <p class="p-card__body__txt"><?php echo get_the_excerpt(get_the_ID());?></p>
         <?php if($cat_terms):?>
             <nav class="p-card__body__cats">

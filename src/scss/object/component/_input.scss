@@ -3,7 +3,7 @@
 .c-input-txtarea {
     padding: import.spvw(8);
     background-color: import.$white;
-    border:solid 1px import.$brayBright;
+    border:solid 1px import.$silver;
     border-radius: 8px;
     font-size: import.spvw(16);
     @include import.mqMin(import.$tabletPortrait) {

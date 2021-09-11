@@ -1,5 +1,13 @@
 @use './import';
-
+body {
+    @include import.baseColorBlock(import.$baseColorBg, import.$dark, import.$baseColorText);
+    font-family: "Helvetica Neue",
+                    Arial,
+                    "Hiragino Kaku Gothic ProN",
+                    "Hiragino Sans",
+                    "BIZ UDPGothic",
+                    sans-serif;
+}
 p {
     line-height: 1.5;
 }

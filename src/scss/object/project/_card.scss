@@ -11,6 +11,7 @@
     .p-card {
         width: 49%;
         margin-top: 2%;
+        @include import.baseColorBlock(import.$subColorBg, import.$white, import.$subColorText);
         border: solid 1px import.$subColorBg;
         border-radius: import.spvw(8);
         @include import.mqMin(import.$tabletPortrait) {
@@ -23,7 +24,6 @@
                 width: 100%;
                 height: 0;
                 padding-bottom: 56.25%;
-
                 &.no-image {
                     background-color: import.$subColorBg;
                     border-radius: import.spvw(8) import.spvw(8) 0 0;
@@ -93,5 +93,14 @@
                 }
             }
         }
+    }
+}
+
+$spvalue : import.spvw(16);
+.p-block-body + .p-card-wrapper {
+    padding-top: 0;
+    margin-top: calc((2% + #{$spvalue} ) * -1);
+    @include import.mqMin(import.$tabletPortrait) {
+        margin-top: calc((2% + 24px) * -1);
     }
 }

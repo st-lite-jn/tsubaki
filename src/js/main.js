@@ -1,22 +1,7 @@
 import {gnavToggle , gnavPosition} from "./gnav";
 import {searchToggle , searchPosition} from "./search";
 import {headerFixed} from "./header";
-import {overContainer} from "./over-container";
 import {carousels} from "./carousels";
-
-//
-// 	const $wrapper = $("#wrapper"),
-// 		  $header = $("#header"),
-// 		  $gnav = $(".l-gnav"),
-// 		  $gnavBtn = $(".l-header-utility__item--gnav"),
-// 		  $gnavItem = $(".l-gnav-main__item"),
-// 		  $dropDown = $(".p-dropdown-sub"),
-// 		  $dropDownBtn = $(".p-dropdown-btn"),
-// 		  $search = $(".l-header-search"),
-// 		  $searchBtn = $(".l-header-utility__item--search"),
-// 		  $accordionBtn = $(".js-accordion")
-
-
 
 // 	const gnavToggle = () => {
 // 		//グローバルナビゲーションの開閉処理
@@ -101,7 +86,6 @@ import {carousels} from "./carousels";
 // 		});
 // 	}
 
-
 // 	//画面をスクロールするとヘッダーの背景色がつく処理
 // 	const headerBgColor = () => {
 // 		let flagHeight;
@@ -169,14 +153,12 @@ let queue = null,
 window.addEventListener( 'resize', function() {
     clearTimeout( queue );
     queue = setTimeout(function() {
-        overContainer();
         gnavPosition();
         searchPosition();
     }, wait);
 },false);
 
 window.addEventListener("DOMContentLoaded",()=>{
-    overContainer();
     gnavPosition();
     searchPosition();
     carousels();
@@ -188,5 +170,4 @@ window.addEventListener("DOMContentLoaded",()=>{
         headerFixed();
     });
 });
-
-
+hljs.highlightAll();
