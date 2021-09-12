@@ -3,7 +3,7 @@
 <?php if ( have_posts() ): ?>
     <?php while( have_posts() ): the_post(); ?>
     <?php require __DIR__ . "/header.php";?>
-     <div class="p-block-body <?php if(!is_single()):?>l-container<?php endif;?>"><?php the_content();?></div>
+    <div class="p-block-body"><?php the_content();?></div>
     <?php require __DIR__ . "/footer.php";?>
     <?php if(is_single()) require TEMPLATEPATH .'/template-parts/components/prev-next.php'; ?>
     <?php endwhile;?>

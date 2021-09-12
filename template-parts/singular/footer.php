@@ -1,6 +1,6 @@
 <?php list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());?>
 <?php if(isset($cat_terms)||isset($tag_terms)):?>
-<div class="p-sg-footer l-container">
+<div class="p-sg-footer">
 <?php if(isset($cat_terms)):?>
 <nav class="p-sg-footer-terms">
 <?php foreach($cat_terms as $cat_term):?>

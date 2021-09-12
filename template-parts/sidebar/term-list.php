@@ -20,12 +20,12 @@
 <?php if($cat_partents):?>
     <ul class="p-sidebar-list">
         <?php foreach ($cat_partents as $cat_partent):?>
-            <li><a href="<?php echo get_term_link($cat_partent->term_id,$cat_partent->taxonomy)?>"><?php echo $cat_partent->name;?></a>
+            <li class="p-sidebar-list__item"><a href="<?php echo get_term_link($cat_partent->term_id,$cat_partent->taxonomy)?>"><?php echo $cat_partent->name;?></a>
             <?php if($cat_children):?>
                 <ul class="p-sidebar-list">
                 <?php foreach($cat_children as $cat_child):?>
                     <?php if($cat_child->parent == $cat_partent->term_id):?>
-                        <li><a href="<?php echo get_term_link($cat_child->term_id,$cat_child->taxonomy)?>"><?php echo $cat_child->name;?></a></li>
+                        <li class="p-sidebar-list__item"><a href="<?php echo get_term_link($cat_child->term_id,$cat_child->taxonomy)?>"><?php echo $cat_child->name;?></a></li>
                     <?php endif;?>
                 <?php endforeach;?>
                 </ul>

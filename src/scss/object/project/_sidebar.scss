@@ -24,4 +24,12 @@
             margin-top: 4px;
         }
     }
+    .p-sidebar-list {
+        margin-top: import.spvw(4);
+        margin-left: import.spvw(8);
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top: 4px;
+            margin-left: 16px;
+        }
+    }
 }
