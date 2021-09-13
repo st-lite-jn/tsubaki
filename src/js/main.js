@@ -2,7 +2,7 @@ import {gnavToggle , gnavPosition} from "./gnav";
 import {searchToggle , searchPosition} from "./search";
 import {headerFixed} from "./header";
 import {carousels} from "./carousels";
-
+import {wpEmbedVideo} from "./wp-embed";
 // 	const gnavToggle = () => {
 // 		//グローバルナビゲーションの開閉処理
 // 		$gnavBtn.on("click",function() {
@@ -155,6 +155,7 @@ window.addEventListener( 'resize', function() {
     queue = setTimeout(function() {
         gnavPosition();
         searchPosition();
+        wpEmbedVideo();
     }, wait);
 },false);
 
@@ -165,6 +166,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     gnavToggle();
     searchToggle();
     headerFixed();
+    wpEmbedVideo();
     //スクロール時に実行
     window.addEventListener( 'scroll' , () => {
         headerFixed();
