@@ -6,7 +6,7 @@ if(!function_exists('tsbk_breadcrumb')):
 function tsbk_breadcrumb($wp_obj = null) {
 
 	// トップページでは何も出力しない
-	if ( is_front_page() ) return false;
+	if ( is_front_page() || is_404()) return false;
 
 	// ウェブサイトのURL
 	$home_url =  home_url();

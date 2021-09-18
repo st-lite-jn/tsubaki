@@ -44,8 +44,16 @@ function tsbk_enqueue_script_main() {
 	wp_add_inline_script( 'tsbk-main' , file_get_contents(TEMPLATEPATH . '/assets/js/main.js') );
 }
 
+function tsbk_enqueue_script_fontawesome() {
+    /**
+     * Font Awesomeの読み込み
+     */
+    wp_enqueue_script( 'tsbk-fontawesome' , 'https://kit.fontawesome.com/e00fe8ca6e.js', array() , false, true );
+}
+
 function tsbk_enqueue_external_files() {
 	tsbk_enqueue_script_jquery();
 	tsbk_enqueue_script_main();
+    tsbk_enqueue_script_fontawesome();
 }
 add_action('wp_enqueue_scripts' , 'tsbk_enqueue_external_files' );

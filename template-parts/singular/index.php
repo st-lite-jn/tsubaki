@@ -1,4 +1,4 @@
-<?php require __DIR__ . "/header.php";?>
+<?php require TEMPLATEPATH . "/template-parts/components/header.php";?>
 <div class="l-container u-mt--40 <?php if(is_single()):?>l-col<?php endif;?>">
     <div class="is-col-wide">
         <?php if ( have_posts() ): ?>

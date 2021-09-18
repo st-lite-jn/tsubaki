@@ -2,35 +2,34 @@
 
 .p-breadcrumb {
     list-style: none;
-    display: flex;
-    justify-self: start;
     padding-top: import.spvw(8);
     padding-bottom: import.spvw(8);
     background-color: import.$mainColor;
     line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     @include import.mqMin(import.$tabletPortrait) {
         padding-top: 8px;
         padding-bottom: 8px;
     }
     &__item {
+        display: inline;
+        white-space: nowrap;
         text-decoration: none;
+        text-overflow: ellipsis;
         color: import.$mineShaft ;
         font-size: import.spvw(8);
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 12px;
         }
-        &::after {
-            content: ">";
-            margin: 0 import.spvw(8);
-            @include import.mqMin(import.$tabletPortrait) {
-                margin: 0 8px;
+        &:not(:first-child) {
+            &::before {
+                content: "\f054";
+                font-family: FontAwesome;
+                margin-right: 0.4em;
+                margin-left: 0.4em;
             }
-        }
-        &:last-child {
-            &::after {
-                display: none;
-                content: "";
-            }
-        }
+       }
     }
 }

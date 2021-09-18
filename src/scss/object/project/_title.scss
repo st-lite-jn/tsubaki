@@ -3,26 +3,48 @@
 .p-title {
     position: relative;
     height: 0;
-    padding-bottom: 41.2%;
+    padding-bottom: 66.6666%;
     background-color: import.$alto;
+    @include import.mqMin(import.$tabletPortrait) {
+        padding-bottom: 40%;
+    }
+    .fadeInUp {
+        opacity: 0;
+    }
 }
 .p-title-props {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    text-shadow:import.$white 0 0 3px;
+    text-shadow:1px 1px 0 import.$white, 0 0 2px import.$white;
     &__label {
-        font-size: import.spvw(28);
+        font-size: import.spvw(24);
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 36px;
         }
     }
     &__date {
+        display: flex;
+        flex-wrap: nowrap;
         font-size: import.spvw(10);
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 14px;
         }
+        > *:not(:first-child) {
+            &::before {
+                content: "/";
+                margin-right: 0.4em;
+                margin-left: 0.4em;
+            }
+        }
+    }
+    &__lead {
+        margin-top: import.spvw(8);
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top: 16px;
+        }
+
     }
 }
 .p-title-visual {

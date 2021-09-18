@@ -2,6 +2,7 @@ import {gnavToggle , gnavPosition} from "./_gnav";
 import {searchToggle , searchPosition} from "./_search";
 import {headerFixed} from "./_header";
 import {carousels} from "./_carousels";
+import {title} from "./_title";
 import {wpEmbedVideo} from "./_wp-embed";
 
 /**
@@ -19,6 +20,7 @@ window.addEventListener( 'resize', function() {
 },false);
 
 window.addEventListener("DOMContentLoaded",()=>{
+    title();
     gnavPosition();
     searchPosition();
     carousels();
