@@ -12,11 +12,11 @@
 			"show_count" => 0,
 		)
 	);
-	$monthly_format = str_replace('<li>','<li class="p-sidebar-list__item">',$monthly_format);
+	$monthly_format = str_replace('<li>','<li class="l-sidebar-list__item">',$monthly_format);
 ?>
-<div class="p-sidebar">
-	<p class="p-sidebar-heading">月別アーカイブ</p>
-	<ul class="p-sidebar-list">
+<div class="l-sidebar">
+	<p class="l-sidebar__heading">月別アーカイブ</p>
+	<ul class="l-sidebar-list">
 		<?php echo $monthly_format;?>
 	</ul>
 </div>

@@ -5,8 +5,8 @@
 	$cat_children = array();
 ?>
 <?php if($cat_terms):?>
-<div class="p-sidebar">
-    <p class="p-sidebar-heading">カテゴリ</p>
+<div class="l-sidebar">
+    <p class="l-sidebar__heading">カテゴリ</p>
 <?php foreach($cat_terms as $cat_term):?>
     <?php
         if ( $cat_term->parent == 0 ) {
@@ -18,14 +18,14 @@
     ?>
 <?php endforeach;?>
 <?php if($cat_partents):?>
-    <ul class="p-sidebar-list">
+    <ul class="l-sidebar-list">
         <?php foreach ($cat_partents as $cat_partent):?>
-            <li class="p-sidebar-list__item"><a href="<?php echo get_term_link($cat_partent->term_id,$cat_partent->taxonomy)?>"><?php echo $cat_partent->name;?></a>
+            <li class="l-sidebar-list__item"><a href="<?php echo get_term_link($cat_partent->term_id,$cat_partent->taxonomy)?>"><?php echo $cat_partent->name;?></a>
             <?php if($cat_children):?>
-                <ul class="p-sidebar-list">
+                <ul class="l-sidebar-list">
                 <?php foreach($cat_children as $cat_child):?>
                     <?php if($cat_child->parent == $cat_partent->term_id):?>
-                        <li class="p-sidebar-list__item"><a href="<?php echo get_term_link($cat_child->term_id,$cat_child->taxonomy)?>"><?php echo $cat_child->name;?></a></li>
+                        <li class="l-sidebar-list__item"><a href="<?php echo get_term_link($cat_child->term_id,$cat_child->taxonomy)?>"><?php echo $cat_child->name;?></a></li>
                     <?php endif;?>
                 <?php endforeach;?>
                 </ul>
@@ -40,9 +40,9 @@
 	$tag_terms = tsbk_get_pt_terms($tsbk_post_type , false);
 ?>
 <?php if($tag_terms):?>
-<div class="p-sidebar">
-	<p class="p-sidebar__heading">タグ</p>
-	<nav class="p-sidebar_tags">
+<div class="l-sidebar">
+	<p class="l-sidebar__heading">タグ</p>
+	<nav class="l-sidebar_tags">
 	<?php foreach($tag_terms as $tag_term):?>
 		<a href="<?php echo get_term_link($tag_term->term_id,$tag_term->taxonomy)?>"><?php echo $tag_term->name;?></a>
 	<?php endforeach;?>

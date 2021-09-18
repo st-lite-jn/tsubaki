@@ -5,7 +5,8 @@
 */
 ?>
 <?php get_header();?>
-<div class="p-block-body"><?php the_content();?></div>
+<div class="l-container">
+<div class="p-block"><?php the_content();?></div>
 <?php
     $args = array(
         "post_type"=> "post"
@@ -21,4 +22,5 @@
             <a class="c-btn" href="<?php echo get_post_type_archive_link( "post" );?>"><?php echo $post_obj->labels->name; ?>一覧を表示</a>
         </nev>
     <?php endif; ?>
+</div>
 <?php get_footer(); ?>

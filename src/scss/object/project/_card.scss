@@ -97,7 +97,7 @@
 }
 
 $spvalue : import.spvw(16);
-.p-block-body + .p-card-wrapper {
+.p-block + .p-card-wrapper {
     padding-top: 0;
     margin-top: calc((2% + #{$spvalue} ) * -1);
     @include import.mqMin(import.$tabletPortrait) {

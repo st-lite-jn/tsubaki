@@ -1,0 +1,42 @@
+@use '../foundation/import';
+.l-sidebar-wrapper {
+    > *:first-child {
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top: 0 !important;
+        }
+    }
+    .l-sidebar {
+        margin-top: import.spvw(32);
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top:40px;
+        }
+        &__heading {
+            font-weight: bold;
+            @include import.mqMin(import.$tabletPortrait) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .l-sidebar-list {
+        list-style: none;
+        margin-top: import.spvw(8);
+        @include import.mqMin(import.$tabletPortrait) {
+            margin-top: 8px;
+        }
+        &__item {
+            margin-top: import.spvw(4);
+            @include import.mqMin(import.$tabletPortrait) {
+                margin-top: 4px;
+            }
+        }
+        .l-sidebar-list {
+            margin-top: import.spvw(4);
+            margin-left: import.spvw(8);
+            @include import.mqMin(import.$tabletPortrait) {
+                margin-top: 4px;
+                margin-left: 16px;
+            }
+        }
+    }
+}

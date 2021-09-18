@@ -14,5 +14,5 @@
         <?php get_search_form();?>
     </header>
 
-    <main class="l-main l-container <?php if(is_single()):?>is-col-2<?php endif;?>">
+    <main class="l-main">
 

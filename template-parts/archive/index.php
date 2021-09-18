@@ -1,4 +1,5 @@
 <?php require __DIR__ . "/header.php";?>
+<div class="l-container">
 <?php
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
 $args = array(
@@ -7,7 +8,6 @@ $args = array(
     ,'orderby' => array( 'date' => 'DESC', 'menu_order' => 'ASC' )
     ,'paged' => $paged
 );
-
 //テンプレート
 if(is_post_type_archive('template')) {
     $args_template = array(
@@ -15,7 +15,6 @@ if(is_post_type_archive('template')) {
     );
     $args = array_merge($args , $args_template);
 }
-
 //カテゴリーアーカイブ
 if(is_category()) {
   $cat = get_query_var('cat');
@@ -56,7 +55,6 @@ if(is_tax()) {
     $args = array_merge($args , $args_term);
   }
 }
-
 //年別・月別アーカイブ
 $year = get_query_var('year');
 if($year) {
@@ -89,3 +87,4 @@ $the_query = new WP_Query($args);
 
 <?php endif;?>
 
+</div>

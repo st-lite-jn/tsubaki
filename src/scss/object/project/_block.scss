@@ -1,44 +1,6 @@
 @use '../../foundation/import';
-// コンテンツヘッダー
-.p-block-header {
-    padding-bottom: import.spvw(16);
-    @include import.mqMin(import.$tabletPortrait) {
-        padding-bottom: 16px;
-    }
-}
-.p-block-header-props {
-    &__ttl {
-        font-size: import.spvw(28);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 36px;
-        }
-    }
-    &__date {
-        font-size: import.spvw(10);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 14px;
-        }
-    }
-}
-.p-block-header-visual {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 52.5%;
-    margin-top:import.spvw(16);
-    @include import.mqMin(import.$tabletPortrait) {
-        margin-top: 16px;
-    }
-    img {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-// コンテンツのブロックエディタ
-.p-block-body {
+// ブロックエディタ
+.p-block {
     padding-bottom: import.spvw(32);
     @include import.mqMin(import.$tabletPortrait) {
         padding-bottom: 40px;

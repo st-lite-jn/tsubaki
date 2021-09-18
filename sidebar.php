@@ -1,4 +1,4 @@
-<div class="l-content-sidebar">
+<div class="l-sidebar-wrapper">
 <?php
     include TEMPLATEPATH .'/template-parts/sidebar/recent-list.php';
     include TEMPLATEPATH .'/template-parts/sidebar/term-list.php';

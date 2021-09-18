@@ -10,13 +10,14 @@
 // Layout
 // ==========================================================================
 @use "layout/wrapper";
-@use "layout/main";
-@use "layout/content";
 @use "layout/container";
 @use "layout/bg-layer";
 @use "layout/header";
 @use "layout/search";
 @use "layout/gnav";
+@use "layout/col";
+@use "layout/main";
+@use "layout/sidebar";
 @use "layout/footer";
 
 // ==========================================================================
@@ -39,11 +40,10 @@
 // -----------------------------------------------------------------
 @use "object/project/breadcrumb";
 @use "object/project/pagination";
-@use "object/project/grid";
+@use "object/project/title";
 @use "object/project/card";
 @use "object/project/block";
 @use "object/project/archive";
-@use "object/project/sidebar";
 
 // -----------------------------------------------------------------
 // Utility
