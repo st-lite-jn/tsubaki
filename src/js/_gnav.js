@@ -1,5 +1,5 @@
-import { ScreenFixed } from "./screen-fixed";
-import { headerFixed } from "./header";
+import { ScreenFixed } from "./_screen-fixed";
+import { headerFixed } from "./_header";
 
 //グローバルナビゲーションの開閉処理
 const gnavToggle = () => {

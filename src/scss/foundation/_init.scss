@@ -1,6 +1,7 @@
 @use './import';
 body {
-    @include import.baseColorBlock(import.$baseColorBg, import.$dark, import.$baseColorText);
+    background-color: import.$baseColor;
+    color: import.$mineShaft ;
     font-family: "Helvetica Neue",
                     Arial,
                     "Hiragino Kaku Gothic ProN",

@@ -11,8 +11,8 @@
     .p-card {
         width: 49%;
         margin-top: 2%;
-        @include import.baseColorBlock(import.$subColorBg, import.$white, import.$subColorText);
-        border: solid 1px import.$subColorBg;
+        background-color: import.$mainColor;
+        box-shadow: 0 0 5px 2px import.$alto;
         border-radius: import.spvw(8);
         @include import.mqMin(import.$tabletPortrait) {
             border-radius: 16px;
@@ -25,7 +25,7 @@
                 height: 0;
                 padding-bottom: 56.25%;
                 &.no-image {
-                    background-color: import.$subColorBg;
+                    background-color: import.$iron;
                     border-radius: import.spvw(8) import.spvw(8) 0 0;
                     @include import.mqMin(import.$tabletPortrait) {
                         border-radius: 16px 16px 0 0;
@@ -37,7 +37,7 @@
                         top:50%;
                         left:50%;
                         transform: translateX(-50%) translateY(-50%);
-                        color: import.$subColorText;
+                        color: import.$mineShaft ;
                         font-size: import.spvw(16);
                         @include import.mqMin(import.$tabletPortrait) {
                             font-size: 24px;

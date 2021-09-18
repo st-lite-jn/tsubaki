@@ -1,4 +1,4 @@
-import {bgElement} from "./gnav";
+import {bgElement} from "./_gnav";
 const searchToggle = () => {
     if(document.querySelector(".l-bg-layer")) {
         document.querySelector(".l-bg-layer").parentNode.removeChild(document.querySelector(".l-bg-layer"));

@@ -7,7 +7,7 @@
 	top: 0;
 	bottom: 0;
 	max-height: 100vh;
-	background-color: import.$mainColorBg;
+	background-color: import.$mainColor;
 	vertical-align: middle;
 	z-index: 9850;
 	overflow-y: scroll;
@@ -96,9 +96,9 @@
 		&__item {
 			position: relative;
 			a {
-				border-bottom: dashed 1px import.$mainColorText;
+				border-bottom: dashed 1px import.$mineShaft ;
 				line-height: 1.33;
-				color: import.$mainColorText;
+				color: import.$mineShaft ;
 				font-weight: 600;
 				@include import.mqMin(import.$tabletPortrait){
 					padding-top: 16px;

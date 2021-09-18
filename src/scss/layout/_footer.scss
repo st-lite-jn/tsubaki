@@ -1,16 +1,18 @@
 @use '../foundation/import';
+.l-footer-wrapper {
+    margin-top: auto;
+}
 
 .l-footer {
-	margin-top: auto;
     padding-top: import.spvw(16);
     padding-bottom: import.spvw(16);
-    @include import.baseColorBlock(import.$accColorBg, import.$dark, import.$accColorText);
+    background-color: import.$azure;
     @include import.mqMin(import.$tabletPortrait) {
         padding-top: 16px;
         padding-bottom: 16px;
     }
     > * {
-        color: import.$accColorText;
+        color: import.$white;
     }
     &__copyright {
         margin-top: import.spvw(8);
@@ -27,7 +29,7 @@
 	text-align: center;
 	&__item {
 		display: inline-block;
-        color: import.$accColorText;
+        color: import.$white;
 		@include import.mqMin(import.$tabletPortrait) {
 			margin-right: 8px;
 			margin-left: 8px;

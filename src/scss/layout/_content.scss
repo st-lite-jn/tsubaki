@@ -6,6 +6,22 @@
         margin-top: 16px;
     }
 }
+.l-content-main ,.l-content-sidebar .p-sidebar {
+    background-color: import.$mainColor;
+    padding: import.spvw(8);
+    border-radius: import.spvw(8);
+    box-shadow: 0 0 5px 2px import.$alto;
+    @include import.mqMin(import.$tabletPortrait) {
+        border-radius: 8px;
+        padding : 16px;
+    }
+}
+
+.l-content-sidebar {
+    > *:first-child {
+        margin-top: 0;
+    }
+}
 
 @include import.mqMin(import.$tabletPortrait) {
     .is-col-2 {

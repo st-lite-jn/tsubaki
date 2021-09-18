@@ -13,6 +13,6 @@
         <?php require_once TEMPLATEPATH .'/template-parts/header/gnav.php'; ?>
         <?php get_search_form();?>
     </header>
-    <?php tsbk_breadcrumb();?>
+
     <main class="l-main l-container <?php if(is_single()):?>is-col-2<?php endif;?>">
 

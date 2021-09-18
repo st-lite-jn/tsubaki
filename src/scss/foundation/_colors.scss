@@ -1,33 +1,46 @@
+/*
+* 基本となるカラー
+*/
+
+$white:#fff;
+$concrete :#f2f2f2;
+$alto: #d8d8d8;
+$iron : #d5d5d5;
+$silver: #c0c0c0;
+$storm : #606060;
+$gray :#525252;
+$mineShaft :#2a2a2a;
+$black :#000;
+
+$red: #ff0000;
+$brightRed : #b30000;
+
+$blue : #0000ff;
+$lochmara :#0076bd;
+$azure: #3251ad;
+
+
+/*
+* カラーセット
+*/
+
 //ベースカラー
-$baseColorBg : #020202;
-$baseColorText : #fdfdfd;
+$baseColor : $concrete;
 
 //メインカラー
-$mainColorBg:#8C272B;
-$mainColorText: #fffffb;
+$mainColor : $white;
 
 //サブカラー
-$subColorBg: #e3e3e3;
-$subColorText: #1c1c1c;
+$subColor: $concrete;
 
 //アクセントカラー
-$accColorBg: #606060;
-$accColorText: #fffef2;
+$accColor: $storm;
 
 //ボタンカラー
-$btnColorBg :#618bad;
-$btnColorTetx: #fff;
+$btnColorBg :$lochmara;
+$btnColorTetx: $white;
 
 //リンクテキストカラー
-$linkColor : #618bad;
+$linkColor : $lochmara;
 
-//Colors
-$white:#fff;
-$black :#000;
-$mineShaft :#333;
-$red: #b22222;
-$blue :#0076bd;
-$azure: #3251ad;
-$dark : #2a2a2a;
-$gray :#666;
-$silver: #ccc;
+
