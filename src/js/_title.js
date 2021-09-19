@@ -8,7 +8,7 @@ const title = () => {
         ],
         duration: 1000,
         easing: 'easeOutCirc',
-        delay: anime.stagger(250, {start: 50})
+        delay: anime.stagger(250, {start: 0})
     })
 }
 export {title};

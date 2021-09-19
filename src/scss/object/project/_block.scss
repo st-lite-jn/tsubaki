@@ -16,7 +16,7 @@
             margin-top: 16px;
         }
     }
-    h1 + p,h2 + p,h3 + p,h4 + p,h5 + p, h6 + p {
+    h1 + *,h2 + *,h3 + *,h4 + *,h5 + *, h6 + * {
         margin-top:import.spvw(8);
         @include import.mqMin(import.$tabletPortrait) {
             margin-top: 8px;
@@ -58,6 +58,9 @@
             font-size: 16px;
         }
     }
+    ul , ol {
+        margin-left: 1em;
+    }
     .wp-block-image {
         text-align: center;
         figcaption {
@@ -70,9 +73,19 @@
     }
     .wp-block-table {
         table {
+            thead {
+                tr {
+                    border-bottom: solid 2px import.$mineShaft ;
+                }
+            }
             tbody {
                 tr {
                     border-bottom: dotted 1px import.$mineShaft ;
+                }
+            }
+            tfoot {
+                tr {
+                    border-top: solid 2px import.$mineShaft ;
                 }
             }
             th,td {
@@ -97,7 +110,7 @@
                 tbody{
                     tr {
                         &:nth-child(odd) {
-                            background-color:import.$accColor;
+                            background-color:import.$subColor;
                         }
                     }
                 }
@@ -109,16 +122,32 @@
             width: 100%;
         }
     }
+    //区切り線
     .wp-block-separator {
         border-style: solid;
         border-width: 0 0 1px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 25%;
+        &.is-style-wide {
+            width: 100%;
+        }
+        &.is-style-dots {
+            border:none;
+        }
     }
+    //ギャラリー
     .wp-block-gallery  {
         margin-bottom: -1em;
+        ul {
+            margin-left: 0;
+        }
     }
+    //コード
     .wp-block-code {
         code {
-            background-color: import.$silver;
+            background-color: import.$white;
+            border: solid 1px import.$alto;
             padding: import.spvw(8);
             @include import.mqMin(import.$tabletPortrait) {
                 padding: 8px;

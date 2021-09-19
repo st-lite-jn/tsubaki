@@ -25,7 +25,7 @@
                 height: 0;
                 padding-bottom: 56.25%;
                 &.no-image {
-                    background-color: import.$iron;
+                    background-color: import.$alto;
                     border-radius: import.spvw(8) import.spvw(8) 0 0;
                     @include import.mqMin(import.$tabletPortrait) {
                         border-radius: 16px 16px 0 0;

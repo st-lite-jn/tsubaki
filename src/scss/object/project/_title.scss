@@ -6,7 +6,7 @@
     padding-bottom: 66.6666%;
     background-color: import.$alto;
     @include import.mqMin(import.$tabletPortrait) {
-        padding-bottom: 40%;
+        padding-bottom: 33.3333%;
     }
     .fadeInUp {
         opacity: 0;
@@ -14,10 +14,18 @@
 }
 .p-title-props {
     position: absolute;
+    width: 100%;
     top: 50%;
     transform: translateY(-50%);
+    background: rgba($color: import.$black, $alpha: .4);
     z-index: 1;
-    text-shadow:1px 1px 0 import.$white, 0 0 2px import.$white;
+    color: import.$white;
+    padding-top: import.spvw(8);
+    padding-bottom: import.spvw(8);
+    @include import.mqMin(import.$tabletPortrait) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
     &__label {
         font-size: import.spvw(24);
         @include import.mqMin(import.$tabletPortrait) {
@@ -28,6 +36,7 @@
         display: flex;
         flex-wrap: nowrap;
         font-size: import.spvw(10);
+        font-weight: bold;
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 14px;
         }
@@ -41,10 +50,10 @@
     }
     &__lead {
         margin-top: import.spvw(8);
+        font-weight: bold;
         @include import.mqMin(import.$tabletPortrait) {
             margin-top: 16px;
         }
-
     }
 }
 .p-title-visual {

@@ -3,7 +3,8 @@
     $fearued_img = get_post_thumbnail_id(get_the_ID()) ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false, array('class'=>'p-title-visual__img')) : false;
 ?>
 <header id="content-title" class="p-title">
-    <section class="p-title-props l-container">
+    <div class="p-title-props">
+        <section class="l-container">
         <h1 class="p-title-props__label fadeInUp"><?php echo $tsbk_title["content-label"];?></h1>
     <?php if(is_single()):?>
         <div class="p-title-props__date fadeInUp">
@@ -16,7 +17,8 @@
            <p><?php echo get_the_excerpt();?></p>
         </div>
     <?php endif; ?>
-    </section>
+        </section>
+    </div>
     <?php if($fearued_img):?>
     <figure class="p-title-visual"><?php echo $fearued_img;?></figure>
     <?php endif;?>
