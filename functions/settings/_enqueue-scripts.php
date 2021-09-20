@@ -29,13 +29,11 @@ function tsbk_enqueue_script_jquery() {
 function tsbk_enqueue_script_main() {
 	/**
 	 * jQuery以外のCDNから取得するJavaScriptを登録
-	 * React@17.0.2
-	 * React@DOM 17.0.2
-	 * babel@6.26.2
-     * animejs@3.2.1
 	 * swiper@6.7.0
+     * animejs@3.2.1
+     * highlightjs@11.2.0
 	 */
-	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/react@17.0.2/umd/react.development.min.js,npm/react-dom@17.0.2/umd/react-dom.development.min.js,npm/babel-standalone@6.26.0,npm/animejs@3.2.1,npm/swiper@6.7.0/swiper-bundle.min.js,npm/@highlightjs/cdn-assets@11.2.0/highlight.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/javascript.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/php.min.js', array() , false, true );
+	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/animejs@3.2.1,npm/swiper@6.7.0/swiper-bundle.min.js,npm/@highlightjs/cdn-assets@11.2.0/highlight.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/javascript.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/php.min.js', array() , false, true );
 	/**
 	 * main.jsの登録
 	 */

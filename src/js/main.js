@@ -3,7 +3,10 @@ import {searchToggle , searchPosition} from "./_search";
 import {headerFixed} from "./_header";
 import {carousels} from "./_carousels";
 import {title} from "./_title";
+import {Animation} from "./_animation";
 import {wpEmbedVideo} from "./_wp-embed";
+
+const animation = new Animation();
 
 /**
  * 関数の発火処理
@@ -18,6 +21,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     searchToggle();
     headerFixed();
     wpEmbedVideo();
+    animation.hoverBounce();
     hljs.highlightAll();
 });
 //ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
@@ -28,9 +32,9 @@ window.addEventListener('load', () => {
 //画面をリサイズしたときに発火
 let queue = null,
     wait = 100;
-window.addEventListener( 'resize', function() {
+window.addEventListener( 'resize', () => {
     clearTimeout( queue );
-    queue = setTimeout(function() {
+    queue = setTimeout(() => {
         gnavPosition();
         searchPosition();
         wpEmbedVideo();

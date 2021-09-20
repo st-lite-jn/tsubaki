@@ -65,11 +65,11 @@ EOM;
 				// 「最初」 の表示
 				$first_page_link = get_pagenum_link(1);
 				$pagenation .= <<< EOM
-				<a href="{$first_page_link}" class="c-btn first">{$text_first}</a>
+				<a href="{$first_page_link}" class="c-btn first hover-bounce">{$text_first}</a>
 EOM;
 
 				$pagenation .= <<< EOM
-					<a href="{$before_page_link}" class="c-btn">{$text_before}</a>
+					<a href="{$before_page_link}" class="c-btn hover-bounce">{$text_before}</a>
 EOM;
 		}
             for ( $i = 1; $i <= $pages; $i++ ) {
@@ -82,7 +82,7 @@ EOM;
                     } else {
 						$number_page_link = get_pagenum_link( $i );
 						$pagenation .= <<< EOM
-						<a href="{$number_page_link}" class="c-btn">{$i}</a>
+						<a href="{$number_page_link}" class="c-btn hover-bounce">{$i}</a>
 EOM;
                     }
                 }
@@ -92,13 +92,13 @@ EOM;
                 // 「次へ」 のリンクを表示
                 $next_page_link = get_pagenum_link( $paged + 1 );
                 $pagenation .= <<< EOM
-						<a href="{$next_page_link}" class="c-btn">{$text_next}</a>
+						<a href="{$next_page_link}" class="c-btn hover-bounce">{$text_next}</a>
 EOM;
 				}
 				// 「最後」のリンクを表示
 				$last_page_link = get_pagenum_link( $pages );
 				$pagenation .= <<< EOM
-				<a href="{$last_page_link}" class="c-btn last">{$text_last}</a>
+				<a href="{$last_page_link}" class="c-btn last hover-bounce">{$text_last}</a>
 EOM;
 			}
 

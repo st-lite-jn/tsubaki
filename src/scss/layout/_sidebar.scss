@@ -39,4 +39,15 @@
             }
         }
     }
+    .l-sidebar-tags {
+        > * {
+            margin-right: import.spvw(8);
+            margin-top: import.spvw(8);
+            @include import.mqMin(import.$tabletPortrait) {
+                margin-top: 8px;
+                margin-right: 4px;
+            }
+        }
+
+    }
 }

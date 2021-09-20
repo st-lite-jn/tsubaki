@@ -3,7 +3,7 @@
 .p-archive-ttl {
     position: relative;
     min-height: import.spvw(80);
-    @include import.baseColorBlock(import.$subColor, import.$white, import.$mineShaft );
+    @include import.baseColorBlock(import.$white, import.$concrete, import.$mineShaft );
     @include import.mqMin(import.$tabletPortrait) {
         min-height: 96px;
     }
@@ -11,6 +11,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        width: 100%;
         transform: translate(-50% ,-50%);
         text-align: center;
     }

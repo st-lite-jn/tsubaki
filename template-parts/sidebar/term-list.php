@@ -42,9 +42,9 @@
 <?php if($tag_terms):?>
 <div class="l-sidebar">
 	<p class="l-sidebar__heading">タグ</p>
-	<nav class="l-sidebar_tags">
+	<nav class="l-sidebar-tags">
 	<?php foreach($tag_terms as $tag_term):?>
-		<a href="<?php echo get_term_link($tag_term->term_id,$tag_term->taxonomy)?>"><?php echo $tag_term->name;?></a>
+		<a class="c-label-tag" href="<?php echo get_term_link($tag_term->term_id,$tag_term->taxonomy)?>"><?php echo $tag_term->name;?></a>
 	<?php endforeach;?>
 	</nav>
 </div>

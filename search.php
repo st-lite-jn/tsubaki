@@ -1,6 +1,7 @@
 <?php $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;?>
 <?php get_header();?>
 <?php require TEMPLATEPATH ."/template-parts/archive/header.php";?>
+<div class="l-container">
 <?php if(!get_search_query()):?>
     <div class="u-al--center u-pt--80">
         <p>検索ワードを入力してください。</p>
@@ -25,5 +26,6 @@
         </div>
     <?php endif;?>
 <?php endif;?>
+</div>
 <?php
 get_footer();

@@ -20,7 +20,7 @@
     <?php if($the_query->have_posts()): ?>
        <?php require TEMPLATEPATH . "/template-parts/archive/loop.php";?>
         <nav class="u-al--center u-mt--40">
-            <a class="c-btn" href="<?php echo get_post_type_archive_link( "post" );?>"><?php echo $post_obj->labels->name; ?>一覧を表示</a>
+            <a class="c-btn hover-bounce" href="<?php echo get_post_type_archive_link( "post" );?>"><?php echo $post_obj->labels->name; ?>一覧を表示</a>
         </nev>
     <?php endif; ?>
 </div>

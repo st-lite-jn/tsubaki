@@ -133,7 +133,16 @@
             width: 100%;
         }
         &.is-style-dots {
+            display: block;
+            width: 100%;
             border:none;
+            text-align: center;
+            &:before {
+                content:"\f141";
+                font-family: Fontawesome;
+                letter-spacing: normal;
+                padding-left: 0;
+            }
         }
     }
     //ギャラリー

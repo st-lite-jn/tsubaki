@@ -12,23 +12,24 @@
         //POST IDからタクソノミーを取得
         list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
     ?>
-    <article class="p-card">
-        <a class="p-card__header" href="<?php echo get_the_permalink(get_the_ID());?>">
-            <figure class="p-card__header__img <?php if(!$thumbnail) echo 'no-image'; ?>"><?php echo $thumbnail;?></figure>
-            <p class="p-card__header__ttl"><?php echo get_the_title(get_the_ID());?></p>
-        </a>
+    <a class="p-card hover-bounce" href="<?php echo get_the_permalink(get_the_ID());?>">
+        <figure class="p-card__thumb <?php if(!$thumbnail) echo 'is-no-image'; ?>">
+            <?php echo $thumbnail;?>
+        </figure>
         <div class="p-card__body">
-            <time class="p-card__body__date">更新日：<?php echo get_the_time('Y.m.d',get_the_ID());?></time>
+            <?php if($cat_terms):?>
+                <?php foreach($cat_terms as $cat_term):?>
+            <p class="c-label-cat"><?php echo $cat_term->name;?></p>
+                <?php break; endforeach; ?>
+            <?php endif;?>
+            <p class="p-card__body__title"><?php echo get_the_title(get_the_ID());?></p>
+            <div class="p-card__body__date">
+                <time itemprop="dateCreated" datetime="<?php echo get_the_time("Y-m-d"); ?>">公開日 : <?php echo get_the_time("Y.m.d"); ?></time>
+                <time itemprop="dateModified" datetime="<?php echo get_the_time("Y-m-d"); ?>">更新日 : <?php echo get_the_modified_date("Y.m.d"); ?></time>
+            </div>
             <p class="p-card__body__txt"><?php echo get_the_excerpt(get_the_ID());?></p>
-        <?php if($cat_terms):?>
-            <nav class="p-card__body__cats">
-            <?php foreach($cat_terms as $cat_term):?>
-                <a class="c-btn--mini" href="<?php echo get_term_link($cat_term->term_id);?>"><?php echo $cat_term->name;?></a>
-            <?php break; endforeach; ?>
-        </nav>
-        <?php endif;?>
        </div>
-    </article>
+    </a>
 <?php endwhile;wp_reset_postdata();?>
 </div>
 

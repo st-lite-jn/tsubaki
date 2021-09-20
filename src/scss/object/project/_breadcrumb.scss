@@ -20,6 +20,7 @@
         text-overflow: ellipsis;
         color: import.$mineShaft ;
         font-size: import.spvw(8);
+        font-weight: bold;
         @include import.mqMin(import.$tabletPortrait) {
             font-size: 12px;
         }
