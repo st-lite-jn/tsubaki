@@ -22,7 +22,7 @@
         }
    }
     &__list {
-        display: inline-block;
+        display: inline;
         color: import.$mineShaft ;
         font-size: import.spvw(8);
         font-weight: bold;
@@ -32,6 +32,7 @@
         }
     }
     &__item {
-        color: import.$mineShaft ;
+        color: import.$mineShaft;
+        text-decoration: none;
     }
 }

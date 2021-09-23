@@ -11,9 +11,13 @@
             margin-top:40px;
         }
         &__heading {
+            padding: import.spvw(8);
+            background-color: #dadada;
             font-weight: bold;
+            font-size: spvw(16);
             @include import.mqMin(import.$tabletPortrait) {
-                font-size: 18px;
+                padding: 8px;
+                font-size: 20px;
             }
         }
     }
@@ -50,11 +54,17 @@
         }
     }
     &.l-container {
-        display: flex;
-        flex-wrap: wrap;
-        > * {
-            margin-top: 0;
-            width: 24%;
+        @include import.mqMin(import.$tabletPortrait) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            > * {
+                margin-top: 16px;
+                width: 22%;
+                &:nth-child(-n + 4) {
+                    margin-top: 0;
+                }
+            }
         }
     }
 }

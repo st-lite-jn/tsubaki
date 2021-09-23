@@ -8,6 +8,10 @@ body {
                     "Hiragino Sans",
                     "BIZ UDPGothic",
                     sans-serif;
+    font-size: import.spvw(12);
+    @include import.mqMin(import.$tabletPortrait) {
+        font-size: 16px;
+    }
 }
 p {
     line-height: 1.5;
