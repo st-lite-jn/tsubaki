@@ -57,12 +57,16 @@
         @include import.mqMin(import.$tabletPortrait) {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            flex-basis: 0;
+            flex-grow: 1;
             > * {
                 margin-top: 16px;
-                width: 22%;
-                &:nth-child(-n + 4) {
+                width: 23.5%;
+                &:nth-child( -n + 4) {
                     margin-top: 0;
+                }
+                &:not(:nth-child(4n)) {
+                    margin-right: 2%;
                 }
             }
         }

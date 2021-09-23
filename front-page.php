@@ -7,7 +7,7 @@
 <?php get_header();?>
 <?php require TEMPLATEPATH . "/template-parts/components/header.php";?>
 <div class="l-container">
-<div class="p-block"><?php the_content();?></div>
+<div class="p-content-block"><?php the_content();?></div>
 <?php
     $args = array(
         "post_type"=> "post"
