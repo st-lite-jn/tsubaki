@@ -12,7 +12,7 @@
         //POST IDからタクソノミーを取得
         list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
     ?>
-    <a class="p-card hover-bounce" href="<?php echo get_the_permalink(get_the_ID());?>">
+    <a class="p-card u-hover-bounce" href="<?php echo get_the_permalink(get_the_ID());?>">
         <figure class="p-card__thumb <?php if(!$thumbnail) echo 'is-no-image'; ?>">
             <?php echo $thumbnail;?>
         </figure>

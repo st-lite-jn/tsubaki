@@ -6,7 +6,6 @@ const wpEmbedVideo = () => {
     const $embedVideos = document.querySelectorAll(".is-type-video iframe");
     $embedVideos.forEach(($embedVideo)=>{
         let embedWidth =  $embedVideo.clientWidth;
-        console.log(embedWidth);
         let embedAttrWidth =  $embedVideo.getAttribute('width');
         let embedAttrHeight =  $embedVideo.getAttribute('height');
         $embedVideo.style.height = embedWidth / embedAttrWidth * embedAttrHeight + "px";

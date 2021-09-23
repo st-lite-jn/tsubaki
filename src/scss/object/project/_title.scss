@@ -8,9 +8,6 @@
     @include import.mqMin(import.$tabletPortrait) {
         padding-bottom: 33.3333%;
     }
-    .fadeInUp {
-        opacity: 0;
-    }
 }
 .p-title-props {
     position: absolute;

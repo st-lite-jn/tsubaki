@@ -21,11 +21,9 @@ const searchToggle = () => {
  * 検索フォームの位置
  */
 const searchPosition = () => {
-
     //WordPressの管理バーが表示されている場合は高さを取得
     //表示されていない場合は0を代入
     const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
-
     const $searchForm = document.getElementById("searchForm");
     const headerHeight = document.getElementById("header").offsetHeight;
     $searchForm.style.top = headerHeight + wpadminbarHeight + "px";

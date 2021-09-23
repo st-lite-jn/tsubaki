@@ -1,0 +1,8 @@
+@use '../../foundation/import';
+/*
+* アニメーションを行う要素の初期状態を定義
+*/
+.u-dalay-fadein-up,
+.u-fadein-up {
+    opacity: 0;
+}

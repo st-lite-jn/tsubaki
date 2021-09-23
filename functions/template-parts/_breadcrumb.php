@@ -5,54 +5,79 @@
 if(!function_exists('tsbk_breadcrumb')):
 function tsbk_breadcrumb($wp_obj = null) {
 
-	// トップページでは何も出力しない
-	if ( is_front_page() || is_404()) return false;
+    // トップページと404エラーページでは何も出力しない
+    if ( is_front_page() || is_404()) return false;
 
-	// ウェブサイトのURL
-	$home_url =  home_url();
-	$dom_class = array(
-		'container' => "p-breadcrumb",
-		'parent' => "p-breadcrumb l-container",
-		'child' => "p-breadcrumb__item",
-		'item' => "p-breadcrumb",
-	);
-	//そのページのWPオブジェクトを取得
-	$wp_obj = $wp_obj ?: get_queried_object();
+    // ウェブサイトのURL
+    $home_url = home_url();
 
-	echo '<div class="p-breadcrumb-wrapper">'.
-			'<nav class="p-breadcrumb l-container">'.
-            '<a class="p-breadcrumb__item" href="'. home_url() .'">Home</a>';
+    //共通のclass要素
+    $dom_class_wrapper = "p-breadcrumb-wrapper";
+    $dom_class_parent = "p-breadcrumb l-container";
+    $dom_class_child = "p-breadcrumb__list";
+    $dom_class_item = "p-breadcrumb__item";
+    //ポジションの初期値
+    $position = 1;
+    //HTML
+    $breadcrumb = null;
 
+    //そのページのWPオブジェクトを取得
+    $wp_obj = $wp_obj ?: get_queried_object();
+
+    $breadcrumb .= "
+            <div class='{$dom_class_wrapper}'>
+                <ul class='{$dom_class_parent}' itemscope itemtype='https://schema.org/BreadcrumbList'>
+                    <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                        <a class='{$dom_class_item}' itemprop='item' href='{$home_url}'>Home</a>
+                        <meta itemprop='position' content='{$position}' />
+                    </li>
+    ";
 	if(is_home()) {
-		/**
-		* 投稿のアーカイブ
-		* $wp_obj : WP_Post
-		*/
-		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->post_title .'</b>';
+        $position ++;
+        /**
+        * 投稿のアーカイブ
+        * $wp_obj : WP_Post
+        */
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >$wp_obj->post_title</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} elseif ( is_attachment() ) {
-		/**
-		* 添付ファイルページ ( $wp_obj : WP_Post )
-		* ※ 添付ファイルページでは is_single() も true になるので先に分岐
-		*/
-		echo '<li><b class="is-current">'. $wp_obj->post_title .'</b>';
-
+        /**
+        * 添付ファイルページ ( $wp_obj : WP_Post )
+        * ※ 添付ファイルページでは is_single() も true になるので先に分岐
+        */
+        $position ++;
+		$breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >$wp_obj->post_title</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} elseif ( is_single() ) {
         /**
         * 投稿ページ
         * $wp_obj : WP_Post
         */
         $post_id    = $wp_obj->ID;
+
         $post_type  = $wp_obj->post_type;
         $post_title = $wp_obj->post_title;
+        $post_archive_link = get_post_type_archive_link( $post_type ); //アーカイブトップURL
+        $post_archive_label = get_post_type_object( $post_type )->label; //投稿タイプのラベル
 
-        echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'.
-        get_post_type_object( $post_type )->label .
-        '</a>';
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <a class='{$dom_class_item}' itemprop='item' href='$post_archive_link'>$post_archive_label</a>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 		// カスタム投稿タイプかどうか
 		if ( $post_type !== 'post' ) {
-
 			$the_tax = "";  //そのサイトに合わせ、投稿タイプごとに分岐させて明示的に指定してもよい
-
 			// 投稿タイプに紐づいたタクソノミーを取得 (投稿フォーマットは除く)
 			$tax_array = get_object_taxonomies( $post_type, 'names');
 			foreach ($tax_array as $tax_name) {
@@ -61,8 +86,6 @@ function tsbk_breadcrumb($wp_obj = null) {
 					break;
 				}
 			}
-			//カスタム投稿タイプ名の表示
-			echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'. get_post_type_object( $post_type )->label .'</a>';
 		} else {
 			$the_tax = 'category';  //通常の投稿の場合、カテゴリーを表示
 		}
@@ -94,21 +117,38 @@ function tsbk_breadcrumb($wp_obj = null) {
 
 						foreach ( $parent_array as $parent_id ) {
 							$parent_term = get_term( $parent_id, $the_tax );
-
-							echo '<a class="p-breadcrumb__item" href="'. get_term_link( $parent_id, $the_tax ) .'">'.$parent_term->name.'</a>';
-						}
-					}
-
-					// 最下層のタームを表示
-					echo '<a class="p-breadcrumb__item" href="'. get_term_link( $term->term_id, $the_tax ). '">'. $term->name. '</a>';
-
+                            $parent_term_link = get_term_link( $parent_id, $the_tax );
+                            $parent_term_label = $parent_term -> name;
+                            $position ++;
+                            $breadcrumb .= "
+                            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                                <a class='{$dom_class_item}' itemprop='item' href='$parent_term_link'>$parent_term_label</a>
+                                <meta itemprop='position' content='{$position}' />
+                            </li>
+                            ";
+                        }
+                    }
+                    // 最下層のタームを表示
+                    $term_link = get_term_link( $term->term_id, $the_tax );
+                    $term_label = $term->name;
+                    $position ++;
+                    $breadcrumb .= "
+                    <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                        <a class='{$dom_class_item}' itemprop='item' href='{$term_link}'>{$term_label}</a>
+                        <meta itemprop='position' content='{$position}' />
+                    </li>
+                    ";
 				endif;
 			}
 		}
-
 		// 投稿自身の表示
-		echo '<b class="p-breadcrumb__item is-current">'. $post_title .'</b>';
-
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >{$post_title}</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} elseif ( is_page() ) {
 		/**
 		 * 固定ページ
@@ -119,91 +159,190 @@ function tsbk_breadcrumb($wp_obj = null) {
 		if ( $wp_obj->post_parent !== 0 ) {
 			$parent_array = array_reverse( get_post_ancestors( $wp_obj->ID) );
 			foreach( $parent_array as $parent_id ) {
-				echo '<a class="p-breadcrumb__item" href="'. get_permalink( $parent_id ).'">'.	get_the_title( $parent_id ).'</a>';
+                $parent_page_link = get_permalink( $parent_id );
+                $paretn_page_label = get_the_title( $parent_id );
+                $position ++;
+                $breadcrumb .= "
+                    <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                        <a class='{$dom_class_item}' itemprop='item' href='{$parent_page_link}'>{$paretn_page_label}</a>
+                        <meta itemprop='position' content='{$position}' />
+                    </li>
+                ";
 			}
 		}
 		// 投稿自身の表示
-		echo '<b class="p-breadcrumb__item is-current">'.  $wp_obj->post_title .'</b>';
+        $position ++;
+        $breadcrumb .= "
+        <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+            <b class='{$dom_class_item}' itemprop='item' >{$wp_obj->post_title}</b>
+            <meta itemprop='position' content='{$position}' />
+        </li>
+    ";
 	} elseif ( is_date() ) {
-		/**
-		 * 日付アーカイブ
-		 * $wp_obj : WP_Post_Type
-		 */
-		if(get_post_type() == "post") {
-			$post_obj = get_post_type_object("post");
-			echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link("post").'">'. $post_obj->label .'</a>';
-		} else {
-			echo '<a class="p-breadcrumb__item" href="/'.$wp_obj->rewrite["slug"].'">'. $wp_obj->label .'</a>';
-		}
+        /**
+         * 日付アーカイブ
+         * $wp_obj : WP_Post_Type
+         */
+        $post_obj = get_post_type_object("post");
+        $post_type_link = get_post_type() == "post" ? get_post_type_archive_link("post") : "/" . $wp_obj->rewrite["slug"];
+        $post_type_label = $post_obj->label;
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <a class='{$dom_class_item}' itemprop='item' href='{$post_type_link}'>{$post_type_label}</a>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
+
 		$year  = get_query_var('year');
 		$month = get_query_var('monthnum');
 		$day   = get_query_var('day');
+
+        $year_link = get_year_link( $year );
+
+        $month_link = get_year_link( $month );
 		if ( $day !== 0 ) {
 			//日別アーカイブ
-			echo '<a class="p-breadcrumb__item" href="'. get_year_link( $year ).'">'. $year .'年</a>'.
-					'<a class="p-breadcrumb__item" href="'. get_month_link( $year, $month ). '">'. $month .'月</a>'.
-					'<b class="p-breadcrumb__item is-current">'. $day .'日</b>';
-
+            $position ++;
+            $breadcrumb .= "
+                <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                    <a class='{$dom_class_item}' itemprop='item' href='$year_link'>{$year}年</a>
+                    <meta itemprop='position' content='{$position}' />
+                </li>";
+            $position ++;
+            $breadcrumb .= "
+                <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                    <a class='{$dom_class_item}' itemprop='item' href='$month_link'>{$month}月</a>
+                    <meta itemprop='position' content='{$position}' />
+                </li>";
+            $position ++;
+            $breadcrumb .= "
+                <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                    <b class='{$dom_class_item}' itemprop='item' >{$day}日</b>
+                    <meta itemprop='position' content='{$position}' />
+                </li>
+            ";
 		} elseif ( $month !== 0 ) {
 			//月別アーカイブ
-			echo '<b class="p-breadcrumb__item is-current">'.$year.'年'.$month.'月</b>';
-
+            $position ++;
+            $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >{$year}年{$month}月</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 		} else {
 			//年別アーカイブ
-			echo '<b class="p-breadcrumb__item is-current">'.$year.'年</b>';
+            $position ++;
+            $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >{$year}年</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 		}
 	} elseif ( is_author() ) {
 		/**
 		 * 投稿者アーカイブ
 		 * $wp_obj : WP_User
 		 */
-		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->display_name .' の執筆記事</b>';
+        $position ++;
+        $breadcrumb .= "
+        <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+            <b class='{$dom_class_item}' itemprop='item' >{$wp_obj->display_name}</b>
+            <meta itemprop='position' content='{$position}' />
+        </li>
+    ";
 	} elseif ( is_tax() || is_category() || is_tag()) {
 		/**
 		 * カテゴリーアーカイブ・タクソノミーアーカイブ・タグアーカイブ
 		 * $wp_obj : WP_Term
 		 */
 		$term_id   = $wp_obj->term_id;
-		$term_name = $wp_obj->name;
+		$term_label = $wp_obj->name;
 		$tax_name  = $wp_obj->taxonomy;
-		$post_type = get_post_type();
-		echo '<a class="p-breadcrumb__item" href="'. get_post_type_archive_link( $post_type ) .'">'.
-				get_post_type_object( $post_type )->label .
-			'</a>';
+		$post_type_link = get_post_type_archive_link(get_post_type());
+        $post_type_label = get_post_type_object( get_post_type() )->label;
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <a class='{$dom_class_item}' itemprop='item' href='$post_type_link'>$post_type_label</a>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 		// 親ターム（カテゴリー）があれば順番に表示
 		if ( $wp_obj->parent !== 0 ) {
 			$parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
 			foreach( $parent_array as $parent_id ) {
 				$parent_term = get_term( $parent_id, $tax_name );
-				echo '<a class="p-breadcrumb__item" href="'. get_term_link( $parent_id, $tax_name ) .'">'.$parent_term->name .'</a>';
+                $paretn_term_link = get_term_link( $parent_id, $tax_name );
+                $paretn_term_label = $parent_term -> name;
+                $position ++;
+                $breadcrumb .= "
+                    <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                        <a class='{$dom_class_item}' itemprop='item' href='{$paretn_term_link}'>{$paretn_term_label}</a>
+                        <meta itemprop='position' content='{$position}' />
+                    </li>
+                ";
 			}
 		}
 		// ターム自身の表示
-		echo '<b class="p-breadcrumb__item is-current">'. $term_name .'</b>';
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >{$term_label}</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
+
 	} elseif ( is_archive() ) {
 		/**
 		 * アーカイブ ( $wp_obj : WP_Term )
 		 */
-		echo '<b class="p-breadcrumb__item is-current">'. $wp_obj->label .'</b>';
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >$wp_obj->label</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} elseif ( is_search() ) {
 		/**
 		 * 検索結果ページ
 		 */
-		echo '<b class="p-breadcrumb__item is-current">検索結果:'. get_search_query() .'</b>';
+        $search_query = get_search_query();
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >検索結果 : $search_query</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} elseif ( is_404() ) {
 		/**
 		 * 404ページ
 		 */
-		echo '<b class="p-breadcrumb__item is-current">404 Not Found</b>';
-
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >404 Not Found</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	} else {
 		/**
 		 * その他のページ（無いと思うが一応）
 		 */
-		echo '<b class="p-breadcrumb__item is-current">'. get_the_title() .'</b>';
+        $label = get_the_title();
+        $position ++;
+        $breadcrumb .= "
+            <li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                <b class='{$dom_class_item}' itemprop='item' >$label</b>
+                <meta itemprop='position' content='{$position}' />
+            </li>
+        ";
 	}
-
-	echo '</nav>
-        </div>';  // 冒頭に合わせて閉じタグ
+    $breadcrumb .= "</ul></div>";
+    echo $breadcrumb;
 }
 endif;

@@ -1,9 +1,8 @@
 <?php
 # -----------------------------------------------------------------
-# templateカテゴリー
+#
 # -----------------------------------------------------------------
 function tsbk_register_tax_template() {
-
 	$labels = array(
 		"name" =>"カテゴリー",
 		"singular_name" => "カテゴリー",
@@ -33,4 +32,4 @@ function tsbk_register_tax_template() {
 		);
 	register_taxonomy( "cat_template", array( "template" ), $args );
 }
-add_action( 'init', 'tsbk_register_tax_template' );
+// add_action( 'init', 'tsbk_register_tax_template' );
