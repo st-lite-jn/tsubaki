@@ -6,6 +6,7 @@
     padding: import.spvw(8) import.spvw(20);
     border-radius: 8px;
     text-decoration: none;
+	text-align: center;
     @include import.mqMin(import.$tabletPortrait) {
         padding: 8px 16px;
     }

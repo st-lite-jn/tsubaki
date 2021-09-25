@@ -1,18 +1,35 @@
 @use '../../foundation/import';
 
 .p-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: import.spvw(16);
-    padding-top: import.spvw(16);
-    padding-bottom: import.spvw(16);
-    @include import.mqMin(import.$tabletPortrait) {
-        margin-top: 24px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
-    .c-btn {
-        margin: 0 8px;
-    }
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: import.spvw(8);
+	padding-top: import.spvw(16);
+	padding-bottom: import.spvw(16);
+	@include import.mqMax(import.$smartPortrait) {
+		flex-wrap: wrap;
+		&__navigation {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&.is-wide {
+				width: 60%;
+				display: block;
+			}
+		}
+	}
+	@include import.mqMin(import.$tabletPortrait) {
+		margin-top: 24px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	.c-btn ,.c-btn--reverse {
+		margin: 0 8px;
+		@include import.mqMax(import.$smartPortrait) {
+			margin-top: import.spvw(8);
+		}
+	}
 }

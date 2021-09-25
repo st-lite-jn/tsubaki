@@ -32,81 +32,78 @@ add_action( 'pre_get_posts', 'tsbk_change_posts_per_page' );
 * $range : 左右に何ページ表示するか
 * $show_only : 1ページしかない時に表示するかどうか
 */
-
 if ( ! class_exists( 'Tsbk_Custom_Pagenation' ) ) {
-class Tsbk_Custom_Pagenation {
-    public static function pagination_method( $pages, $paged, $range = 2, $show_only = false ) {
-		$pagenation = "";
-		$pages = intval($pages);    //float型で渡ってくるので明示的に int型 へ
-        $paged = $paged ?: 1;       //get_query_var('paged')をそのまま投げても大丈夫なように
-		$last_range = $pages - $range;
-		//表示テキスト
-        $text_first   = "最新";
-        $text_before  = "&lt; 前へ";
-        $text_next    = "次へ &gt;";
-       	$text_last    = "最後";
-        if ( $show_only && $pages === 1 ):
-            // 1ページのみで表示設定が true の時
-            echo '<div class="p-pagination"><span class="c-btn">1</span></div>';
-            return;
-        endif;
+	class Tsbk_Custom_Pagenation {
+		public static function pagination_method( $pages, $paged, $range = 2, $show_only = false ) {
+			$pagenation = "";
+			$pages = intval($pages);    //float型で渡ってくるので明示的に int型 へ
+			$paged = $paged ?: 1;       //get_query_var('paged')をそのまま投げても大丈夫なように
+			$last_range = $pages - $range;
+			//表示テキスト
+			$text_first   = "最新";
+			$text_before  = "&lt; 前へ";
+			$text_next    = "次へ &gt;";
+			$text_last    = "最後";
+			if ( $show_only && $pages === 1 ):
+				// 1ページのみで表示設定が true の時
+				echo '<div class="p-pagination"><span class="c-btn">1</span></div>';
+				return;
+			endif;
+			// 1ページのみで表示設定もない場合
+			if ( $pages === 1 ) return;
 
-        if ( $pages === 1 ) return;    // 1ページのみで表示設定もない場合
-
-        if ( 1 !== $pages ) {
 			//2ページ以上の時
-			$pagenation .= <<< EOM
-				<div class="p-pagination">
-
-EOM;
-		   if ( $paged > 1 ) {
-				$before_page_link = get_pagenum_link( $paged - 1 );
-
-				// 「最初」 の表示
-				$first_page_link = get_pagenum_link(1);
-				$pagenation .= <<< EOM
-				<a href="{$first_page_link}" class="c-btn first u-hover-bounce">{$text_first}</a>
-EOM;
-
-				$pagenation .= <<< EOM
-					<a href="{$before_page_link}" class="c-btn u-hover-bounce">{$text_before}</a>
-EOM;
-		}
-            for ( $i = 1; $i <= $pages; $i++ ) {
-                if ( $i <= $paged + $range && $i >= $paged - $range ) {
-                    // $paged +- $range 以内であればページ番号を出力
-                    if ( $paged === $i ) {
-						$pagenation .= <<< EOM
-						<span class="c-btn--reverse">{$i}</span>
-EOM;
-                    } else {
-						$number_page_link = get_pagenum_link( $i );
-						$pagenation .= <<< EOM
-						<a href="{$number_page_link}" class="c-btn u-hover-bounce">{$i}</a>
-EOM;
-                    }
-                }
+			if ( 1 !== $pages ) {
+				$pagenation .= "
+					<div class='p-pagination'>
+				";
+				if ( $paged > 1 ) {
+					$before_page_link = get_pagenum_link( $paged - 1 );
+					// 「最初」 の表示
+					$first_page_link = get_pagenum_link(1);
+					$pagenation .= "<div class='p-pagination__navigation'>";
+					$pagenation .= "
+						<a href='{$first_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_first}</a>
+					";
+					$pagenation .= "
+						<a href='{$before_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_before}</a>
+					";
+					$pagenation .= "</div>";
 			}
-            if ( $paged != $pages ) {
-              if ( $paged < $pages ) {
-                // 「次へ」 のリンクを表示
-                $next_page_link = get_pagenum_link( $paged + 1 );
-                $pagenation .= <<< EOM
-						<a href="{$next_page_link}" class="c-btn u-hover-bounce">{$text_next}</a>
-EOM;
+				for ( $i = 1; $i <= $pages; $i++ ) {
+					if ( $i <= $paged + $range && $i >= $paged - $range ) {
+						// $paged +- $range 以内であればページ番号を出力
+						if ( $paged === $i ) {
+							$pagenation .= "
+								<span class='c-btn--reverse'>{$i}</span>
+							";
+						} else {
+							$number_page_link = get_pagenum_link( $i );
+							$pagenation .= "
+							<a href='{$number_page_link}' class='c-btn u-hover-bounce'>{$i}</a>
+							";
+						}
+					}
 				}
-				// 「最後」のリンクを表示
-				$last_page_link = get_pagenum_link( $pages );
-				$pagenation .= <<< EOM
-				<a href="{$last_page_link}" class="c-btn last u-hover-bounce">{$text_last}</a>
-EOM;
+				if ( $paged != $pages ) {
+					$pagenation .= "<div class='p-pagination__navigation'>";
+					if ( $paged < $pages ) {
+						// 「次へ」 のリンクを表示
+						$next_page_link = get_pagenum_link( $paged + 1 );
+						$pagenation .= "
+							<a href='{$next_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_next}</a>
+						";
+					}
+					// 「最後」のリンクを表示
+					$last_page_link = get_pagenum_link( $pages );
+					$pagenation .= "
+						<a href='{$last_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_last}</a>
+					";
+					$pagenation .= "</div>";
+				}
+				$pagenation .= "</div>";
 			}
-
-			$pagenation .= <<< EOM
-			 </div>
-EOM;
+			echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $pagenation);
 		}
-		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $pagenation);
 	}
-}
 }

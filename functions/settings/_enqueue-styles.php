@@ -4,11 +4,15 @@
 # -----------------------------------------------------------------
 function tsbk_enqueue_styles() {
 	/**
+	 * Google Fonts
+	 */
+	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap' );
+	/**
 	 * CDNから取得するCSSを登録
 	 * ress@4.0.0
 	 * swiper@6.7.0
-     * highlightjs@11.2.0
-     * fontawesome-free@5.15.4
+	 * highlightjs@11.2.0
+	 * fontawesome-free@5.15.4
 	 */
 	wp_enqueue_style( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/ress@4.0.0,npm/swiper@6.7.0/swiper-bundle.min.css,npm/@highlightjs/cdn-assets@11.2.0/styles/default.min.css,npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css' );
 	/**

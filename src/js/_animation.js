@@ -5,10 +5,10 @@ class Animation {
         if($targets) {
             $targets.forEach($target =>{
                 $target.addEventListener('mouseenter', (e) => {
-                    cardEffects(e.currentTarget , 0.9, 900, 400);
+                    cardEffects(e.currentTarget , 0.9, 1000, 400);
                 });
                 $target.addEventListener('touchstart', (e) => {
-                    cardEffects(e.currentTarget , 0.9, 900, 400);
+                    cardEffects(e.currentTarget , 0.9, 1000, 400);
                 });
                 $target.addEventListener('mouseleave', (e) => {
                     cardEffects(e.currentTarget ,1.0, 600, 300);

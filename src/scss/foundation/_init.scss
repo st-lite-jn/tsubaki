@@ -2,12 +2,7 @@
 body {
     background-color: import.$baseColor;
     color: import.$mineShaft;
-    font-family: "Helvetica Neue",
-                    Arial,
-                    "Hiragino Kaku Gothic ProN",
-                    "Hiragino Sans",
-                    "BIZ UDPGothic",
-                    sans-serif;
+    font-family:'Sawarabi Gothic', sans-serif;
     font-size: import.spvw(12);
     @include import.mqMin(import.$tabletPortrait) {
         font-size: 16px;
