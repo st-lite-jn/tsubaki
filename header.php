@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<html <?php language_attributes(); ?>>
 <?php get_template_part( 'template-parts/header/head' );?>
 <body>
 <div id="wrapper">

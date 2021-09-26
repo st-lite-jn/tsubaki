@@ -150,6 +150,9 @@ function tsbk_global_var_title() {
 			$ttl_arr[] = $year . '年';
 			$content_name = $year . '年';
 		}
+	} elseif(is_author()) {
+		$ttl_arr[] = $wp_obj->data->display_name . "の記事";
+		$content_name =$wp_obj->data->display_name . "の記事";
 	} elseif(is_archive() || is_post_type_archive() || is_single() || is_tax()) {
 		/**
 		* その他アーカイブ
