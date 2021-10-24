@@ -1,0 +1,16 @@
+@use '../foundation/import';
+.wp-blocks {
+	margin-top: import.spvw(40);
+	@include import.mqMin(import.$tabletPortrait) {
+		margin-top: 80px;
+	}
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+	> * {
+		margin-top: import.spvw(12);
+		@include import.mqMin(import.$tabletPortrait) {
+			margin-top: 24px;
+		}
+	}
+}

@@ -9,7 +9,7 @@ const enabledSourceMap = process.env.NODE_ENV !== 'production';
 
 module.exports = {
 	//エントリポイント（デフォルトと同じなので省略可）
-	entry: './src/index.js',
+	entry: './_src/index.js',
 	//出力先（デフォルトと同じなので省略可）
 	output: {
 		filename: 'js/main.js',

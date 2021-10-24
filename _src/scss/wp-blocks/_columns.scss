@@ -1,0 +1,18 @@
+@use '../foundation/import';
+.wp-blocks {
+	.wp-block-columns {
+		margin-bottom: 0;
+		.wp-block-column {
+			margin-bottom: 0;
+			> *:first-child {
+				margin-top: 0 !important;
+			}
+			>* {
+				margin-top: import.spvw(12);
+				@include import.mqMin(import.$tabletPortrait) {
+					margin-top: 24px;
+				}
+			}
+		}
+	}
+}

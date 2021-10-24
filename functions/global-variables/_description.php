@@ -19,4 +19,4 @@ function tsbk_global_var_desc() {
 		$tsbk_description = get_bloginfo('description');
 	}
 }
-add_action( 'after_setup_theme' , 'tsbk_global_var_desc' );
+add_action( 'template_redirect' , 'tsbk_global_var_desc' );
