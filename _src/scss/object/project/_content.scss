@@ -85,148 +85,18 @@
             margin-top: 16px;
         }
     }
-    h1 + *,h2 + *,h3 + *,h4 + *,h5 + *, h6 + * {
-        margin-top:import.spvw(8);
-        @include import.mqMin(import.$tabletPortrait) {
-            margin-top: 8px;
-        }
-    }
-    h1 {
-        font-size: import.spvw(28);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 36px;
-        }
-    }
-    h2 {
-        font-size: import.spvw(24);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 32px;
-        }
-    }
-    h3 {
-        font-size: import.spvw(20);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 28px;
-        }
-    }
-    h4 {
-        font-size: import.spvw(18);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 24px;
-        }
-    }
-    h5 {
-        font-size: import.spvw(16);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 20px;
-        }
-    }
-    h6 {
-        font-size: import.spvw(16);
-        @include import.mqMin(import.$tabletPortrait) {
-            font-size: 20px;
-        }
-    }
-    ul , ol {
-        margin-left: 1em;
-    }
-    .wp-block-image {
-        text-align: center;
-    }
-    .wp-block-table {
-        table {
-            thead {
-                tr {
-                    border-bottom: solid 2px import.$black ;
-                }
-            }
-            tbody {
-                tr {
-                    border-bottom: dotted 1px import.$black ;
-                }
-            }
-            tfoot {
-                tr {
-                    border-top: solid 2px import.$black ;
-                }
-            }
-            th,td {
-                padding: import.spvw(8);
-                @include import.mqMin(import.$tabletPortrait) {
-                    padding: 8px;
-                }
-            }
-        }
-        &.is-style-stripes {
-            border-bottom: none;
-            table {
-                tbody{
-                    tr {
-                        &:nth-child(odd) {
-                            background-color:import.$subColor;
-                        }
-                    }
-                }
-            }
-        }
-    }
+
+
     .wp-block-embed {
         iframe {
             width: 100%;
         }
     }
-    //区切り線
-    .wp-block-separator {
-        border-style: solid;
-        border-width: 0 0 1px;
-        margin-right: auto;
-        margin-left: auto;
-        width: 25%;
-        &.is-style-wide {
-            width: 100%;
-        }
-        &.is-style-dots {
-            display: block;
-            width: 100%;
-            border:none;
-            text-align: center;
-            &:before {
-                content:"\f141";
-                font-family: Fontawesome;
-                letter-spacing: normal;
-                padding-left: 0;
-            }
-        }
-    }
+
     //ギャラリー
-    .wp-block-gallery  {
-        margin-bottom: -1em;
-        ul {
-            margin-left: 0;
-        }
-    }
-    //コード
-    .wp-block-code {
-        code {
-            background-color: import.$white;
-            border: solid 1px import.$alto;
-            padding: import.spvw(8);
-            @include import.mqMin(import.$tabletPortrait) {
-                padding: 8px;
-            }
-        }
-    }
-    figure {
-        figcaption {
-            margin-top: import.spvw(8);
-            text-align: center;
-            font-size:import.spvw(8);
-            @include import.mqMin(import.$tabletPortrait) {
-                margin-top: 8px;
-                font-size:12px;
-            }
-        }
-    }
+
+
+
     &__pages {
         text-align: center;
         .post-page-numbers {
@@ -239,10 +109,4 @@
             font-weight: bold;
         }
     }
-}
-/**
-* コンテンツのフッターエリア
-*/
-.p-content-footer {
-
 }

@@ -2,8 +2,8 @@
 //======================================================================
 // クエリーに応じてパンくずリストを生成する関数
 //======================================================================
-if(!function_exists('tsbk_breadcrumb')) {
-	function tsbk_breadcrumb($wp_obj = null) {
+if(!function_exists('tsbk_output_breadcrumb')) {
+	function tsbk_output_breadcrumb($wp_obj = null) {
 
 	// トップページと404エラーページでは何も出力しない
 	if ( is_front_page() || is_404()) return false;

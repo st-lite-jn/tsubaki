@@ -83,7 +83,7 @@ $the_query = new WP_Query($args);
 
 <?php require __DIR__ . "/loop.php"; ?>
 
-<?php Tsbk_Custom_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
+<?php Tsbk_Output_Pagenation::pagination_method( $the_query->max_num_pages, $paged); ?>
 
 <?php endif;?>
 

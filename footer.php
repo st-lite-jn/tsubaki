@@ -1,7 +1,7 @@
 
 </main>
 <div class="l-footer-wrapper">
-<?php tsbk_breadcrumb();?>
+<?php tsbk_output_breadcrumb();?>
 <footer class="l-footer">
 <?php
     include TEMPLATEPATH . '/template-parts/footer/fnav.php';

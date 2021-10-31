@@ -1,0 +1,39 @@
+@use '../foundation/import';
+.tsbk-blocks {
+	h1 {
+		font-size: import.spvw(28);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 36px;
+		}
+	}
+	h2 {
+		font-size: import.spvw(24);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 32px;
+		}
+	}
+	h3 {
+		font-size: import.spvw(20);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 28px;
+		}
+	}
+	h4 {
+		font-size: import.spvw(18);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 24px;
+		}
+	}
+	h5 {
+		font-size: import.spvw(16);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 20px;
+		}
+	}
+	h6 {
+		font-size: import.spvw(16);
+		@include import.mqMin(import.$tabletPortrait) {
+			font-size: 20px;
+		}
+	}
+}

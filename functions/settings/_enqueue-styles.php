@@ -6,7 +6,7 @@ function tsbk_enqueue_styles() {
 	/**
 	 * Google Fonts
 	 */
-	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap' );
+	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined' );
 	/**
 	 * CDNから取得するCSSを登録
 	 * ress@4.0.0

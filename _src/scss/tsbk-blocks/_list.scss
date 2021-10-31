@@ -1,0 +1,7 @@
+.tsbk-blocks {
+	ul , ol {
+		&:not([class]) {
+			margin-left: 1em;
+		}
+	}
+}

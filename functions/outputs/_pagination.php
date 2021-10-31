@@ -32,8 +32,8 @@ add_action( 'pre_get_posts', 'tsbk_change_posts_per_page' );
 * $range : 左右に何ページ表示するか
 * $show_only : 1ページしかない時に表示するかどうか
 */
-if ( ! class_exists( 'Tsbk_Custom_Pagenation' ) ) {
-	class Tsbk_Custom_Pagenation {
+if ( ! class_exists( 'Tsbk_Output_Pagenation' ) ) {
+	class Tsbk_Output_Pagenation {
 		public static function pagination_method( $pages, $paged, $range = 2, $show_only = false ) {
 			$pagenation = "";
 			$pages = intval($pages);    //float型で渡ってくるので明示的に int型 へ

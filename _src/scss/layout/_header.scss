@@ -65,20 +65,11 @@
 			height: import.spvw(40);
 			margin-left: import.spvw(10);
 		}
-		&--search {
+		&#searchBtn {
 			z-index: 9800;
 		}
-		&--gnav {
+		&#gnavBtn {
 			z-index: 9999;
-		}
-		&.is-opened {
-			background-color: import.$black ;
-			.l-header-utility-ico {
-				display: none;
-			}
-			.l-header-utility-ico--close {
-				display: block;
-			}
 		}
 	}
 }

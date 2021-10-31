@@ -4,7 +4,7 @@
 		<div class="l-col-wide">
 			<?php if ( have_posts() ): ?>
 				<?php while( have_posts() ): the_post(); ?>
-				<div class="p-content-block" itemprop="mainEntityOfPage">
+				<div class="tsbk-blocks" itemprop="mainEntityOfPage">
 					<?php the_content();?>
 					<?php
 						//ページ区切り

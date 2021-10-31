@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<?php get_template_part( 'template-parts/header/head' );?>
+<head>
+<?php wp_head(); ?>
+</head>
 <body>
 <div id="wrapper">
 	<header id="header" class="l-header ">

@@ -1,5 +1,6 @@
 import { ScreenFixed } from "./_screen-fixed";
 import { headerFixed } from "./_header";
+import { bgLayer } from "./_bg-layer";
 
 //グローバルナビゲーションの開閉処理
 const gnavToggle = () => {
@@ -12,21 +13,25 @@ const gnavToggle = () => {
 		if($bgLayer) {
 			$bgLayer.parentNode.removeChild(document.querySelector(".l-bg-layer"));
 		}
-		bgElement(e.currentTarget);
+		bgLayer(e.currentTarget);
+		e.currentTarget.textContent;
 		if(!e.currentTarget.classList.contains("is-opened")) {
 			let $targets = document.querySelectorAll(".is-opened");
 			$targets.forEach(($target) => {
 				$target.classList.remove("is-opened");
 			});
+			e.currentTarget.textContent = "close";
+		} else {
+			e.currentTarget.textContent = "menu";
 		}
 		e.currentTarget.classList.toggle("is-opened");
 		$gnav.classList.toggle("is-opened");
 		if($gnav.classList.contains("is-opened")) {
-		screenFixed.fixed();
-		headerFixed();
+			screenFixed.fixed();
+			headerFixed();
 		} else {
-		screenFixed.reset();
-		headerFixed();
+			screenFixed.reset();
+			headerFixed();
 		}
 	});
 }
@@ -38,29 +43,4 @@ const gnavPosition = () => {
 	const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
 	$gnav.style.paddingTop = `${headerHeight + wpadminbarHeight}px`;
 }
-const bgElement = (e) => {
-	if(e) {
-		let $bgLayer = document.createElement('div');
-		$bgLayer.className ="l-bg-layer";
-		anime({
-			targets: $bgLayer,
-			keyframes:[
-				{opacity:0},
-				{opacity:.4},
-				{opacity:1}
-			],
-			duration: 300,
-			easing: 'linear'
-		})
-		if(!e.classList.contains("is-opened")) {
-			document.getElementById("wrapper").insertBefore($bgLayer , document.getElementById("header"));
-		} else {
-			if(document.querySelector(".l-bg-layer")) {
-				document.querySelector(".l-bg-layer").parentNode.removeChild(document.querySelector(".l-bg-layer"));
-			}
-		}
-	}
-}
-
-
-export {gnavToggle , gnavPosition , bgElement};
+export {gnavToggle , gnavPosition};
