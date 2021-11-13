@@ -18,4 +18,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.ftp_password }}
           local-dir: ./
-          server-dir: /home/limejackal4/www/itlite/wp-content/themes/tsubaki
+          server-dir: /home/limejackal4/www/itlite/wp-content/themes/tsubaki/
