@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php require TEMPLATEPATH . "/template-parts/components/header.php";?>
+<?php require TEMPLATEPATH . "/template-parts/components/content-header.php";?>
 <div class="l-container">
     <p class="u-al--center u-pt--40 u-pb--40">お探しのページが見つかりませんでした。<br>
     お手数ですが、URLを確認し、もう一度リクエストを試すか、<br>

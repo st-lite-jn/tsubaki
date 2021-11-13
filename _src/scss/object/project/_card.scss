@@ -31,8 +31,7 @@
 					border-radius: 16px 16px 0 0;
 				}
 				&::after {
-					content: "\f06a  No image";
-					font-family: Fontawesome ,'Sawarabi Gothic', sans-serif;
+					content: "\e3f4";
 					display: block;
 					position: absolute;
 					top:50%;
@@ -40,9 +39,10 @@
 					width: 100%;
 					text-align: center;
 					color: import.$black ;
-					font-size: import.spvw(16);
+					font-family: 'Material Icons';
+					font-size: import.spvw(40);
 					@include import.mqMin(import.$tabletPortrait) {
-						font-size: 24px;
+						font-size: 48px;
 					}
 				}
 			}

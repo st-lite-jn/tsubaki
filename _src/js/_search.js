@@ -1,4 +1,3 @@
-import {bgElement} from "./_gnav";
 import { bgLayer } from "./_bg-layer";
 
 const searchToggle = () => {
@@ -9,11 +8,13 @@ const searchToggle = () => {
 	const $searchForm = document.getElementById("searchForm");
 	let headerHeight = document.getElementById("header").offsetHeight;
 	$searchBtn.addEventListener("click", (e) => {
-		let $iopenElements = document.querySelectorAll("is-opened");
-		$iopenElements.forEach((iopenElements)=>{
-			iopenElements.classList.remove("is-opened");
+		let $isOpenElements = document.querySelectorAll("is-opened");
+		$isOpenElements.forEach((isOpenElement)=>{
+			isOpenElement.classList.remove("is-opened");
 		});
 		bgLayer(e.currentTarget);
+		if(document.getElementById("gnavBtn").textContent === "close"){document.getElementById("gnavBtn").textContent = "menu";};
+		e.currentTarget.textContent = e.currentTarget.textContent === "close" ? "search" : "close";
 		e.currentTarget.classList.toggle("is-opened");
 		$searchForm.classList.toggle("is-opened");
 	});

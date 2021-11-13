@@ -1,0 +1,16 @@
+.tsbk-blocks {
+	ul {
+		list-style-type: circle;
+	}
+	ol {
+		list-style-type: decimal;
+	}
+	ul , ol {
+		&:not([class]) {
+			margin-left: 1em;
+		}
+		&.wp-block-archives ,&.wp-block-post-template {
+			list-style-type: none;
+		}
+	}
+}

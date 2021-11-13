@@ -1,29 +1,32 @@
 @use './import';
 body {
-    background-color: import.$baseColor;
-    color: import.$black;
-    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-    font-size: import.spvw(12);
-    @include import.mqMin(import.$tabletPortrait) {
-        font-size: 16px;
-    }
+	background-color: import.$baseColor;
+	color: import.$black;
+	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+	font-size: import.spvw(12);
+	@include import.mqMin(import.$tabletPortrait) {
+		font-size: 16px;
+	}
 }
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 h1,h2,h3,h4,h5,h6,strong,b {
-    font-weight: bold;
+	font-weight: bold;
 }
 *{
-    &::-webkit-scrollbar {
-        display: none;
-    }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 a {
-    text-decoration: underline;
-    color : import.$linkColor;
-    &:hover {
-        text-decoration: none;
-    }
+	text-decoration: underline;
+	color : import.$linkColor;
+	&:hover {
+		text-decoration: none;
+	}
+}
+ul,ol {
+	list-style: none;
 }

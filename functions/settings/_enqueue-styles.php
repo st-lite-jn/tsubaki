@@ -12,9 +12,8 @@ function tsbk_enqueue_styles() {
 	 * ress@4.0.0
 	 * swiper@6.7.0
 	 * highlightjs@11.2.0
-	 * fontawesome-free@5.15.4
 	 */
-	wp_enqueue_style( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/ress@4.0.0,npm/swiper@6.7.0/swiper-bundle.min.css,npm/@highlightjs/cdn-assets@11.2.0/styles/default.min.css,npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css' );
+	wp_enqueue_style( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/ress@4.0.0,npm/swiper@6.7.0/swiper-bundle.min.css,npm/@highlightjs/cdn-assets@11.2.0/styles/default.min.css' );
 	/**
 	 * wp-block-libraryを登録
 	 */

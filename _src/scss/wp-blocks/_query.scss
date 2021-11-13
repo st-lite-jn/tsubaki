@@ -46,38 +46,3 @@
 		}
 	}
 }
-.wp-block-post-terms {
-	margin-bottom: -0.5em !important;
-	a {
-		display: inline-block;
-		margin-bottom: .5em;
-		background-color: import.$subColor;
-		color: import.$black;
-		text-decoration: none;
-		font-size: import.spvw(6);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 12px;
-		}
-	}
-	&.is-cat {
-		a {
-			border-radius: 24px;
-			font-weight: bold;
-			padding: import.spvw(2) import.spvw(6);
-			@include import.mqMin(import.$tabletPortrait) {
-				padding: 4px 12px;
-			}
-		}
-	}
-	&.is-tag {
-		a {
-			padding: import.spvw(2) import.spvw(4);
-			@include import.mqMin(import.$tabletPortrait) {
-				padding: 4px 8px;
-			}
-			&::before{
-				content: "#";
-			}
-		}
-	}
-}

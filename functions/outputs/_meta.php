@@ -4,6 +4,10 @@
 //======================================================================
 if(!function_exists('tsbk_output_meta')) {
 	function tsbk_output_meta() {
+		$title = wp_get_document_title();
+		global $tsbk_description;
+		global $tsbk_title;
+		global $tsbk_ogtype;
 		$charset = get_bloginfo('charset');
 		$site_name = get_bloginfo('name');
 		$site_desc = get_bloginfo('description');
@@ -15,19 +19,14 @@ if(!function_exists('tsbk_output_meta')) {
 			<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
 		";
 		if(!class_exists('jetpack')) {
-			global $tsbk_description;
-			global $tsbk_title;
-			global $tsbk_ogtype;
 			$meta .= "
 			<meta name=\"description\" content=\"{$tsbk_description}\" />
-			<meta name=\"pagename\" content=\"{$tsbk_title["title-tag"]}\" />
 			<meta property=\"og:site_name\" content=\"{$tsbk_title["site-name"]}\" />
-			<meta property=\"og:title\" content=\"{$tsbk_title["title-tag"]}\" />
+			<meta property=\"og:title\" content=\"{$title}\" />
 			<meta property=\"og:description\" content=\"{$tsbk_description}\" />
 			<meta property=\"og:type\" content=\"{$tsbk_ogtype}\" />
 			<meta name=\"twitter:description\" content=\"{$tsbk_description}\" />
 			<meta name=\"twitter:card\" content=\"summary_large_image\" />
-			<title>{$tsbk_title["title-tag"]}</title>
 			";
 		}
 		$meta .= "
@@ -53,4 +52,4 @@ if(!function_exists('tsbk_output_meta')) {
 		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $meta);
 	}
 }
-add_action( 'wp_head' , 'tsbk_output_meta' , 1);
+add_action( 'wp_head' , 'tsbk_output_meta' , 5);

@@ -1,74 +1,63 @@
 @use '../foundation/import';
 .l-sidebar-wrapper {
-    > *:first-child {
-        @include import.mqMin(import.$tabletPortrait) {
-            margin-top: 0 !important;
-        }
-    }
-    .l-sidebar {
-        margin-top: import.spvw(32);
-        @include import.mqMin(import.$tabletPortrait) {
-            margin-top:40px;
-        }
-        &__heading {
-            padding: import.spvw(8);
-            background-color: #dadada;
-            font-weight: bold;
-            font-size: spvw(16);
-            @include import.mqMin(import.$tabletPortrait) {
-                padding: 8px;
-                font-size: 20px;
-            }
-        }
-    }
-
-    .l-sidebar-list {
-        list-style: none;
-        margin-top: import.spvw(8);
-        @include import.mqMin(import.$tabletPortrait) {
-            margin-top: 8px;
-        }
-        &__item {
-            margin-top: import.spvw(4);
-            @include import.mqMin(import.$tabletPortrait) {
-                margin-top: 4px;
-            }
-        }
-        .l-sidebar-list {
-            margin-top: import.spvw(4);
-            margin-left: import.spvw(8);
-            @include import.mqMin(import.$tabletPortrait) {
-                margin-top: 4px;
-                margin-left: 16px;
-            }
-        }
-    }
-    .l-sidebar-tags {
-        > * {
-            margin-right: import.spvw(8);
-            margin-top: import.spvw(8);
-            @include import.mqMin(import.$tabletPortrait) {
-                margin-top: 8px;
-                margin-right: 4px;
-            }
-        }
-    }
-    &.l-container {
-        @include import.mqMin(import.$tabletPortrait) {
-            display: flex;
-            flex-wrap: wrap;
-            flex-basis: 0;
-            flex-grow: 1;
-            > * {
-                margin-top: 16px;
-                width: 23.5%;
-                &:nth-child( -n + 4) {
-                    margin-top: 0;
-                }
-                &:not(:nth-child(4n)) {
-                    margin-right: 2%;
-                }
-            }
-        }
-    }
+	> *:first-child {
+		@include import.mqMin(import.$tabletPortrait) {
+			margin-top: 0 !important;
+		}
+	}
+	.l-sidebar {
+		margin-top: import.spvw(32);
+		@include import.mqMin(import.$tabletPortrait) {
+			margin-top:40px;
+		}
+		&__heading {
+			padding: import.spvw(8);
+			background-color: #dadada;
+			font-weight: bold;
+			font-size: spvw(16);
+			@include import.mqMin(import.$tabletPortrait) {
+				padding: 8px;
+				font-size: 20px;
+			}
+		}
+	}
+	.l-sidebar-list {
+		list-style: none;
+		margin-top: import.spvw(8);
+		@include import.mqMin(import.$tabletPortrait) {
+			margin-top: 8px;
+		}
+		&__item {
+			margin-top: import.spvw(4);
+			@include import.mqMin(import.$tabletPortrait) {
+				margin-top: 4px;
+			}
+		}
+		.l-sidebar-list {
+			margin-top: import.spvw(4);
+			margin-left: import.spvw(8);
+			@include import.mqMin(import.$tabletPortrait) {
+				margin-top: 4px;
+				margin-left: 16px;
+			}
+		}
+	}
+	&.l-container {
+		@include import.mqMin(import.$tabletPortrait) {
+			display: flex;
+			flex-wrap: wrap;
+			flex-basis: 0;
+			flex-grow: 1;
+			> * {
+				margin-top: 16px;
+				width: 23.5%;
+				&:nth-child( -n + 4) {
+					margin-top: 0;
+				}
+				&:not(:nth-child(4n)) {
+					margin-right: 2%;
+				}
+			}
+		}
+	}
 }

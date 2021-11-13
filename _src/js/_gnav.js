@@ -20,10 +20,9 @@ const gnavToggle = () => {
 			$targets.forEach(($target) => {
 				$target.classList.remove("is-opened");
 			});
-			e.currentTarget.textContent = "close";
-		} else {
-			e.currentTarget.textContent = "menu";
 		}
+		if(document.getElementById("searchBtn").textContent === "close"){document.getElementById("searchBtn").textContent = "search";};
+		e.currentTarget.textContent = e.currentTarget.textContent === "close" ? "menu ": "close";
 		e.currentTarget.classList.toggle("is-opened");
 		$gnav.classList.toggle("is-opened");
 		if($gnav.classList.contains("is-opened")) {
