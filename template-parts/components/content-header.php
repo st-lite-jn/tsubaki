@@ -1,18 +1,25 @@
 <?php
-	//タイトル
-	$title = wp_get_document_title();
+	/**
+	 * タイトルの取得
+	 */
+	$title = get_the_title();
+	/**
+	 * アイキャッチ画像の取得
+	 */
 	$featured_img = !is_404() && get_post_thumbnail_id(get_the_ID()) ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false, array('class'=>'p-content-header-visual__img')) : false;
-
-	//アイキャッチ画像
 	if($featured_img) {
 		$featured_id = get_post_thumbnail_id(get_the_ID());
 		$featured_array = wp_get_attachment_image_src($featured_id, 'large');
 	}
 
-	//作成者
+	/**
+	 * 制作者名取得
+	 */
 	$author = get_userdata($post->post_author);
 
-	//カテゴリとタグを取得
+	/**
+	 * カテゴリとタグの取得
+	 */
 	if(is_single()) {
 		list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
 	}
@@ -25,7 +32,10 @@
 		<div class="p-content-header__meta u-mt--8 u-dalay-fadein-up">
 			<time itemprop="datePublished" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published">公開日 : <?php echo get_the_time("Y.m.d"); ?></time>
 			<time itemprop="dateModified" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-modified">更新日 : <?php echo get_the_modified_date("Y.m.d"); ?></time>
-			<p itemprop="author" class="p-content-header__meta__item is-author"><?php echo $author->display_name; ?></p>
+			<p itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-content-header__meta__item is-author">
+				<span itemprop="name" ><?php echo $author->display_name; ?></span>
+				<?php if($author->user_url):?><link rel="author" itemprop="url" href="<?php echo $author->user_url;?>" /><?php endif;?>
+			</p>
 		</div>
 		<?php if(is_single()): ?>
 			<?php if( isset($cat_terms) || isset($tag_terms) ):?>
