@@ -1,16 +1,39 @@
+@use '../foundation/import';
+
 .tsbk-blocks {
 	ul {
-		list-style-type: circle;
+		&:not([class]) {
+			list-style-type: circle;
+		}
 	}
 	ol {
-		list-style-type: decimal;
+		&:not([class]) {
+			list-style-type: decimal;
+		}
 	}
 	ul , ol {
 		&:not([class]) {
 			margin-left: 1em;
+			font-size: 1rem;
+			li {
+				margin-top: import.spvw(4);
+				@include import.mqMin(import.$tabletPortrait) {
+					margin-top: 8px;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+				ul , ol {
+					margin-top: import.spvw(4);
+					@include import.mqMin(import.$tabletPortrait) {
+						margin-top: 8px;
+					}
+				}
+			}
 		}
 		&.wp-block-archives ,&.wp-block-post-template {
 			list-style-type: none;
 		}
 	}
+
 }

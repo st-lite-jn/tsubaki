@@ -1,13 +1,15 @@
 @use '../../foundation/import';
 .c-input-txt ,
 .c-input-txtarea {
-    padding: import.spvw(8);
-    background-color: import.$white;
-    border:solid 1px import.$alto;
-    border-radius: 8px;
-    font-size: import.spvw(16);
-    @include import.mqMin(import.$tabletPortrait) {
-        padding: 8px;
-        font-size: 16px;
-    }
+	padding: import.spvw(4);
+	background-color: import.$white;
+	border:solid 1px import.$alto;
+	border-radius: 8px;
+	font-size: 1rem;
+	@include import.mqMin(import.$tabletPortrait) {
+		padding: 8px;
+	}
+	&::placeholder {
+		font-size: 1rem;
+	}
 }

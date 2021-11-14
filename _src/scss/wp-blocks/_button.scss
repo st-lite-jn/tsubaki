@@ -1,0 +1,8 @@
+@use '../foundation/import';
+.wp-block-buttons {
+	.wp-block-button {
+		&__link {
+			font-size: 1rem;
+		}
+	}
+}

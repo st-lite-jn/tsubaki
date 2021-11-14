@@ -1,28 +1,28 @@
 @use '../../foundation/import';
 .c-btn {
-    display: inline-block;
-    background-color: import.$linkColor;
-    color: import.$white;
-    padding: import.spvw(8) import.spvw(20);
-    border-radius: 8px;
-    text-decoration: none;
+	display: inline-block;
+	padding: import.spvw(8) import.spvw(20);
+	background-color: import.$linkColor;
+	border-radius: 8px;
+	text-decoration: none;
 	text-align: center;
-    @include import.mqMin(import.$tabletPortrait) {
-        padding: 8px 16px;
-    }
-    &--reverse {
-        @extend .c-btn;
-        background-color: import.$white;
-        border : solid 1px import.$linkColor;
-        color: import.$linkColor;
-    }
-    &--mini {
-        @extend .c-btn;
-        padding: import.spvw(4) import.spvw(8);
-        font-size: import.spvw(8);
-        @include import.mqMin(import.$tabletPortrait) {
-            padding: 8px 12px;
-            font-size: 8px;
-        }
-    }
+	color: import.$white;
+	font-size: 1rem;
+	@include import.mqMin(import.$tabletPortrait) {
+		padding: 8px 16px;
+	}
+	&--reverse {
+		@extend .c-btn;
+		background-color: import.$white;
+		border : solid 1px import.$linkColor;
+		color: import.$linkColor;
+	}
+	&--mini {
+		@extend .c-btn;
+		padding: import.spvw(4) import.spvw(8);
+		font-size: 0.75rem;
+		@include import.mqMin(import.$tabletPortrait) {
+			padding: 8px 12px;
+		}
+	}
 }

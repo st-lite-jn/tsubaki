@@ -100,6 +100,7 @@
 				line-height: 1.33;
 				color: import.$black ;
 				font-weight: 600;
+				font-size: 1.25rem;
 				@include import.mqMin(import.$tabletPortrait){
 					padding-top: 16px;
 					padding-bottom: 16px;

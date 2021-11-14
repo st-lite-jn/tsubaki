@@ -17,7 +17,6 @@
 @use "layout/gnav";
 @use "layout/col";
 @use "layout/main";
-@use "layout/sidebar";
 @use "layout/footer";
 
 // ==========================================================================
@@ -26,11 +25,14 @@
 @use "wp-blocks/common";
 @use "wp-blocks/columns";
 @use "wp-blocks/query";
+@use "wp-blocks/button";
 @use "wp-blocks/post-terms";
 @use "wp-blocks/heading";
+@use "wp-blocks/paragraph";
 @use "wp-blocks/list";
 @use "wp-blocks/quote";
 @use "wp-blocks/pullquote";
+@use "wp-blocks/embed";
 @use "wp-blocks/table";
 @use "wp-blocks/code";
 @use "wp-blocks/separator";

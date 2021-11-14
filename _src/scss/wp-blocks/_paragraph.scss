@@ -1,0 +1,8 @@
+@use '../foundation/import';
+.tsbk-blocks {
+	p {
+		&:not([class]) {
+			font-size: 1rem;
+		}
+	}
+}

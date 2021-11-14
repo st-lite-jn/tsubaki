@@ -8,10 +8,7 @@
 		background-color: import.$subColor;
 		color: import.$black;
 		text-decoration: none;
-		font-size: import.spvw(6);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 12px;
-		}
+		font-size: .5rem;
 	}
 	&.is-cat {
 		* {

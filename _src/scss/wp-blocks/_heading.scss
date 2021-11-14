@@ -1,39 +1,18 @@
 @use '../foundation/import';
 .tsbk-blocks {
 	h1 {
-		font-size: import.spvw(28);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 36px;
-		}
+		font-size: 2rem;
 	}
 	h2 {
-		font-size: import.spvw(24);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 32px;
-		}
+		font-size: 1.75rem;
 	}
 	h3 {
-		font-size: import.spvw(20);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 28px;
-		}
+		font-size: 1.5rem;
 	}
 	h4 {
-		font-size: import.spvw(18);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 24px;
-		}
+		font-size: 1.25rem;
 	}
-	h5 {
-		font-size: import.spvw(16);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 20px;
-		}
-	}
-	h6 {
-		font-size: import.spvw(16);
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 20px;
-		}
+	h5 ,h6 {
+		font-size: 1rem;
 	}
 }

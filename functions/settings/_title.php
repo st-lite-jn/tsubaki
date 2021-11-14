@@ -14,7 +14,6 @@ if(!function_exists( "tsbk_document_title" ) ){
 			krsort($title);
 		}
 
-
 		//テンプレートの種類ごとにタイトルを修正
 		if ( is_home() || is_front_page() ) {
 			$title['tagline'] = null;

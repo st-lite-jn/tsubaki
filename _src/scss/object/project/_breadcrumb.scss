@@ -25,12 +25,9 @@
 	}
 	&__list {
 		color: import.$black ;
-		font-size: import.spvw(8);
 		font-weight: bold;
 		text-decoration: none;
-		@include import.mqMin(import.$tabletPortrait) {
-			font-size: 12px;
-		}
+		font-size: .5rem;
 	}
 	&__item {
 		color: import.$black;
