@@ -5,8 +5,8 @@
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
 	overflow: hidden;
-	background-color: import.$mainColor;
-	line-height: 1;
+	background-color: import.$baseColor;
+	border-top: solid 1px import.$concrete;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	@include import.mqMin(import.$tabletPortrait) {
@@ -19,11 +19,12 @@
 			content: "\e5cc";
 			margin-right: 0.4em;
 			margin-left: 0.4em;
-			line-height: 1;
 			font-family: 'Material Icons';
 		}
 	}
 	&__list {
+		display: inline-flex;
+		align-items: center;
 		color: import.$black ;
 		font-weight: bold;
 		text-decoration: none;

@@ -6,10 +6,10 @@
 .p-content-header-wrapper {
 	position: relative;
 	height: 0;
-	padding-bottom: 66.6666%;
+	padding-bottom: 61.803398876%;
 	background-color: import.$alto;
 	@include import.mqMin(import.$tabletPortrait) {
-		padding-bottom: 33.3333%;
+		padding-bottom: 33.33333%;
 	}
 }
 .p-content-header {
@@ -29,16 +29,68 @@
 	&__label {
 		font-size: 2rem;
 	}
-	&__date {
+	&__meta {
 		display: flex;
 		flex-wrap: nowrap;
-		font-size:.875rem;
-		font-weight: bold;
-		> *:not(:first-child) {
-			&::before {
+		align-items: center;
+		&__item {
+			display: inline-flex;
+			align-items: center;
+			font-size: .875rem;
+			font-weight: bold;
+			&.is-published::before,&.is-modified::before,&.is-author::before{
+				margin-right: .5em;
+				font-family: 'Material Icons';
+			}
+			&.is-published::before{
+				content:"\e8b5";
+			}
+			&.is-modified::before{
+				content: "\e923";
+			}
+			&.is-author::before{
+				content: "\e7fd";
+			}
+		}
+		> *:not(:last-child) {
+			&::after {
 				content: "/";
 				margin-right: 0.4em;
 				margin-left: 0.4em;
+			}
+		}
+	}
+	&__tax {
+		&__item {
+			display: inline-flex;
+			align-items: center;
+			margin: 0 .5em 0 0;
+			text-decoration: none;
+			color: import.$white;
+			font-size: .875rem;
+			&:hover {
+				text-decoration: underline;
+				&::before{
+					text-decoration: none;
+				}
+			}
+			&::before{
+				display: inline-block;
+				font-family: 'Material Icons';
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			&.is-cat {
+				&::before{
+					content: "\f05b";
+					margin-right: .1em;
+				}
+			}
+			&.is-tag {
+				&::before{
+					content: "\e9ef";
+				}
 			}
 		}
 	}

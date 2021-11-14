@@ -17,10 +17,9 @@
 					);
 				?>
 			</div>
-			<?php require __DIR__ . "/footer.php";?>
 			<?php if(is_single()) require TEMPLATEPATH .'/template-parts/components/prev-next.php'; ?>
 			<?php endwhile;?>
 		<?php endif; ?>
 	</div>
 </article>
-<?php if(is_single()) get_sidebar(); ?>
+

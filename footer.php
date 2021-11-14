@@ -1,4 +1,4 @@
-
+<?php if(is_single()) get_sidebar(); ?>
 </main>
 <div class="l-footer-wrapper">
 <?php tsbk_output_breadcrumb();?>

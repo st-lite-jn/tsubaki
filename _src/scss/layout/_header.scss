@@ -1,24 +1,23 @@
 @use '../foundation/import';
 .l-header {
-    transition: .5s;
-    background-color: import.$mainColor;
-    width: 100%;
-    z-index: 9900;
-    border-bottom: solid 1px import.$alto;
-    box-shadow: 0 0 4px 1px import.$alto; //水平方向の距離 垂直方向の距離 ぼかし具合 広がり具合（距離） 色;
-    @include import.mqMin(import.$tabletPortrait) {
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-    @include import.mqMax(import.$smartPortrait) {
-        padding-top: import.spvw(4);
-        padding-bottom: import.spvw(4);
-    }
-    &.is-scrolled {
-        position: fixed;
-        top: 0;
-        background: rgba($color:import.$mainColor, $alpha: .5)
-    }
+	transition: .5s;
+	background-color: import.$mainColor;
+	width: 100%;
+	z-index: 9900;
+	border-bottom: solid 1px import.$alto;
+	@include import.mqMin(import.$tabletPortrait) {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+	@include import.mqMax(import.$smartPortrait) {
+		padding-top: import.spvw(4);
+		padding-bottom: import.spvw(4);
+	}
+	&.is-scrolled {
+		position: fixed;
+		top: 0;
+		background: rgba($color:import.$mainColor, $alpha: .5)
+	}
 	.l-container {
 		display: flex;
 		justify-content:space-between;
@@ -73,7 +72,6 @@
 		}
 	}
 }
-
 .l-header-utility-ico , .l-header-utility-ico--close {
 	@include import.mqMin(import.$tabletPortrait) {
 		width: 17.6px;
@@ -89,7 +87,7 @@
 	stroke:import.$black  !important;
 }
 .l-header-utility-ico--close {
-    display: none;
+	display: none;
 	stroke: import.$mainColor !important;
 }
 

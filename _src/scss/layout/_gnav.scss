@@ -104,12 +104,10 @@
 				@include import.mqMin(import.$tabletPortrait){
 					padding-top: 16px;
 					padding-bottom: 16px;
-					font-size: 20px;
 				}
 				@include import.mqMax(import.$smartPortrait){
 					padding-top: import.spvw(16);
 					padding-bottom: import.spvw(8);
-					font-size: import.spvw(20);
 				}
 			}
 			.l-gnav-sub {

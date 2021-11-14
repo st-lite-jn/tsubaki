@@ -32,8 +32,8 @@ if(!function_exists('tsbk_output_meta')) {
 		$meta .= "
 		<script type=\"application/ld+json\">
 		{
-		\"@context\" : \"https://schema.org\",
-		\"@type\": \"WebSite\",
+			\"@context\" : \"https://schema.org\",
+			\"@type\": \"WebSite\",
 			\"url\": \"{$site_url}\",
 			\"name\": \"{$site_name}\",
 			\"description\":\"{$site_desc}\",
@@ -41,11 +41,7 @@ if(!function_exists('tsbk_output_meta')) {
 				\"@type\": \"SearchAction\",
 				\"target\": \"{$site_url}/?s={search_term_string}\",
 				\"query-input\": \"required name=search_term_string\"
-			},
-			\"@context\": \"https://schema.org\",
-			\"@type\": \"Organization\",
-			\"url\": \"{$site_url}\",
-			\"logo\": \"{$site_icon}\"
+			}
 		}
 		</script>
 		";

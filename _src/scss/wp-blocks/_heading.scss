@@ -1,18 +1,47 @@
 @use '../foundation/import';
 .tsbk-blocks {
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: normal;
+	}
+	h1,h2 {
+		&:not([class]) {
+			background-color: import.$concrete;
+			border-left: solid 8px import.$accColor;
+			padding-left: import.spvw(8);
+			@include import.mqMin(import.$tabletPortrait) {
+				padding-left: 8px;
+			}
+		}
+	}
 	h1 {
 		font-size: 2rem;
 	}
 	h2 {
 		font-size: 1.75rem;
 	}
+	h3,h4 {
+		&:not([class]) {
+			border-bottom: solid #8C272B;
+		}
+	}
 	h3 {
 		font-size: 1.5rem;
+		&:not([class]) {
+			border-bottom-width: 2px;
+		}
 	}
 	h4 {
 		font-size: 1.25rem;
+		&:not([class]) {
+			border-bottom-width: 1px;
+		}
 	}
 	h5 ,h6 {
 		font-size: 1rem;
+	}
+	h5 {
+		&:not([class]) {
+			border-bottom: dotted 1px #8C272B;
+		}
 	}
 }
