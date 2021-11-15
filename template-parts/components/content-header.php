@@ -2,7 +2,12 @@
 	/**
 	 * タイトルの取得
 	 */
-	$title = get_the_title();
+	if(is_front_page()) {
+		$title = get_bloginfo( 'name');
+	} else {
+		$title = get_the_title();
+	}
+
 	/**
 	 * アイキャッチ画像の取得
 	 */
