@@ -1,7 +1,7 @@
 @use './import';
 body {
 	background-color: import.$baseColor;
-	color: import.$black;
+	color: import.$fontColor;
 	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 	font-size: import.spvw(16);
 	@include import.mqMin(import.$tabletPortrait) {

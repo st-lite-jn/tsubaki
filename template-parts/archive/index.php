@@ -1,4 +1,4 @@
-<?php require __DIR__ . "/header.php";?>
+<?php include TEMPLATEPATH . "/template-parts/components/content-header.php"; ?>
 <div class="l-container">
 <?php
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;

@@ -2,26 +2,28 @@
 	/**
 	 * タイトルの取得
 	 */
-	if(is_front_page()) {
-		$title = get_bloginfo( 'name');
-	} else {
+	if( is_front_page() ) {
+		$title = get_bloginfo( 'name' );
+	} elseif( is_singular() ) {
 		$title = get_the_title();
+	} else {
+		$title = wp_get_document_title();
 	}
-
 	/**
 	 * アイキャッチ画像の取得
 	 */
-	$featured_img = !is_404() && get_post_thumbnail_id(get_the_ID()) ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false, array('class'=>'p-content-header-visual__img')) : false;
+	$featured_img = !is_404() && !is_archive() && !is_home() && get_post_thumbnail_id( get_the_ID() ) ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false, array('class'=>'p-content-header-visual__img')) : false;
 	if($featured_img) {
 		$featured_id = get_post_thumbnail_id(get_the_ID());
 		$featured_array = wp_get_attachment_image_src($featured_id, 'large');
 	}
-
 	/**
 	 * 制作者名取得
 	 */
-	$author = get_userdata($post->post_author);
-
+	$author = false;
+	if( is_singular() ) {
+		$author = get_userdata($post->post_author);
+	}
 	/**
 	 * カテゴリとタグの取得
 	 */
@@ -35,8 +37,8 @@
 			<h1 class="p-content-header__label u-dalay-fadein-up" itemprop="headline"><?php echo $title; ?></h1>
 	<?php if(is_single()):?>
 		<div class="p-content-header__meta u-mt--8 u-dalay-fadein-up">
-			<time itemprop="datePublished" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published">公開日 : <?php echo get_the_time("Y.m.d"); ?></time>
-			<time itemprop="dateModified" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-modified">更新日 : <?php echo get_the_modified_date("Y.m.d"); ?></time>
+			<time itemprop="datePublished" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published"><?php echo get_the_time("Y.m.d"); ?></time>
+			<time itemprop="dateModified" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-modified"><?php echo get_the_modified_date("Y.m.d"); ?></time>
 			<p itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-content-header__meta__item is-author">
 				<span itemprop="name" ><?php echo $author->display_name; ?></span>
 				<?php if($author->user_url):?><link rel="author" itemprop="url" href="<?php echo $author->user_url;?>" /><?php endif;?>

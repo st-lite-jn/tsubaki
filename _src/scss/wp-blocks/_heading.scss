@@ -7,9 +7,9 @@
 		&:not([class]) {
 			background-color: import.$concrete;
 			border-left: solid 8px import.$accColor;
-			padding: import.spvw(8);
+			padding: import.spvw(4) import.spvw(8);
 			@include import.mqMin(import.$tabletPortrait) {
-				padding: 8px;
+				padding: 8px 16px;
 			}
 		}
 	}

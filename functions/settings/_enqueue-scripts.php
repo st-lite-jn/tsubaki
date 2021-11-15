@@ -29,11 +29,9 @@ function tsbk_enqueue_script_jquery() {
 function tsbk_enqueue_script_main() {
 	/**
 	 * jQuery以外のCDNから取得するJavaScriptを登録
-	 * swiper@6.7.0
      * animejs@3.2.1
-     * highlightjs@11.2.0
 	 */
-	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/animejs@3.2.1,npm/swiper@6.7.0/swiper-bundle.min.js,npm/@highlightjs/cdn-assets@11.2.0/highlight.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/javascript.min.js,npm/@highlightjs/cdn-assets@11.2.0/languages/php.min.js', array() , false, true );
+	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/animejs@3.2.1', array() , false, true );
 	/**
 	 * main.jsの登録
 	 */
