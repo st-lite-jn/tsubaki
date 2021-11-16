@@ -17,6 +17,7 @@
 		$featured_id = get_post_thumbnail_id(get_the_ID());
 		$featured_array = wp_get_attachment_image_src($featured_id, 'large');
 	}
+
 	/**
 	 * 制作者名取得
 	 */

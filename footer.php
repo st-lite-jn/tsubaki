@@ -11,8 +11,6 @@
 </div>
 </div>
 <!-- //wrapper -->
-<?php include TEMPLATEPATH .'/assets/img/svg-icons.svg';?>
 <?php wp_footer(); ?>
-<?php get_template_part( 'template-parts/footer', 'scripts'); ?>
 </body>
 </html>

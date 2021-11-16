@@ -17,7 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
     searchToggle();
     headerFixed();
     wpEmbedVideo();
-    hljs.highlightAll();
 });
 //ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
 window.addEventListener('load', () => {
