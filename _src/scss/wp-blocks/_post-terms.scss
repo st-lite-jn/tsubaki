@@ -3,31 +3,31 @@
 .wp-block-post-terms {
 	margin-bottom: -0.5em !important;
 	* {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
 		margin-bottom: .5em;
-		background-color: import.$mainColor;
 		color: import.$black;
 		text-decoration: none;
-		font-size: .5rem;
+		font-size: .75rem;
+		&:hover {
+			text-decoration: underline;
+		}
+		&::before{
+			margin-right: .5em;
+			font-family: 'Material Icons';
+		}
 	}
 	&.is-cat {
 		* {
-			border-radius: 24px;
-			font-weight: bold;
-			padding: import.spvw(2) import.spvw(6);
-			@include import.mqMin(import.$tabletPortrait) {
-				padding: 4px 12px;
+			&::before{
+				content: "\e574";
 			}
 		}
 	}
 	&.is-tag {
 		* {
-			padding: import.spvw(2) import.spvw(4);
-			@include import.mqMin(import.$tabletPortrait) {
-				padding: 4px 8px;
-			}
 			&::before{
-				content: "#";
+				content: "\e9ef";
 			}
 		}
 	}

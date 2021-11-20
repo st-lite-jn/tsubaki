@@ -23,22 +23,30 @@
 // WP Blocks
 // ==========================================================================
 @use "wp-blocks/common";
-@use "wp-blocks/columns";
+
 @use "wp-blocks/query";
 @use "wp-blocks/button";
-@use "wp-blocks/post-terms";
+
 @use "wp-blocks/heading";
 @use "wp-blocks/paragraph";
 @use "wp-blocks/list";
+@use "wp-blocks/table";
 @use "wp-blocks/quote";
 @use "wp-blocks/pullquote";
-@use "wp-blocks/embed";
+
 @use "wp-blocks/video";
-@use "wp-blocks/table";
 @use "wp-blocks/code";
-@use "wp-blocks/separator";
+
+@use "wp-blocks/embed";
 @use "wp-blocks/image";
 @use "wp-blocks/gallery";
+
+@use "wp-blocks/separator";
+
+@use "wp-blocks/columns";
+@use "wp-blocks/post-terms";
+@use "wp-blocks/latest-posts";
+@use "wp-blocks/categories-list";
 
 
 // ==========================================================================
@@ -47,6 +55,11 @@
 // -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------
+
+@use "object/utility/animation";
+@use "object/utility/align";
+@use "object/utility/margin-padding";
+@use "object/utility/over-container";
 
 // -----------------------------------------------------------------
 // Component
@@ -60,14 +73,6 @@
 @use "object/project/breadcrumb";
 @use "object/project/pagination";
 @use "object/project/card";
-@use "object/project/content";
+@use "object/project/content-header";
 @use "object/project/archive";
 
-// -----------------------------------------------------------------
-// Utility
-// -----------------------------------------------------------------
-
-@use "object/utility/animation";
-@use "object/utility/align";
-@use "object/utility/margin-padding";
-@use "object/utility/over-container";

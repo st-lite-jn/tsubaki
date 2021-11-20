@@ -23,10 +23,12 @@
 		.wp-block-post-title {
 			a {
 				text-decoration: none;
-				color: import.$black;
 				&:hover{
 					text-decoration: underline;
 				}
+			}
+			&:not([style]) a {
+				color: import.$fontColor;
 			}
 		}
 		.wp-block-post-featured-image {

@@ -2,11 +2,11 @@
 
 .wp-block-code {
 	code {
-		background-color: import.$white;
+		background-color: import.$mainColor;
 		border: solid 1px import.$alto;
 		padding: import.spvw(8);
 		@include import.mqMin(import.$tabletPortrait) {
-			padding: 8px;
+			padding: 16px;
 		}
 	}
 }

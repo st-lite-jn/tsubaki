@@ -1,8 +1,8 @@
 @use '../foundation/import';
 
 .l-main {
-    padding-bottom: import.spvw(32);
-    @include import.mqMin(import.$tabletPortrait){
-        padding-bottom: 40px;
-    }
+	padding-bottom: import.spvw(40);
+	@include import.mqMin(import.$tabletPortrait){
+		padding-bottom: 80px;
+	}
 }

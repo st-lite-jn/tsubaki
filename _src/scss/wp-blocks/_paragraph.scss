@@ -1,6 +1,7 @@
 @use '../foundation/import';
 .tsbk-blocks {
 	p:not([class]) {
+		line-height: 1.75;
 		font-size: 1rem;
 		 + p:not([class]) {
 			 margin-top: 1em;
