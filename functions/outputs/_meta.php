@@ -4,10 +4,18 @@
 //======================================================================
 if(!function_exists('tsbk_output_meta')) {
 	function tsbk_output_meta() {
-		$title = wp_get_document_title();
+
 		global $tsbk_description;
-		global $tsbk_title;
 		global $tsbk_ogtype;
+
+		if( is_front_page() ) {
+			$title = get_bloginfo( 'name' );
+		} elseif( is_singular() ) {
+			$title = get_the_title();
+		} else {
+			$title = get_the_archive_title();
+		}
+
 		$charset = get_bloginfo('charset');
 		$site_name = get_bloginfo('name');
 		$site_desc = get_bloginfo('description');
@@ -22,7 +30,7 @@ if(!function_exists('tsbk_output_meta')) {
 		if(!class_exists('jetpack')) {
 			$html_meta .= "
 			<meta name=\"description\" content=\"{$tsbk_description}\" />
-			<meta property=\"og:site_name\" content=\"{$tsbk_title["site-name"]}\" />
+			<meta property=\"og:site_name\" content=\"{$site_name}\" />
 			<meta property=\"og:title\" content=\"{$title}\" />
 			<meta property=\"og:description\" content=\"{$tsbk_description}\" />
 			<meta property=\"og:type\" content=\"{$tsbk_ogtype}\" />

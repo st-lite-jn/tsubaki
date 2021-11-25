@@ -7,7 +7,7 @@
 	} elseif( is_singular() ) {
 		$title = get_the_title();
 	} else {
-		$title = wp_get_document_title();
+		$title = get_the_archive_title();
 	}
 	/**
 	 * アイキャッチ画像の取得

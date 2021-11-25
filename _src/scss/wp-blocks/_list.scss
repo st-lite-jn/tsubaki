@@ -1,6 +1,6 @@
 @use '../foundation/import';
 
-.tsbk-blocks {
+.editor-styles-wrapper {
 	ul {
 		&:not([class]) {
 			list-style-type: circle;
@@ -31,5 +31,9 @@
 				}
 			}
 		}
+		&.wp-block-archives ,&.wp-block-post-template {
+			list-style-type: none;
+		}
 	}
+
 }

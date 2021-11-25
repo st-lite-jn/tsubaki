@@ -7,11 +7,7 @@ function tsbk_enqueue_styles() {
 	 * Google Fonts
 	 */
 	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined' );
-	/**
-	 * CDNから取得するCSSを登録
-	 * ress@4.0.0
-	 */
-	wp_enqueue_style( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/ress@4.0.0' );
+
 	/**
 	 * wp-block-libraryを登録
 	 */

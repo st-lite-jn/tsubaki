@@ -3,7 +3,7 @@
 	<div class="l-container u-mt--40">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
-			<div class="tsbk-blocks" itemprop="mainEntityOfPage">
+			<div class="editor-styles-wrapper" itemprop="mainEntityOfPage">
 				<?php the_content();?>
 				<?php
 					//ページ区切り
