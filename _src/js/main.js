@@ -1,7 +1,6 @@
 import {gnavToggle , gnavPosition} from "./_gnav";
 import {searchToggle , searchPosition} from "./_search";
 import {headerFixed} from "./_header";
-import {carousels} from "./_carousels";
 import {animations} from "./_animations";
 import {wpEmbedVideo} from "./_wp-embed";
 
@@ -12,7 +11,6 @@ import {wpEmbedVideo} from "./_wp-embed";
 window.addEventListener('DOMContentLoaded', () => {
     gnavPosition();
     searchPosition();
-    carousels();
     gnavToggle();
     searchToggle();
     headerFixed();

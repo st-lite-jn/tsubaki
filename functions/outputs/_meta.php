@@ -57,4 +57,4 @@ if(!function_exists('tsbk_output_meta')) {
 		echo $html_meta;
 	}
 }
-add_action( 'wp_head' , 'tsbk_output_meta' , 5);
+add_action( 'wp_head' , 'tsbk_output_meta' , 2);

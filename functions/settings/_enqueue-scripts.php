@@ -45,12 +45,15 @@ function tsbk_enqueue_external_files() {
 add_action('wp_enqueue_scripts' , 'tsbk_enqueue_external_files' );
 
 /**
- * scriptの読み込みにdeferを付与
+ * scriptの記述のリプレイス
  */
-function tsbk_add_script_defer($tag, $handle) {
-	if($handle !== 'tsbk-main' && $handle !== 'wp-embed') {
+function tsbk_script_replace($tag, $handle) {
+	/**
+	 * tsbk-mainとwp-embedにdeferを追加
+	 */
+	if($handle !== 'tsbk-bundle' && $handle !== 'tsbk-main' && $handle !== 'wp-embed') {
 		return $tag;
 	}
 	return str_replace(' src=', ' defer src=', $tag);
 }
-add_filter('script_loader_tag', 'tsbk_add_script_defer', 10, 2);
+add_filter('script_loader_tag', 'tsbk_script_replace', 10, 2);

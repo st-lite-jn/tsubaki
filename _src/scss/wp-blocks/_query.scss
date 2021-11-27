@@ -32,6 +32,9 @@
 			}
 		}
 		.wp-block-post-featured-image {
+			a {
+				display: inline;
+			}
 			overflow: hidden;
 			transition:.5s;
 			img {
