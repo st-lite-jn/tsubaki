@@ -4,15 +4,33 @@ const path = require('path');
 //MiniCssExtractPlugin の読み込み
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+//FixStyleOnlyEntriesの読み込み
+const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
+
 // production モード以外の場合、変数 enabledSourceMap は true
 const enabledSourceMap = process.env.NODE_ENV !== 'production';
 
+
+const entryPoints = {
+	js: {
+	  main : "./_src/js/main.js",
+	},
+	scss: {
+	  style : "./_src/scss/style.scss",
+	  editor : "./_src/scss/editor.scss",
+	}
+};
+
 module.exports = {
 	//エントリポイント（デフォルトと同じなので省略可）
-	entry: './_src/index.js',
+	entry: {
+		main : entryPoints.js.main,
+		style : entryPoints.scss.style,
+		editor : entryPoints.scss.editor
+	},
 	//出力先（デフォルトと同じなので省略可）
 	output: {
-		filename: 'js/main.js',
+		filename: 'js/[name].js',
 		path: path.resolve(__dirname, 'assets'),
 	},
 	module: {
@@ -56,9 +74,10 @@ module.exports = {
 	},
 	//プラグインの設定
 	plugins: [
+		new FixStyleOnlyEntries(),
 		new MiniCssExtractPlugin({
 			// 抽出する CSS のファイル名
-			filename: "css/style.css",
+			filename: "css/[name].css",
 		}),
 	],
 	//source-map タイプのソースマップを出力

@@ -35,12 +35,22 @@ function tsbk_enqueue_script_main() {
 	/**
 	 * main.jsの登録
 	 */
-	wp_register_script( 'tsbk-main' , false , array() , false , true);
-	wp_enqueue_script( 'tsbk-main' );
-	wp_add_inline_script( 'tsbk-main' , file_get_contents(TEMPLATEPATH . '/assets/js/main.js') );
+	wp_enqueue_script( 'tsbk-main' , get_template_directory_uri() . '/assets/js/main.js' , array('tsbk-bundle') ,false , true);
+
 }
 function tsbk_enqueue_external_files() {
 	tsbk_enqueue_script_jquery();
 	tsbk_enqueue_script_main();
 }
 add_action('wp_enqueue_scripts' , 'tsbk_enqueue_external_files' );
+
+/**
+ * scriptの読み込みにdeferを付与
+ */
+function tsbk_add_script_defer($tag, $handle) {
+	if($handle !== 'tsbk-main' && $handle !== 'wp-embed') {
+		return $tag;
+	}
+	return str_replace(' src=', ' defer src=', $tag);
+}
+add_filter('script_loader_tag', 'tsbk_add_script_defer', 10, 2);

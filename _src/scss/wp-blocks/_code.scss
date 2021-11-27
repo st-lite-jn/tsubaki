@@ -1,12 +1,11 @@
 @use '../foundation/import';
 
 .wp-block-code {
-	code {
-		background-color: import.$mainColor;
-		border: solid 1px import.$alto;
-		padding: import.spvw(8);
-		@include import.mqMin(import.$tabletPortrait) {
-			padding: 16px;
-		}
+	background-color: import.$mainColor;
+	border: solid 1px import.$alto;
+	padding: import.spvw(8);
+	font-size: 1rem;
+	@include import.mqMin(import.$tabletPortrait) {
+		padding: 16px;
 	}
 }

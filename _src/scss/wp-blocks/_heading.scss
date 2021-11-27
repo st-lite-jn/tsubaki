@@ -1,10 +1,12 @@
 @use '../foundation/import';
 .editor-styles-wrapper {
 	h1,h2,h3,h4,h5,h6 {
-		font-weight: normal;
+		&:not(.wp-block-post-title,.wp-block-site-title) {
+			font-weight: normal;
+		}
 	}
 	h1,h2 {
-		&:not([class]) {
+		&:not(.wp-block-post-title,.wp-block-site-title) {
 			background-color: import.$concrete;
 			border-left: solid 8px import.$accColor;
 			padding: import.spvw(4) import.spvw(8);
