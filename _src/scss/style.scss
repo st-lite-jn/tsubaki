@@ -22,31 +22,31 @@
 // ==========================================================================
 // WP Blocks
 // ==========================================================================
-@use "wp-blocks/common";
+@use "object/wp-blocks/common";
 
-@use "wp-blocks/query";
-@use "wp-blocks/button";
+@use "object/wp-blocks/query";
+@use "object/wp-blocks/button";
 
-@use "wp-blocks/heading";
-@use "wp-blocks/paragraph";
-@use "wp-blocks/list";
-@use "wp-blocks/table";
-@use "wp-blocks/quote";
-@use "wp-blocks/pullquote";
+@use "object/wp-blocks/heading";
+@use "object/wp-blocks/paragraph";
+@use "object/wp-blocks/list";
+@use "object/wp-blocks/table";
+@use "object/wp-blocks/quote";
+@use "object/wp-blocks/pullquote";
 
-@use "wp-blocks/video";
-@use "wp-blocks/code";
+@use "object/wp-blocks/video";
+@use "object/wp-blocks/code";
 
-@use "wp-blocks/embed";
-@use "wp-blocks/image";
-@use "wp-blocks/gallery";
+@use "object/wp-blocks/embed";
+@use "object/wp-blocks/image";
+@use "object/wp-blocks/gallery";
 
-@use "wp-blocks/separator";
+@use "object/wp-blocks/separator";
 
-@use "wp-blocks/columns";
-@use "wp-blocks/post-terms";
-@use "wp-blocks/latest-posts";
-@use "wp-blocks/categories-list";
+@use "object/wp-blocks/columns";
+@use "object/wp-blocks/post-terms";
+@use "object/wp-blocks/latest-posts";
+@use "object/wp-blocks/categories-list";
 
 
 // ==========================================================================

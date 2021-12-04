@@ -1,4 +1,5 @@
-@use '../foundation/import';
+@use '../../foundation/import';
+
 .editor-styles-wrapper {
 	margin-top: import.spvw(20);
 	@include import.mqMin(import.$tabletPortrait) {
