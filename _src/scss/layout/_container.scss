@@ -10,7 +10,7 @@
 		padding-left: calc((100% - 1160px) / 2);
 		padding-right: calc((100% - 1160px) / 2);
 	}
-	@include import.mqMax(import.$smartPortrait) {
+	@include import.mqMax(import.$smartPhone) {
 		padding-right: import.spvw(16);
 		padding-left: import.spvw(16);
 	}

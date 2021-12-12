@@ -7,7 +7,7 @@
 	margin-top: import.spvw(8);
 	padding-top: import.spvw(16);
 	padding-bottom: import.spvw(16);
-	@include import.mqMax(import.$smartPortrait) {
+	@include import.mqMax(import.$smartPhone) {
 		flex-wrap: wrap;
 		&__navigation {
 			width: 100%;
@@ -28,7 +28,7 @@
 
 	.c-btn ,.c-btn--reverse {
 		margin: 0 8px;
-		@include import.mqMax(import.$smartPortrait) {
+		@include import.mqMax(import.$smartPhone) {
 			margin-top: import.spvw(8);
 		}
 	}

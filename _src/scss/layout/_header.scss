@@ -9,7 +9,7 @@
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
-	@include import.mqMax(import.$smartPortrait) {
+	@include import.mqMax(import.$smartPhone) {
 		padding-top: import.spvw(4);
 		padding-bottom: import.spvw(4);
 	}
@@ -33,7 +33,7 @@
 		@include import.mqMin(import.$tabletPortrait) {
 			width: 160px;
 		}
-		@include import.mqMax(import.$smartPortrait) {
+		@include import.mqMax(import.$smartPhone) {
 			width: import.spvw(160);
 		}
 	}
@@ -59,7 +59,7 @@
 			height: 44px;
 			margin-left: 12px;
 		}
-		@include import.mqMax(import.$smartPortrait) {
+		@include import.mqMax(import.$smartPhone) {
 			width: import.spvw(40);
 			height: import.spvw(40);
 			margin-left: import.spvw(10);
@@ -77,7 +77,7 @@
 		width: 17.6px;
 		height: 17.6px;
 	}
-	@include import.mqMax(import.$smartPortrait) {
+	@include import.mqMax(import.$smartPhone) {
 		width: import.spvw(17.6);
 		height: import.spvw(17.6);
 	}

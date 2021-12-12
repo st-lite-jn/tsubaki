@@ -33,7 +33,7 @@
 			margin-left: 8px;
 			font-size: 0.75rem;
 		}
-		@include import.mqMax(import.$smartPortrait) {
+		@include import.mqMax(import.$smartPhone) {
 			margin-right:import.spvw(8);
 			margin-left: import.spvw(8);
 		}

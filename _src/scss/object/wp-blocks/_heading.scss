@@ -17,7 +17,7 @@
 		font-size: 1.75rem;
 	}
 	h3,h4,h5 {
-		&:not([class]) {
+		&:not([class]){
 			border-bottom-color: import.$accColor;
 			border-bottom: solid import.$accColor;
 		}
