@@ -6,7 +6,7 @@ function tsbk_enqueue_styles() {
 	/**
 	 * Google Fonts
 	 */
-	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined' );
+	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined&display=swap' );
 
 	/**
 	 * wp-block-libraryを登録

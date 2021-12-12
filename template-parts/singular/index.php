@@ -9,7 +9,7 @@
 					//ページ区切り
 					wp_link_pages(
 						array(
-						'before'   => '<nav class="p-content-block__pages" aria-label="' . esc_attr__( 'ページ', 'tsubaki' ) . '">',
+						'before'   => '<nav class="wp-blocks-pager" aria-label="' . esc_attr__( 'ページ', 'tsubaki' ) . '">',
 						'after'    => '</nav>',
 						/* translators: %: Page number. */
 						'pagelink' => esc_html__( 'ページ %', 'tsubaki' ),
@@ -22,4 +22,8 @@
 		<?php endif; ?>
 	</div>
 </article>
+<?php
+if( is_single() ) {
+	comments_template();
+}
 

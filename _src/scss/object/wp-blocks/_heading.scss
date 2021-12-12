@@ -16,9 +16,20 @@
 		}
 		font-size: 1.75rem;
 	}
+	h3,h4,h5 {
+		&:not([class]) {
+			border-bottom-color: import.$accColor;
+			border-bottom: solid import.$accColor;
+		}
+	}
 	h3,h4 {
 		&:not([class]) {
-			border-bottom: solid #8C272B;
+			border-bottom-style: solid;
+		}
+	}
+	h5 {
+		&:not([class]) {
+			border-bottom-style: dotted;
 		}
 	}
 	h3 {
@@ -27,7 +38,7 @@
 			border-bottom-width: 2px;
 		}
 	}
-	h4 {
+	h4,h5 {
 		font-size: 1.25rem;
 		&:not([class]) {
 			border-bottom-width: 1px;
@@ -35,10 +46,5 @@
 	}
 	h5 ,h6 {
 		font-size: 1rem;
-	}
-	h5 {
-		&:not([class]) {
-			border-bottom: dotted 1px #8C272B;
-		}
 	}
 }

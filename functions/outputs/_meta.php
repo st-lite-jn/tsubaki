@@ -5,9 +5,11 @@
 if(!function_exists('tsbk_output_meta')) {
 	function tsbk_output_meta() {
 
+		//ディスクリプションとOGタイプはグローバル変数で取得
 		global $tsbk_description;
 		global $tsbk_ogtype;
 
+		//タイトル
 		if( is_front_page() ) {
 			$title = get_bloginfo( 'name' );
 		} elseif( is_singular() ) {
@@ -21,6 +23,7 @@ if(!function_exists('tsbk_output_meta')) {
 		$site_desc = get_bloginfo('description');
 		$site_url = home_url();
 		$site_icon = get_site_icon_url();
+		//HTMLを初期化
 		$html_meta = "";
 		$html_meta .= "
 			<meta charset=\"{$charset}\" />
@@ -54,7 +57,7 @@ if(!function_exists('tsbk_output_meta')) {
 			}
 			</script>
 		";
-		echo $html_meta;
+		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $html_meta);
 	}
 }
-add_action( 'wp_head' , 'tsbk_output_meta' , 2);
+add_action( 'wp_head' , 'tsbk_output_meta' , 1);

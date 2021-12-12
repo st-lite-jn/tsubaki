@@ -28,7 +28,7 @@
 				}
 			}
 			&:not([style]) a {
-				color: import.$fontColor;
+				color: import.$baseFontColor;
 			}
 		}
 		.wp-block-post-featured-image {
