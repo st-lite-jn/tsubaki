@@ -23,3 +23,16 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links');//引用表示（埋�
 remove_action('wp_print_styles', 'print_emoji_styles');// 絵文字に関するCSS
 remove_action('admin_print_scripts', 'print_emoji_detection_script');// 絵文字に関するJavaScript(管理画面)
 remove_action('admin_print_styles', 'print_emoji_styles');// 絵文字に関するCSS(管理画面)
+
+
+function tsbk_add_wp_head () {
+	$home_url = home_url();
+	$theme_file_url = get_theme_file_uri();
+	echo "
+		<link rel='preload' href='{$theme_file_url}/assets/js/main.js' as='script' />
+		<link rel='preload' href='{$theme_file_url}/assets/css/style.css' as='style' />
+		<link rel='preload' href='{$home_url}/wp-includes/css/dist/block-library/style.min.css' as='style' />
+		<link rel='preload' href='https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined&display=swap' as='style' />
+	";
+}
+add_action ( 'wp_head' ,'tsbk_add_wp_head', 1 );

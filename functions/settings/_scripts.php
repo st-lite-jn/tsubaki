@@ -51,7 +51,11 @@ function tsbk_script_replace($tag, $handle) {
 	/**
 	 * tsbk-mainとwp-embedにdeferを追加
 	 */
-	if($handle !== 'tsbk-bundle' && $handle !== 'tsbk-main' && $handle !== 'wp-embed') {
+	if(
+		$handle !== 'tsbk-bundle' &&
+		$handle !== 'tsbk-main' &&
+		$handle !== 'wp-embed'
+	) {
 		return $tag;
 	}
 	return str_replace(' src=', ' defer src=', $tag);
