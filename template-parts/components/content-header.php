@@ -12,7 +12,14 @@
 	/**
 	 * アイキャッチ画像の取得
 	 */
-	$featured_img = !is_404() && !is_archive() && !is_home() && get_post_thumbnail_id( get_the_ID() ) ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false, array('class'=>'p-content-header-visual__img')) : false;
+	$args_featured = [
+		'class' => 'p-content-header-visual__img',
+		'loading'=>'auto',
+		'decoding'=>'async'
+	];
+	$featured_img = !is_404() && !is_archive() && !is_home() && get_post_thumbnail_id( get_the_ID() )
+				  ? wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false , $args_featured )
+				  : false;
 	if($featured_img) {
 		$featured_id = get_post_thumbnail_id(get_the_ID());
 		$featured_array = wp_get_attachment_image_src($featured_id, 'large');
