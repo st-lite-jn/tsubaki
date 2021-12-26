@@ -26,7 +26,7 @@
 		padding-bottom: 16px;
 	}
 
-	.c-btn ,.c-btn--reverse {
+	.button ,.button--reverse {
 		margin: 0 8px;
 		@include import.mqMax(import.$smartPhone) {
 			margin-top: import.spvw(8);

@@ -29,6 +29,6 @@ const searchPosition = () => {
 	const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
 	const $searchForm = document.getElementById("searchForm");
 	const headerHeight = document.getElementById("header").offsetHeight;
-	$searchForm.style.top = headerHeight + wpadminbarHeight + "px";
+	$searchForm.style.top = `{headerHeight} + {wpadminbarHeight}px`;
 }
 export {searchToggle , searchPosition};

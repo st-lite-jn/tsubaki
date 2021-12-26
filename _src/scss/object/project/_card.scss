@@ -7,16 +7,22 @@
 	padding-top: import.spvw(40);
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-top:40px;
+		&::after {
+			content: "";
+			display: block;
+			width: 32%;
+		}
 	}
 	.p-card {
 		width: 49%;
 		margin-top: 2%;
-		box-shadow: 0 0 5px 2px import.$alto;
+		box-shadow: 0 4px 2px import.$alto;
 		background-color: import.$mainColor;
 		border-radius: import.spvw(8);
 		text-decoration: none;
 		color: import.$black;
 		@include import.mqMin(import.$tabletPortrait) {
+			width: 32%;
 			border-radius: 16px;
 		}
 		&__thumb {
@@ -77,8 +83,19 @@
 				font-size: .75rem;
 			}
 			&__txt {
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
 				font-size: .75rem;
 			}
+		}
+	}
+	a.p-card {
+		transition: .3s;
+		&:hover {
+			box-shadow: none;
+			transform: translateY(4px);
 		}
 	}
 }

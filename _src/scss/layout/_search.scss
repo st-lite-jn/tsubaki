@@ -5,9 +5,9 @@
 	display: none;
 	z-index: 9100;
 	width: 100%;
-	padding-top: import.spvw(8);
+	padding-top: import.spvw(16);
 	@include import.mqMin(import.$tabletPortrait) {
-		padding-top: 16px;
+		padding-top: 32px;
 	}
 	&.is-opened {
 		display: block;
@@ -16,12 +16,13 @@
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: space-between;
+		align-items: normal;
 		.c-input-txt {
 			flex: 1;
 			border-right: none;
 			border-radius: 8px 0 0 8px;
 		}
-		.c-btn {
+		.button {
 			display: inline-flex;
 			justify-content: align-items;
 			border-radius: 0 8px 8px 0;

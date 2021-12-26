@@ -1,8 +1,11 @@
 @use '../../foundation/import';
-.c-btn {
+.button {
 	display: inline-block;
 	padding: import.spvw(8) import.spvw(20);
-	background-color: import.$linkColor;
+	background: linear-gradient(90deg, import.$white 0%, import.$white 50%, import.$linkColor 50% ,import.$linkColor 100%);
+	background-position: 100% 0%;
+	background-size: 200%;
+	border : solid 1px import.$linkColor;
 	border-radius: 8px;
 	text-decoration: none;
 	text-align: center;
@@ -11,14 +14,14 @@
 	@include import.mqMin(import.$tabletPortrait) {
 		padding: 8px 16px;
 	}
-	&--reverse {
-		@extend .c-btn;
-		background-color: import.$white;
-		border : solid 1px import.$linkColor;
+	&.is-outlined {
+		background: linear-gradient(90deg, import.$linkColor 0% ,import.$linkColor 50%, import.$white 50%, import.$white 100%);
+		background-position: 100% 50%;
+		background-size: 200%;
 		color: import.$linkColor;
 	}
 	&--mini {
-		@extend .c-btn;
+		@extend .button;
 		padding: import.spvw(4) import.spvw(8);
 		font-size: 0.75rem;
 		@include import.mqMin(import.$tabletPortrait) {
@@ -27,15 +30,56 @@
 	}
 }
 
-.wp-block-buttons {
-	.wp-block-button {
-		&__link {
-			font-size: 1rem;
+a,button,input {
+	&.button {
+		&:hover {
+			animation : hoverBgColor ease .5s both;
+			color: import.$linkColor;
+		}
+		&.is-outlined {
+			&:hover {
+				animation : hoverBgColor ease .5s both;
+				color: import.$white;
+			}
 		}
 	}
 }
 
+//ブロックエディタのボタン
+.wp-block-buttons {
+	.wp-block-button {
+		&__link {
+			&:not(.has-background) {
+				@extend .button;
+			}
+		}
+	}
+	.is-style-outline>.wp-block-button__link:not(.has-background),
+	.wp-block-button__link.is-style-outline:not(.has-background) {
+		@extend .button;
+		@extend .is-outlined;
+	}
+}
+
+.wp-block-file .wp-block-file__button,
 .comment-reply-link,
+.post-page-numbers,
 .form-submit .submit {
-	@extend .c-btn--reverse;
+	@extend .button;
+}
+
+.post-page-numbers {
+	&.current {
+		@extend .button;
+		@extend .is-outlined;
+	}
+}
+
+@keyframes hoverBgColor {
+	0% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
 }

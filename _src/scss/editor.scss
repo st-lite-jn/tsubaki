@@ -6,7 +6,6 @@
 // ==========================================================================
 
 @use "object/wp-blocks/query";
-@use "object/wp-blocks/button";
 
 @use "object/wp-blocks/heading";
 @use "object/wp-blocks/paragraph";
@@ -22,6 +21,8 @@
 @use "object/wp-blocks/image";
 @use "object/wp-blocks/gallery";
 
+
+@use "object/wp-blocks/button";
 @use "object/wp-blocks/separator";
 
 @use "object/wp-blocks/columns";

@@ -46,7 +46,7 @@ if ( ! class_exists( 'Tsbk_Output_Pagenation' ) ) {
 			$text_last    = "最後";
 			if ( $show_only && $pages === 1 ):
 				// 1ページのみで表示設定が true の時
-				echo '<div class="p-pagination"><span class="c-btn">1</span></div>';
+				echo '<div class="p-pagination"><span class="button is-outlined">1</span></div>';
 				return;
 			endif;
 			// 1ページのみで表示設定もない場合
@@ -63,10 +63,10 @@ if ( ! class_exists( 'Tsbk_Output_Pagenation' ) ) {
 					$first_page_link = get_pagenum_link(1);
 					$pagenation .= "<div class='p-pagination__navigation'>";
 					$pagenation .= "
-						<a href='{$first_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_first}</a>
+						<a href='{$first_page_link}' class='button is-wide '>{$text_first}</a>
 					";
 					$pagenation .= "
-						<a href='{$before_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_before}</a>
+						<a href='{$before_page_link}' class='button is-wide '>{$text_before}</a>
 					";
 					$pagenation .= "</div>";
 			}
@@ -75,12 +75,12 @@ if ( ! class_exists( 'Tsbk_Output_Pagenation' ) ) {
 						// $paged +- $range 以内であればページ番号を出力
 						if ( $paged === $i ) {
 							$pagenation .= "
-								<span class='c-btn--reverse'>{$i}</span>
+								<span class='button is-outlined'>{$i}</span>
 							";
 						} else {
 							$number_page_link = get_pagenum_link( $i );
 							$pagenation .= "
-							<a href='{$number_page_link}' class='c-btn u-hover-bounce'>{$i}</a>
+							<a href='{$number_page_link}' class='button is-outlined'>{$i}</a>
 							";
 						}
 					}
@@ -91,13 +91,13 @@ if ( ! class_exists( 'Tsbk_Output_Pagenation' ) ) {
 						// 「次へ」 のリンクを表示
 						$next_page_link = get_pagenum_link( $paged + 1 );
 						$pagenation .= "
-							<a href='{$next_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_next}</a>
+							<a href='{$next_page_link}' class='button is-wide '>{$text_next}</a>
 						";
 					}
 					// 「最後」のリンクを表示
 					$last_page_link = get_pagenum_link( $pages );
 					$pagenation .= "
-						<a href='{$last_page_link}' class='c-btn is-wide u-hover-bounce'>{$text_last}</a>
+						<a href='{$last_page_link}' class='button is-wide '>{$text_last}</a>
 					";
 					$pagenation .= "</div>";
 				}
