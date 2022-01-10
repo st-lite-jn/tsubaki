@@ -1,35 +1,37 @@
 @use '../../foundation/import';
-.wp-block-table {
-	table {
-		thead {
-			tr {
-				border-bottom: solid 2px import.$black ;
-			}
-		}
-		tbody {
-			tr {
-				border-bottom: dotted 1px import.$black ;
-			}
-		}
-		tfoot {
-			tr {
-				border-top: solid 2px import.$black ;
-			}
-		}
-		th,td {
-			padding: import.spvw(4);
-			@include import.mqMin(import.$tabletPortrait) {
-				padding: 8px;
-			}
-		}
-	}
-	&.is-style-stripes {
-		border-bottom: none;
+@include import.wpBlocks {
+	.wp-block-table {
 		table {
-			tbody{
+			thead {
 				tr {
-					&:nth-child(odd) {
-						background-color:import.$mainColor;
+					border-bottom: solid 2px import.$black ;
+				}
+			}
+			tbody {
+				tr {
+					border-bottom: dotted 1px import.$black ;
+				}
+			}
+			tfoot {
+				tr {
+					border-top: solid 2px import.$black ;
+				}
+			}
+			th,td {
+				padding: import.spvw(4);
+				@include import.mqMin(import.$tabletPortrait) {
+					padding: 8px;
+				}
+			}
+		}
+		&.is-style-stripes {
+			border-bottom: none;
+			table {
+				tbody{
+					tr {
+						&:nth-child(odd) {
+							background-color:import.$mainColor;
+						}
 					}
 				}
 			}

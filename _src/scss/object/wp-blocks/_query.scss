@@ -1,51 +1,52 @@
 @use '../../foundation/import';
-
-.wp-block-query {
-	.wp-block-post-template {
-		&:not(.is-flex-container) {
-			li {
-				padding: 20px 0;
-				border-bottom: solid 1px import.$alto;
-				&:first-child {
-					border-top: solid 1px import.$alto;
-				}
-				> *:first-child {
-					margin-top: 0!important;
-				}
-			}
-		}
-		.wp-block-post-title,.wp-block-post-excerpt,.wp-block-post-date {
-			margin-top: import.spvw(6);
-			@include import.mqMin(import.$tabletPortrait) {
-				margin-top: 12px;
-			}
-		}
-		.wp-block-post-title {
-			a {
-				text-decoration: none;
-				&:hover{
-					text-decoration: underline;
+@include import.wpBlocks {
+	.wp-block-query {
+		.wp-block-post-template {
+			&:not(.is-flex-container) {
+				li {
+					padding: 20px 0;
+					border-bottom: solid 1px import.$alto;
+					&:first-child {
+						border-top: solid 1px import.$alto;
+					}
+					> *:first-child {
+						margin-top: 0!important;
+					}
 				}
 			}
-			&:not([style]) a {
-				color: import.$baseFontColor;
+			.wp-block-post-title,.wp-block-post-excerpt,.wp-block-post-date {
+				margin-top: import.spvw(6);
+				@include import.mqMin(import.$tabletPortrait) {
+					margin-top: 12px;
+				}
 			}
-		}
-		.wp-block-post-featured-image {
-			a {
-				display: inline;
+			.wp-block-post-title {
+				a {
+					text-decoration: none;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+				&:not([style]) a {
+					color: import.$baseFontColor;
+				}
 			}
-			overflow: hidden;
-			transition:.5s;
-			img {
+			.wp-block-post-featured-image {
+				a {
+					display: inline;
+				}
+				overflow: hidden;
 				transition:.5s;
-				aspect-ratio: 3 / 2;
-				width: 100%;
-				object-fit: cover;
-			}
-			&:hover {
 				img {
-					transform: scale(1.2);
+					transition:.5s;
+					aspect-ratio: 3 / 2;
+					width: 100%;
+					object-fit: cover;
+				}
+				&:hover {
+					img {
+						transform: scale(1.2);
+					}
 				}
 			}
 		}

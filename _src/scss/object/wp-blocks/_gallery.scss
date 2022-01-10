@@ -1,7 +1,8 @@
 @use '../../foundation/import';
-
-.wp-block-gallery {
-	ul {
-		margin-left: 0;
+@include import.wpBlocks {
+	.wp-block-gallery {
+		ul {
+			margin-left: 0;
+		}
 	}
 }

@@ -1,10 +1,11 @@
 @use '../../foundation/import';
-
-.wp-block-separator {
-	margin-top: import.spvw(12);
-	margin-bottom: import.spvw(12);
-	@include import.mqMin(import.$tabletPortrait) {
-		margin-top: 24px;
-		margin-bottom: 24px;
+@include import.wpBlocks {
+	.wp-block-separator {
+		margin-top: import.spvw(12);
+		margin-bottom: import.spvw(12);
+		@include import.mqMin(import.$tabletPortrait) {
+			margin-top: 24px;
+			margin-bottom: 24px;
+		}
 	}
 }

@@ -1,6 +1,6 @@
 @use '../../foundation/import';
 
-.editor-styles-wrapper {
+@include import.wpBlocks {
 	ul {
 		&:not(.wp-block-post-template) {
 			list-style-type: circle;

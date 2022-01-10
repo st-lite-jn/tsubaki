@@ -2,11 +2,8 @@
 register_block_style(
 	'core/heading',
 	array(
-		'name'			=> 'basic',
-		'label'			=> 'ベーシック',
-		'inline_style'	=> '.is-style-basic {
-			border-left: solid 8px orange;
-			padding-left: 12px;
-		}',
+		'name'			=> 'center',
+		'label'			=> '真ん中寄せ',
+		'style_handle'	=> 'editor',
 	)
 );

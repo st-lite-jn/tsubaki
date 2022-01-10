@@ -17,24 +17,24 @@
 }
 
 @mixin baseColorBlock($color1, $color2 , $color3) {
-    background-size: 3px 3px;
-    background-position: 50% 50%;
-    background-image: repeating-linear-gradient(
-        90deg,
-        $color1 ,
-        $color1 1px,
-        transparent 1px,
-        transparent 3px
-    ),
-    repeating-linear-gradient(
-        0deg,
-        $color1 ,
-        $color1 1px,
-        $color2 1px,
-        $color2 3px
-    );
-    background-repeat: repeat;
-    color: $color3;
+	background-size: 3px 3px;
+	background-position: 50% 50%;
+	background-image: repeating-linear-gradient(
+		90deg,
+		$color1 ,
+		$color1 1px,
+		transparent 1px,
+		transparent 3px
+	),
+	repeating-linear-gradient(
+		0deg,
+		$color1 ,
+		$color1 1px,
+		$color2 1px,
+		$color2 3px
+	);
+	background-repeat: repeat;
+	color: $color3;
 }
 //container
 @mixin baseContainer {
@@ -97,5 +97,11 @@
 	}
 	&:after {
 		clear: both;
+	}
+}
+
+@mixin wpBlocks {
+	.editor-styles-wrapper {
+		@content;
 	}
 }

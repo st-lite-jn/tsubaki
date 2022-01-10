@@ -1,8 +1,9 @@
 @use '../../foundation/import';
-
+@include import.wpBlocks {
 .wp-block-image {
 	margin-bottom: 0;
 	figcaption {
 		margin-bottom: 0;
 	}
+}
 }

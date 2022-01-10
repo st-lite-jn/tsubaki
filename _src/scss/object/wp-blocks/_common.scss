@@ -1,6 +1,6 @@
 @use '../../foundation/import';
 
-.editor-styles-wrapper {
+@include import.wpBlocks {
 	margin-top: import.spvw(20);
 	@include import.mqMin(import.$tabletPortrait) {
 		margin-top: 40px;

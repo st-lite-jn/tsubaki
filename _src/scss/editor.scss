@@ -1,32 +1,34 @@
 @charset "utf-8";
 
-
-// ==========================================================================
-// WP Blocks
-// ==========================================================================
-
-@use "object/wp-blocks/query";
-
+//テキスト
 @use "object/wp-blocks/heading";
 @use "object/wp-blocks/paragraph";
 @use "object/wp-blocks/list";
-@use "object/wp-blocks/table";
 @use "object/wp-blocks/quote";
-@use "object/wp-blocks/pullquote";
-
-@use "object/wp-blocks/video";
 @use "object/wp-blocks/code";
+@use "object/wp-blocks/pullquote";
+@use "object/wp-blocks/table";
 
-@use "object/wp-blocks/embed";
+//メディア
 @use "object/wp-blocks/image";
 @use "object/wp-blocks/gallery";
+@use "object/wp-blocks/video";
 
-
+//デザイン
+@use "object/wp-blocks/columns";
+@use "object/wp-blocks/post-terms";
 @use "object/wp-blocks/button";
 @use "object/wp-blocks/separator";
 
-@use "object/wp-blocks/columns";
-@use "object/wp-blocks/post-terms";
+//ウィジェット
 @use "object/wp-blocks/latest-posts";
 @use "object/wp-blocks/categories-list";
 
+//テーマ
+@use "object/wp-blocks/query";
+
+//埋め込み
+@use "object/wp-blocks/embed";
+
+//オプション
+@use "object/wp-blocks/link";

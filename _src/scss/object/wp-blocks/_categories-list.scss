@@ -1,5 +1,5 @@
 @use '../../foundation/import';;
-.editor-styles-wrapper {
+@include import.wpBlocks {
 	ul.wp-block-archives-list,
 	ul.wp-block-categories-list {
 		margin-left: 1em;

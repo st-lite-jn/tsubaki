@@ -46,35 +46,36 @@ a,button,input {
 }
 
 //ブロックエディタのボタン
-.wp-block-buttons {
-	.wp-block-button {
-		&__link {
-			&:not(.has-background) {
-				@extend .button;
+@include import.wpBlocks {
+	.wp-block-buttons {
+		.wp-block-button {
+			&__link {
+				&:not(.has-background) {
+					@extend .button;
+				}
 			}
 		}
+		.is-style-outline>.wp-block-button__link:not(.has-background),
+		.wp-block-button__link.is-style-outline:not(.has-background) {
+			@extend .button;
+			@extend .is-outlined;
+		}
 	}
-	.is-style-outline>.wp-block-button__link:not(.has-background),
-	.wp-block-button__link.is-style-outline:not(.has-background) {
+
+	.wp-block-file .wp-block-file__button,
+	.comment-reply-link,
+	.post-page-numbers,
+	.form-submit .submit {
 		@extend .button;
-		@extend .is-outlined;
+	}
+
+	.post-page-numbers {
+		&.current {
+			@extend .button;
+			@extend .is-outlined;
+		}
 	}
 }
-
-.wp-block-file .wp-block-file__button,
-.comment-reply-link,
-.post-page-numbers,
-.form-submit .submit {
-	@extend .button;
-}
-
-.post-page-numbers {
-	&.current {
-		@extend .button;
-		@extend .is-outlined;
-	}
-}
-
 @keyframes hoverBgColor {
 	0% {
 		background-position: 100% 0%;

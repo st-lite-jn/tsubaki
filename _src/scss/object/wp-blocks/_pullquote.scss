@@ -1,6 +1,6 @@
 @use '../../foundation/import';
 
-.editor-styles-wrapper {
+@include import.wpBlocks {
 	.wp-block-pullquote {
 		margin-bottom: 0;
 		border-top: 4px solid currentColor;
