@@ -2,17 +2,17 @@
 
 @include import.wpBlocks {
 	ul {
-		&:not(.wp-block-post-template) {
+		&:not([class]) ,&.wp-block-list {
 			list-style-type: circle;
 		}
 	}
 	ol {
-		&:not(.wp-block-post-template) {
+		&:not([class]) ,&.wp-block-list {
 			list-style-type: decimal;
 		}
 	}
 	ul , ol {
-		&:not(.wp-block-post-template,.wp-block-social-links) {
+		&:not([class]) ,&.wp-block-list {
 			padding-left: 1em;
 			font-size: 1rem;
 			li {
@@ -35,5 +35,4 @@
 			list-style-type: none;
 		}
 	}
-
 }
