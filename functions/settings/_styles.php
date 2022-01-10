@@ -19,7 +19,7 @@ function tsbk_enqueue_styles() {
 	/**
 	 * style.cssを登録
 	 */
-	wp_enqueue_style( 'tsbk-style' , get_theme_file_uri()."/assets/css/style.css" );
+	wp_enqueue_style( 'tsbk-style' , get_theme_file_uri()."/assets/css/style.css" , array() , filemtime(get_theme_file_path() ."/assets/css/style.css") , 'all');
 }
 add_action('wp_enqueue_scripts' , 'tsbk_enqueue_styles' );
 

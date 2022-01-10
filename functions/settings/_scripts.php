@@ -22,20 +22,20 @@ function tsbk_enqueue_script_jquery() {
 		return;
 	}
 	wp_deregister_script( 'jquery' ); // デフォルトのjQueryを解除
-	wp_register_script( 'jquery' , 'https://cdn.jsdelivr.net/combine/npm/jquery@3.6.0,npm/jquery-migrate@3.3.2' , array() , false , true ); // 代わりのファイルをフックさせる
+	wp_register_script( 'jquery' , 'https://cdn.jsdelivr.net/combine/npm/jquery@3.6.0,npm/jquery-migrate@3.3.2' , array() , filemtime(get_theme_file_path() ."/assets/js/main.js") , true ); // 代わりのファイルをフックさせる
 	wp_enqueue_script( 'jquery' );
 }
 
 function tsbk_enqueue_script_main() {
 	/**
 	 * jQuery以外のCDNから取得するJavaScriptを登録
-     * animejs@3.2.1
+	 * animejs@3.2.1
 	 */
-	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/animejs@3.2.1', array() , false, true );
+	wp_enqueue_script( 'tsbk-bundle' , 'https://cdn.jsdelivr.net/combine/npm/animejs@3.2.1', array() , filemtime(get_theme_file_path() ."/assets/js/main.js"), true );
 	/**
 	 * main.jsの登録
 	 */
-	wp_enqueue_script( 'tsbk-main' , get_template_directory_uri() . '/assets/js/main.js' , array('tsbk-bundle') ,false , true);
+	wp_enqueue_script( 'tsbk-main' , get_template_directory_uri() . '/assets/js/main.js' , array('tsbk-bundle') , filemtime(get_theme_file_path() ."/assets/js/main.js")  , true);
 
 }
 function tsbk_enqueue_external_files() {
