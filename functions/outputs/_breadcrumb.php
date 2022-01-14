@@ -184,7 +184,7 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 		$position ++;
 		$breadcrumb .= "
 		<li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-			<span class='{$dom_class_item}' itemprop='item'>{$wp_obj->post_title}</span>
+			<span class='{$dom_class_item}' itemprop='name'>{$wp_obj->post_title}</span>
 			<meta itemprop='position' content='{$position}' />
 		</li>
 	";

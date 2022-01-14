@@ -45,8 +45,8 @@
 @use "object/wp-blocks/separator";
 
 //ウィジェット
+@use "object/wp-blocks/archives-categories";
 @use "object/wp-blocks/latest-posts";
-@use "object/wp-blocks/categories-list";
 
 //テーマ
 @use "object/wp-blocks/query";
