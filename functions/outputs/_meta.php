@@ -23,6 +23,7 @@ if(!function_exists('tsbk_output_meta')) {
 		$site_desc = get_bloginfo('description');
 		$site_url = home_url();
 		$site_icon = get_site_icon_url();
+
 		//HTMLを初期化
 		$html_meta = "";
 		$html_meta .= "
@@ -41,22 +42,6 @@ if(!function_exists('tsbk_output_meta')) {
 			<meta name=\"twitter:card\" content=\"summary_large_image\" />
 			";
 		}
-		$html_meta .= "
-			<script type=\"application/ld+json\">
-			{
-				\"@context\" : \"https://schema.org\",
-				\"@type\": \"WebSite\",
-				\"url\": \"{$site_url}\",
-				\"name\": \"{$site_name}\",
-				\"description\":\"{$site_desc}\",
-				\"potentialAction\": {
-					\"@type\": \"SearchAction\",
-					\"target\": \"{$site_url}/?s={search_term_string}\",
-					\"query-input\": \"required name=search_term_string\"
-				}
-			}
-			</script>
-		";
 		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $html_meta);
 	}
 }

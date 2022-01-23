@@ -42,14 +42,13 @@
 <header class="p-content-header-wrapper">
 	<div class="p-content-header">
 		<section class="l-container">
-			<h1 class="p-content-header__label u-dalay-fadein-up" itemprop="headline"><?php echo $title; ?></h1>
+			<h1 class="p-content-header__label u-dalay-fadein-up"><?php echo $title; ?></h1>
 	<?php if(is_single()):?>
 		<div class="p-content-header__meta u-mt--8 u-dalay-fadein-up">
-			<time itemprop="datePublished" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published"><?php echo get_the_time("Y.m.d"); ?></time>
-			<time itemprop="dateModified" datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-modified"><?php echo get_the_modified_date("Y.m.d"); ?></time>
-			<p itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-content-header__meta__item is-author">
-				<span itemprop="name" ><?php echo $author->display_name; ?></span>
-				<?php if($author->user_url):?><link rel="author" itemprop="url" href="<?php echo $author->user_url;?>" /><?php endif;?>
+			<time datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published"><?php echo get_the_time("Y.m.d"); ?></time>
+			<time datetime="<?php echo get_the_modified_date("Y-m-d"); ?>" class="p-content-header__meta__item is-modified"><?php echo get_the_modified_date("Y.m.d"); ?></time>
+			<p class="p-content-header__meta__item is-author">
+				<span><?php echo $author->display_name; ?></span>
 			</p>
 		</div>
 		<?php if(is_single()): ?>
@@ -57,7 +56,7 @@
 				<div class="p-content-header__tax u-mt--8 u-dalay-fadein-up">
 				<?php if( isset($cat_terms) ):?>
 					<?php foreach($cat_terms as $cat_term):?>
-					<a href="<?php echo get_tag_link($cat_term->term_id);?>" class="p-content-header__tax__item is-cat" itemprop="about"><?php echo $cat_term->name;?></a>
+					<a href="<?php echo get_tag_link($cat_term->term_id);?>" class="p-content-header__tax__item is-cat"><?php echo $cat_term->name;?></a>
 					<?php break; endforeach; ?>
 				<?php endif;?>
 				<?php if(isset($tag_terms)):?>
@@ -71,17 +70,14 @@
 	<?php endif; ?>
 	<?php if(is_page() && has_excerpt()):?>
 		<div class="p-content-header__lead u-dalay-fadein-up">
-		<p itemprop="description"><?php echo get_the_excerpt();?></p>
+		<p><?php echo get_the_excerpt();?></p>
 		</div>
 	<?php endif; ?>
 		</section>
 	</div>
 	<?php if($featured_img):?>
-	<figure class="p-content-header-visual" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+	<figure class="p-content-header-visual">
 		<?php echo $featured_img;?>
-		<meta itemprop="url" content="<?php echo $featured_array[0];?>" />
-		<meta itemprop="width" content="<?php echo $featured_array[1];?>" />
-		<meta itemprop="height" content="<?php echo $featured_array[2];?>" />
 	</figure>
 	<?php endif;?>
 </header>

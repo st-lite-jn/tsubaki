@@ -10,4 +10,4 @@ function tsbk_global_var_ogtype(){
 		$tsbk_ogtype = "article";
 	}
 }
-add_action( 'after_setup_theme' , 'tsbk_global_var_ogtype' );
+add_action( 'template_redirect' , 'tsbk_global_var_ogtype' , 10 , 1 );

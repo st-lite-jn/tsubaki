@@ -3,41 +3,63 @@
 /**
  * 出力するタイトルをカスタマイズ
  */
-// if(!function_exists( "tsbk_document_title" ) ){
-// 	function tsbk_document_title($title){
-// 		$post_type = get_post_type();
-// 		$post_obj = get_post_type_object($post_type);
+if(!function_exists( "tsbk_custom_title" ) ):
 
-// 		//カスタム投稿タイプの個別ページの場合、タイトルにカスタム投稿タイプのラベルを追加する
-// 		if(( is_single() ) && ( $post_obj->name !== "post" && $post_obj->name !== "page" ) ) {
-// 			$title = $title + array("site-post-label" => $post_obj->label);
-// 			krsort($title);
-// 		}
+function tsbk_custom_title($title) {
+	if( is_admin() ) return false;
 
-// 		//テンプレートの種類ごとにタイトルを修正
-// 		if ( is_home() || is_front_page() ) {
-// 			$title['tagline'] = null;
-// 		}
+	$post_obj = get_post_type_object( get_post_type() );
 
-// 		//wp_head以外でのタイトルを修正
-// 		if(!doing_action('wp_head')){
-// 			$title['tagline'] = null;
-// 			$title['site'] = null;
-// 			if(is_archive() || is_single()) {
-// 				$title['post-label'] = null;
-// 			}
-// 		}
+	//カスタム投稿タイプの個別ページの場合、タイトルにカスタム投稿タイプのラベルを追加する
+	if(( is_single() ) && ( $post_obj->name !== "post" && $post_obj->name !== "page" ) ) {
+		$title = $title + array("site-post-label" => $post_obj->label);
+		krsort($title);
+	}
+	//テンプレートの種類ごとにタイトルを修正
+	if ( is_home() || is_front_page() ) {
+		$title['tagline'] = null;
+	}
+	return $title;
+}
 
-// 		return $title;
-// 	}
-// }
-// add_filter('document_title_parts','tsbk_document_title');
+endif;
+add_filter( 'document_title_parts' , 'tsbk_custom_title' );
 
 /*
 タイトルのセパレーターを修正
 */
-// function tsbk_document_title_separator( $sep ) {
-// 	$sep = ' | ';
-// 	return $sep;
-// }
-// add_filter( 'document_title_separator', 'tsbk_document_title_separator' );
+if(!function_exists( "tsbk_custom_title_separator" ) ):
+function tsbk_custom_title_separator( $sep ) {
+	$sep = ' | ';
+	return $sep;
+}
+endif;
+add_filter( 'document_title_separator', 'tsbk_custom_title_separator' );
+
+
+/**
+ * get_the_archive_titleで表示するタイトルをカスタマイズ
+ */
+if(!function_exists('tsbk_custom_archive_title')):
+function tsbk_custom_archive_title ($title) {
+	if (is_category()) {
+		$title = single_cat_title('',false);
+	} elseif (is_tag()) {
+		$title = single_tag_title('',false);
+	} elseif (is_tax()) {
+		$title = single_term_title('',false);
+	} elseif (is_post_type_archive() ){
+		$title = post_type_archive_title('',false);
+	} elseif (is_date()) {
+		$title = get_the_time('Y年n月');
+	} elseif (is_search()) {
+		$title = '検索結果 : '.esc_html( get_search_query(false) );
+	} elseif (is_404() ) {
+		$title = '404エラー : ページが見つかりませんでした';
+	} else {
+
+	}
+	return $title;
+}
+endif;
+add_filter( 'get_the_archive_title', 'tsbk_custom_archive_title');
