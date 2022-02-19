@@ -2,6 +2,9 @@
 @include import.wpBlocks {
 	.wp-block-archives-dropdown {
 		position: relative;
+		label {
+			display: none;
+		}
 		select {
 			width: 100%;
 			padding: 8px;

@@ -60,10 +60,7 @@ module.exports = {
 						options: {
 							// dart-sass を優先
 							implementation: require('sass'),
-							sassOptions: {
-								// fibers を使わない場合は以下で false を指定
-								fiber: require('fibers'),
-							},
+							sassOptions: {},
 							// ソースマップを有効に
 							sourceMap: enabledSourceMap,
 						},

@@ -29,11 +29,11 @@ if(!function_exists('tsbk_output_meta')) {
 		$html_meta .= "
 			<meta charset=\"{$charset}\" />
 			<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+			<meta name=\"description\" content=\"{$tsbk_description}\" />
 		";
 		//Jetpackを使用していない場合のみ出力
 		if(!class_exists('jetpack')) {
 			$html_meta .= "
-			<meta name=\"description\" content=\"{$tsbk_description}\" />
 			<meta property=\"og:site_name\" content=\"{$site_name}\" />
 			<meta property=\"og:title\" content=\"{$title}\" />
 			<meta property=\"og:description\" content=\"{$tsbk_description}\" />
