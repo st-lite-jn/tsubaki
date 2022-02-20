@@ -8,15 +8,7 @@ if(!function_exists('tsbk_output_meta')) {
 		//ディスクリプションとOGタイプはグローバル変数で取得
 		global $tsbk_description;
 		global $tsbk_ogtype;
-
-		//タイトル
-		if( is_front_page() ) {
-			$title = get_bloginfo( 'name' );
-		} elseif( is_singular() ) {
-			$title = get_the_title();
-		} else {
-			$title = get_the_archive_title();
-		}
+		global $tsbk_title;
 
 		$charset = get_bloginfo('charset');
 		$site_name = get_bloginfo('name');
@@ -29,20 +21,21 @@ if(!function_exists('tsbk_output_meta')) {
 		$html_meta .= "
 			<meta charset=\"{$charset}\" />
 			<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+			<title>{$tsbk_title['title-tag']}</title>
 			<meta name=\"description\" content=\"{$tsbk_description}\" />
 		";
 		//Jetpackを使用していない場合のみ出力
 		if(!class_exists('jetpack')) {
 			$html_meta .= "
 			<meta property=\"og:site_name\" content=\"{$site_name}\" />
-			<meta property=\"og:title\" content=\"{$title}\" />
+			<meta property=\"og:title\" content=\"{$tsbk_title['title-tag']}\" />
 			<meta property=\"og:description\" content=\"{$tsbk_description}\" />
 			<meta property=\"og:type\" content=\"{$tsbk_ogtype}\" />
 			<meta name=\"twitter:description\" content=\"{$tsbk_description}\" />
 			<meta name=\"twitter:card\" content=\"summary_large_image\" />
 			";
 		}
-		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $html_meta);
+		echo $html_meta;
 	}
 }
 add_action( 'wp_head' , 'tsbk_output_meta' , 1);

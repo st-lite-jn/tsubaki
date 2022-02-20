@@ -5,6 +5,9 @@
 if(!function_exists('tsbk_output_breadcrumb')) {
 	function tsbk_output_breadcrumb($wp_obj = null) {
 
+	global $tsbk_title;
+	global $tsbk_post_type;
+
 	// トップページと404エラーページでは何も出力しない
 	if ( is_front_page() || is_404()) return false;
 
@@ -16,6 +19,7 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 	$dom_class_parent = "p-breadcrumb l-container";
 	$dom_class_child = "p-breadcrumb__list";
 	$dom_class_item = "p-breadcrumb__item";
+
 	//ポジションの初期値
 	$position = 1;
 	//HTML
@@ -67,9 +71,15 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 
 		$post_type  = $wp_obj->post_type;
 		$post_title = $wp_obj->post_title;
-		$post_archive_link = get_post_type_archive_link( $post_type ); //アーカイブトップURL
-		$post_archive_label = get_post_type_object( $post_type )->label; //投稿タイプのラベル
 
+		$post_archive_link = get_post_type_archive_link( $post_type ); //アーカイブトップURL
+
+		if($post_type === "post" && get_option( 'page_for_posts' ) ) {
+			$home_id = get_option( 'page_for_posts' );
+			$post_archive_label = get_the_title( $home_id );
+		} else {
+			$post_archive_label = get_post_type_object( $post_type ) -> label; //投稿タイプのラベル
+		}
 		$position ++;
 		$breadcrumb .= "
 			<li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
@@ -193,14 +203,21 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 		 * 日付アーカイブ
 		 * $wp_obj : WP_Post_Type
 		 */
-		$post_obj = get_post_type_object("post");
-		$post_type_link = get_post_type() == "post" ? get_post_type_archive_link("post") : "/" . $wp_obj->rewrite["slug"];
-		$post_type_label = $post_obj->label;
+
+		$post_archive_link = get_post_type_archive_link( $tsbk_post_type );
+		if($tsbk_post_type === "post" && get_option( 'page_for_posts' ) ) {
+			$home_id = get_option( 'page_for_posts' );
+			$post_archive_label = get_the_title( $home_id );
+		} else {
+			$post_archive_label = get_post_type_object($tsbk_post_type) -> label; //投稿タイプのラベル
+		}
+
+
 		$position ++;
 		$breadcrumb .= "
 			<li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-				<a class='{$dom_class_item}' itemprop='item' href='{$post_type_link}'>
-					<span itemprop='name'>{$post_type_label}</span>
+				<a class='{$dom_class_item}' itemprop='item' href='{$post_archive_link}'>
+					<span itemprop='name'>{$post_archive_label}</span>
 				</a>
 				<meta itemprop='position' content='{$position}' />
 			</li>
@@ -277,13 +294,20 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 		$term_id   = $wp_obj->term_id;
 		$term_label = $wp_obj->name;
 		$tax_name  = $wp_obj->taxonomy;
-		$post_type_link = get_post_type_archive_link(get_post_type());
-		$post_type_label = get_post_type_object( get_post_type() )->label;
+
+		$post_archive_link = get_post_type_archive_link( $tsbk_post_type );
+		if($tsbk_post_type === "post" && get_option( 'page_for_posts' ) ) {
+			$home_id = get_option( 'page_for_posts' );
+			$post_archive_label = get_the_title( $home_id );
+		} else {
+			$post_archive_label = get_post_type_object($tsbk_post_type) -> label; //投稿タイプのラベル
+		}
+
 		$position ++;
 		$breadcrumb .= "
 			<li class='{$dom_class_child}' itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-				<a class='{$dom_class_item}' itemprop='item' href='$post_type_link'>
-					<span itemprop='name'>{$post_type_label}</span>
+				<a class='{$dom_class_item}' itemprop='item' href='$post_archive_link'>
+					<span itemprop='name'>{$post_archive_label}</span>
 				</a>
 				<meta itemprop='position' content='{$position}' />
 			</li>
