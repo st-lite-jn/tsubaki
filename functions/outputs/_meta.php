@@ -9,6 +9,7 @@ if(!function_exists('tsbk_output_meta')) {
 		global $tsbk_description;
 		global $tsbk_ogtype;
 		global $tsbk_title;
+		global $tsbk_ogimg;
 
 		$charset = get_bloginfo('charset');
 		$site_name = get_bloginfo('name');
@@ -27,15 +28,18 @@ if(!function_exists('tsbk_output_meta')) {
 		//Jetpackを使用していない場合のみ出力
 		if(!class_exists('jetpack')) {
 			$html_meta .= "
-			<meta property=\"og:site_name\" content=\"{$site_name}\" />
-			<meta property=\"og:title\" content=\"{$tsbk_title['title-tag']}\" />
-			<meta property=\"og:description\" content=\"{$tsbk_description}\" />
-			<meta property=\"og:type\" content=\"{$tsbk_ogtype}\" />
-			<meta name=\"twitter:description\" content=\"{$tsbk_description}\" />
-			<meta name=\"twitter:card\" content=\"summary_large_image\" />
+				<meta property=\"og:site_name\" content=\"{$site_name}\" />
+				<meta property=\"og:title\" content=\"{$tsbk_title['title-tag']}\" />
+				<meta property=\"og:description\" content=\"{$tsbk_description}\" />
+				<meta property=\"og:type\" content=\"{$tsbk_ogtype}\" />
+				<meta property=\"og:image\" content=\"{$tsbk_ogimg[0]}\" />
+				<meta property=\"og:image:width\" content=\"{$tsbk_ogimg[1]}\" />
+				<meta property=\"og:image:heighgt\" content=\"{$tsbk_ogimg[2]}\" />
+				<meta name=\"twitter:description\" content=\"{$tsbk_description}\" />
+				<meta name=\"twitter:card\" content=\"summary_large_image\" />
 			";
 		}
-		echo $html_meta;
+		echo preg_replace('/(\t|\r\n|\r|\n)/s', '', $html_meta);
 	}
 }
 add_action( 'wp_head' , 'tsbk_output_meta' , 1);

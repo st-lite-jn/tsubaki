@@ -31,21 +31,45 @@
 					color: import.$baseFontColor;
 				}
 			}
-			.wp-block-post-featured-image {
-				a {
-					display: inline;
+			.is-thumbnail {
+				&:empty {
+					display: block;
+					height: 100%;
+					&::before {
+						display: block;
+						content: "";
+						width: 100%;
+						height: 66.666666%;
+						background-color: import.$concrete;
+						border: solid 1px import.$alto;
+						color: import.$black;
+						&::after {
+							display: block;
+							content: "\f022";
+							width: 100%;
+							top: 50%;
+							transform: translateY(-50%);
+							font-family: 'Material Icons';
+						}
+					}
+
 				}
-				overflow: hidden;
-				transition:.5s;
-				img {
+				.wp-block-post-featured-image {
+					a {
+						display: inline;
+					}
+					overflow: hidden;
 					transition:.5s;
-					aspect-ratio: 3 / 2;
-					width: 100%;
-					object-fit: cover;
-				}
-				&:hover {
 					img {
-						transform: scale(1.2);
+						transition:.5s;
+						aspect-ratio: 3 / 2;
+						width: 100%;
+						object-fit: cover;
+					}
+					&:hover {
+						img {
+							transform: scale(1.2);
+						}
 					}
 				}
 			}
