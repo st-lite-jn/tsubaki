@@ -1,0 +1,16 @@
+@use '../../foundation/import';
+@include import.wpBlocks {
+	.wp-block-group {
+		&__inner-container {
+			> * {
+				margin-top: import.spvw(16);
+				@include import.mqMin(import.$tabletPortrait) {
+					margin-top: 16px;
+				}
+				&:first-child {
+					margin-top: 0 !important;
+				}
+			}
+		}
+	}
+}
