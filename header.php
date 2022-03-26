@@ -8,11 +8,13 @@
 	<header id="header" class="l-header ">
 		<div class="l-container">
 			<?php
-				include TEMPLATEPATH .'/template-parts/header/logo.php';
-				include TEMPLATEPATH .'/template-parts/header/utility.php';
+				get_template_part( 'template-parts/header/logo');
+				get_template_part( 'template-parts/header/utility' );
 			?>
 		</div>
-		<?php require_once TEMPLATEPATH .'/template-parts/header/gnav.php'; ?>
-		<?php get_search_form();?>
+		<?php
+			get_template_part( 'template-parts/header/gnav' );
+			get_search_form();
+		?>
 	</header>
 	<main class="l-main">

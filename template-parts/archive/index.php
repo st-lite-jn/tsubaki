@@ -1,4 +1,9 @@
-<?php include TEMPLATEPATH . "/template-parts/components/content-header.php"; ?>
+<?php
+	global $tsbk_post_type;
+?>
+<?php
+	get_template_part('template-parts/components/content' , 'header' );
+?>
 <div class="l-container">
 <?php
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;

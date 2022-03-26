@@ -5,13 +5,13 @@
 .l-footer {
 	padding-top: import.spvw(16);
 	padding-bottom: import.spvw(16);
-	background-color: import.$mainColor;
+	background-color: var(--color-main);
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-top: 32px;
 		padding-bottom: 32px;
 	}
 	> * {
-		color: import.$black;
+		color: var(--color-base-font);
 	}
 	&__copyright {
 		margin-top: import.spvw(20);
@@ -27,7 +27,7 @@
 	text-align: center;
 	&__item {
 		display: inline-block;
-		color: import.$black;
+		color: var(--color-base-font);
 		@include import.mqMin(import.$tabletPortrait) {
 			margin-right: 8px;
 			margin-left: 8px;

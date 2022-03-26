@@ -3,6 +3,7 @@ import {searchToggle , searchPosition} from "./_search";
 import {headerFixed} from "./_header";
 import {animations} from "./_animations";
 import {wpEmbedVideo} from "./_wp-embed";
+import {wpQueryThumnail} from "./_wp-query";
 
 /**
  * 関数の発火処理
@@ -15,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     searchToggle();
     headerFixed();
     wpEmbedVideo();
+	wpQueryThumnail();
 });
 //ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
 window.addEventListener('load', () => {

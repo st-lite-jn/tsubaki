@@ -6,10 +6,9 @@ html {
 	}
 }
 body {
-	background-color: import.$baseColor;
-	color: import.$baseFontColor;
-	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-
+	background-color: var(--color-base);
+	color: var(--color-base-font);
+	font-family: 'Noto Sans JP', sans-serif;
 }
 img {
 	max-width: 100%;
@@ -25,7 +24,7 @@ h1,h2,h3,h4,h5,h6,strong,b {
 }
 a {
 	text-decoration: underline;
-	color : import.$linkColor;
+	color : var(--color-link);
 	&:hover {
 		text-decoration: none;
 	}

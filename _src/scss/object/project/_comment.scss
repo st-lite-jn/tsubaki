@@ -62,7 +62,7 @@
 	}
 	&__required {
 		font-weight: bold;
-		color: import.$accColor;
+		color: var(--color-acc);
 	}
 	&__comment {
 		width: 100%;

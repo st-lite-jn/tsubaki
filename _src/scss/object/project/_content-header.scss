@@ -7,7 +7,7 @@
 	position: relative;
 	height: 0;
 	padding-bottom: 61.803398876%;
-	background-color: import.$alto;
+	background-color: var(--colo-main);
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-bottom: 33.33333%;
 	}
@@ -17,9 +17,8 @@
 	width: 100%;
 	top: 50%;
 	transform: translateY(-50%);
-	background: rgba($color: import.$black, $alpha: .4);
 	z-index: 1;
-	color: import.$white;
+	color: var(--color-white);
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
 	@include import.mqMin(import.$tabletPortrait) {
@@ -61,35 +60,33 @@
 		}
 	}
 	&__tax {
+		display: flex;
+		align-items: center;
 		&__item {
-			display: inline-flex;
-			align-items: center;
-			margin: 0 .5em 0 0;
+			display: inline-block;
 			text-decoration: none;
-			color: import.$white;
-			font-size: .875rem;
-			&:hover {
-				text-decoration: underline;
-				&::before{
-					text-decoration: none;
-				}
-			}
-			&::before{
-				display: inline-block;
-				font-family: 'Material Icons';
-				&:hover {
-					text-decoration: none;
-				}
-			}
+			margin: 0 .5em 0 0;
+			color: var(--color-white);
 			&.is-cat {
-				&::before{
-					content: "\e2c7";
-					margin-right: .1em;
+				padding: import.spvw(4) import.spvw(8);
+				background-color: var(--color-acc);
+				border-radius: import.spvw(10);
+				color: var(--color-white);
+				font-size: .75rem;
+				transition: .5s;
+				@include import.mqMin(import.$tabletPortrait) {
+					border-radius: 10px;
+					padding: 4px 8px;
+				}
+				&:hover{
+					opacity: .5;
 				}
 			}
 			&.is-tag {
-				&::before{
-					content: "\e9ef";
+				font-size: .5rem;
+				font-weight: bold;
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 		}

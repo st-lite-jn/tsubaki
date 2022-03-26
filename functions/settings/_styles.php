@@ -3,23 +3,20 @@
 # スタイルシートの登録
 # -----------------------------------------------------------------
 function tsbk_enqueue_styles() {
-	/**
-	 * Google Fonts
-	 */
-	wp_enqueue_style( 'tsbk-googlefonts' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined&display=swap' );
+
+	//テーマのバージョンを取得
+	$theme_version = wp_get_theme() -> get( 'Version' );
 
 	/**
-	 * wp-block-libraryを登録
+	 * Google Web Fonts
 	 */
-	wp_deregister_style( 'wp-block-library' );
-	wp_register_style( 'wp-block-library' , false);
-	wp_enqueue_style( 'wp-block-library');
-	wp_add_inline_style( 'wp-block-library' , file_get_contents( ABSPATH .'wp-includes/css/dist/block-library/style.min.css'));
+	wp_enqueue_style( 'tsbk-google-fonts' , 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap' , array() , null , 'all');
+	wp_enqueue_style( 'tsbk-google-icons' , 'https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined&display=swap' , array() , null , 'all');
 
 	/**
 	 * style.cssを登録
 	 */
-	wp_enqueue_style( 'tsbk-style' , get_theme_file_uri()."/assets/css/style.css" , array() , filemtime(get_theme_file_path() ."/assets/css/style.css") , 'all');
+	wp_enqueue_style( 'tsbk-style' , get_theme_file_uri() . "/assets/css/style.css" , array() , $theme_version , 'all');
 }
 add_action('wp_enqueue_scripts' , 'tsbk_enqueue_styles' );
 

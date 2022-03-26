@@ -5,19 +5,13 @@
 			&:not(.is-flex-container) {
 				li {
 					padding: 20px 0;
-					border-bottom: solid 1px import.$alto;
+					border-bottom: solid 1px var(--color-gray);
 					&:first-child {
-						border-top: solid 1px import.$alto;
+						border-top: solid 1px var(--color-gray);
 					}
 					> *:first-child {
 						margin-top: 0!important;
 					}
-				}
-			}
-			.wp-block-post-title,.wp-block-post-excerpt,.wp-block-post-date {
-				margin-top: import.spvw(6);
-				@include import.mqMin(import.$tabletPortrait) {
-					margin-top: 12px;
 				}
 			}
 			.wp-block-post-title {
@@ -28,43 +22,36 @@
 					}
 				}
 				&:not([style]) a {
-					color: import.$baseFontColor;
+					color: var(--color-base-font);
 				}
 			}
 			.is-thumbnail {
-				&:empty {
+				.is-noimage {
 					display: block;
 					height: 100%;
-					&::before {
-						display: block;
-						content: "";
+					span {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						aspect-ratio: 3/2;
 						width: 100%;
-						height: 66.666666%;
-						background-color: import.$concrete;
-						border: solid 1px import.$alto;
-						color: import.$black;
-						&::after {
-							display: block;
-							content: "\f022";
-							width: 100%;
-							top: 50%;
-							transform: translateY(-50%);
-							font-family: 'Material Icons';
-						}
+						background-color: var(--color-light-gray);
+						border: solid 1px var(--color-gray);
+						color: var(--color-gray);
+						font-size: 2rem;
 					}
-
 				}
 				.wp-block-post-featured-image {
 					a {
 						display: inline;
 					}
 					overflow: hidden;
-					transition:.5s;
+					transition: .5s;
 					img {
-						transition:.5s;
 						aspect-ratio: 3 / 2;
 						width: 100%;
 						object-fit: cover;
+						transition: .5s;
 					}
 					&:hover {
 						img {

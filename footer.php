@@ -4,8 +4,8 @@
 <?php tsbk_output_breadcrumb();?>
 <footer class="l-footer">
 <?php
-	include TEMPLATEPATH . '/template-parts/footer/fnav.php';
-	include TEMPLATEPATH . '/template-parts/footer/copyright.php';
+	get_template_part('template-parts/footer/fnav');
+	get_template_part('template-parts/footer/copyright');
 ?>
 </footer>
 </div>

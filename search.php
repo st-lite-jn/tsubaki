@@ -1,6 +1,8 @@
 <?php $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;?>
-<?php get_header();?>
-<?php include TEMPLATEPATH . "/template-parts/components/content-header.php"; ?>
+<?php
+	get_header();
+	get_template_part('template-parts/components/content' , 'header' );
+?>
 <div class="l-container">
 <?php if(!get_search_query()):?>
 	<div class="u-al--center u-pt--80">

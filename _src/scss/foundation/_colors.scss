@@ -1,40 +1,14 @@
-/*
-* 基本となるカラー
-*/
-
-$white:#fff;
-$concrete :#f2f2f2;
-$alto: #d8d8d8;
-$black :#1f1235;
-
-$red: #ff0000;
-$brightRed : #b30000;
-$pastelPink : #fdd1e0;
-
-$blue : #0000ff;
-$lochmara :#0076bd;
-$azure: #3251ad;
-
-/*
-* カラーセット
-*/
-
-//ベースカラー
-$baseColor : $white;
-
-//ベースのフォントカラー
-$baseFontColor : $black;
-
-//メインカラー
-$mainColor : $concrete;
-
-//サブカラー
-$subColor: #d8d8d8;
-
-//アクセントカラー
-$accColor: #8C272B;
-
-//リンクテキストカラー
-$linkColor : #0076bd;
-
-
+:root {
+	--color-base : #ffffff;
+	--color-base-font : #1f1235;
+	--colo-main : #8C272B;
+	--colo-main-font : #ffffff;
+	--colo-sub : #fcf0f0;
+	--color-acc : #278C42;
+	--color-acc-font : #ffffff;
+	--color-link : #0076bd;
+	--color-white : #ffffff;
+	--color-gray : #cccccc;
+	--color-black : #1f1235;
+	--color-light-gray :#eeeeee;
+}

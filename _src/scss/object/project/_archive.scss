@@ -3,7 +3,7 @@
 .p-archive-ttl {
 	position: relative;
 	min-height: import.spvw(80);
-	@include import.baseColorBlock(import.$white, import.$concrete, import.$black );
+	@include import.baseColorBlock(var(--color-base), var(--color-light-gray), var(--color-base-font) );
 	@include import.mqMin(import.$tabletPortrait) {
 		min-height: 96px;
 	}

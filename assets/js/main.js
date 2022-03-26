@@ -300,6 +300,34 @@ const wpEmbedVideo = () => {
 
 
 
+/***/ }),
+
+/***/ "./_src/js/_wp-query.js":
+/*!******************************!*\
+  !*** ./_src/js/_wp-query.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "wpQueryThumnail": () => (/* binding */ wpQueryThumnail)
+/* harmony export */ });
+/**
+ *
+ *
+ */
+const wpQueryThumnail = () => {
+	const $queryThumbnails = document.querySelectorAll(".wp-block-column.is-thumbnail");
+	const span = document.createElement("span");
+	$queryThumbnails.forEach(($queryThumbnail)=>{
+		if(!$queryThumbnail.hasChildNodes()) {
+			$queryThumbnail.innerHTML = `<div class="is-noimage"><span class="material-icons-outlined">image</span></div>`
+		}
+	});
+}
+
+
+
 /***/ })
 
 /******/ 	});
@@ -370,6 +398,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_header */ "./_src/js/_header.js");
 /* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_animations */ "./_src/js/_animations.js");
 /* harmony import */ var _wp_embed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_wp-embed */ "./_src/js/_wp-embed.js");
+/* harmony import */ var _wp_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_wp-query */ "./_src/js/_wp-query.js");
+
 
 
 
@@ -387,6 +417,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchToggle)();
     (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
     (0,_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
+	(0,_wp_query__WEBPACK_IMPORTED_MODULE_5__.wpQueryThumnail)();
 });
 //ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
 window.addEventListener('load', () => {

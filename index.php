@@ -3,9 +3,10 @@
  *
  * Template Name: アーカイブのテンプレート
 */
-global $tsbk_post_type;
+
 ?>
-<?php get_header(); ?>
-<?php include TEMPLATEPATH . '/template-parts/archive/index.php';?>
-<?php get_sidebar(); ?>
-<?php get_footer();?>
+<?php
+get_header();
+get_template_part('template-parts/archive/index');
+get_sidebar();
+get_footer();

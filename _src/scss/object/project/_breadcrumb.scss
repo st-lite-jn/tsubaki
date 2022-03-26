@@ -5,8 +5,8 @@
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
 	overflow: hidden;
-	background-color: import.$baseColor;
-	border-top: solid 1px import.$concrete;
+	background-color: var(--color-base);
+	border-top: solid 1px var(--color-light-gray);
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	@include import.mqMin(import.$tabletPortrait) {
@@ -25,12 +25,12 @@
 	&__list {
 		display: inline-flex;
 		align-items: center;
-		color: import.$black ;
+		color: var(--color-base-font) ;
 		text-decoration: none;
 		font-size: .75rem;
 	}
 	&__item {
-		color: import.$black;
+		color: var(--color-base-font);
 		text-decoration: none;
 	}
 }

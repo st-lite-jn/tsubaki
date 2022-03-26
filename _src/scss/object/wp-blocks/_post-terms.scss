@@ -3,31 +3,38 @@
 .wp-block-post-terms {
 	margin-bottom: -0.5em !important;
 	* {
-		display: inline-flex;
-		align-items: center;
-		margin-bottom: .5em;
-		color: import.$black;
+		display: inline-block;
 		text-decoration: none;
-		font-size: .75rem;
-		&:hover {
-			text-decoration: underline;
-		}
-		&::before{
-			margin-right: .5em;
-			font-family: 'Material Icons';
-		}
+		margin-bottom: .5em;
 	}
 	&.is-cat {
-		* {
-			&::before{
-				content: "\e2c7";
+		a {
+			padding: import.spvw(4) import.spvw(8);
+			margin-right: 1em;
+			background-color: var(--color-acc);
+			border-radius: import.spvw(10);
+			color: var(--color-acc-font);
+			font-size: .75rem;
+			transition: .5s;
+			@include import.mqMin(import.$tabletPortrait) {
+				border-radius: 10px;
+				padding: 4px 8px;
 			}
+			&:hover{
+				opacity: .5;
+			}
+		}
+		.wp-block-post-terms__separator {
+			display: none;
 		}
 	}
 	&.is-tag {
-		* {
-			&::before{
-				content: "\e9ef";
+		a {
+			color: var(--color-base-font);
+			font-size: .5rem;
+			font-weight: bold;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}

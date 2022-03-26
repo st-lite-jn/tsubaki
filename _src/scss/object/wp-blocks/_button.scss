@@ -2,23 +2,23 @@
 .button {
 	display: inline-block;
 	padding: import.spvw(8) import.spvw(20);
-	background: linear-gradient(90deg, import.$white 0%, import.$white 50%, import.$linkColor 50% ,import.$linkColor 100%);
+	background: linear-gradient(90deg, var(--color-white) 0%, var(--color-white) 50%, var(--color-link) 50% ,var(--color-link) 100%);
 	background-position: 100% 0%;
 	background-size: 200%;
-	border : solid 1px import.$linkColor;
+	border : solid 1px var(--color-link);
 	border-radius: 8px;
 	text-decoration: none;
 	text-align: center;
-	color: import.$white;
+	color: var(--color-white);
 	font-size: 1rem;
 	@include import.mqMin(import.$tabletPortrait) {
 		padding: 8px 16px;
 	}
 	&.is-outlined {
-		background: linear-gradient(90deg, import.$linkColor 0% ,import.$linkColor 50%, import.$white 50%, import.$white 100%);
+		background: linear-gradient(90deg, var(--color-link) 0% ,var(--color-link) 50%, var(--color-white) 50%, var(--color-white) 100%);
 		background-position: 100% 50%;
 		background-size: 200%;
-		color: import.$linkColor;
+		color: var(--color-link);
 	}
 	&--mini {
 		@extend .button;
@@ -34,12 +34,12 @@ a,button,input {
 	&.button {
 		&:hover {
 			animation : hoverBgColor ease .5s both;
-			color: import.$linkColor;
+			color: var(--color-link);
 		}
 		&.is-outlined {
 			&:hover {
 				animation : hoverBgColor ease .5s both;
-				color: import.$white;
+				color: var(--color-white);
 			}
 		}
 	}
