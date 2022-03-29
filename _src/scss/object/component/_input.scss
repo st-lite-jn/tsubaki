@@ -2,8 +2,8 @@
 input ,
 textarea {
 	padding: import.spvw(4);
-	background-color: var(--color-base);
-	border:solid 1px var(--color-gray);
+	background-color: var(--tbk-color-base);
+	border:solid 1px var(--tbk-color-gray);
 	border-radius: 8px;
 	font-size: 1rem;
 	@include import.mqMin(import.$tabletPortrait) {

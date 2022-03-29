@@ -16,11 +16,11 @@
 	.p-card {
 		width: 49%;
 		margin-top: 2%;
-		box-shadow: 0 4px 2px var(--color-gray);
-		background-color: var(--color-main);
+		box-shadow: 0 4px 2px var(--tbk-color-gray);
+		background-color: var(--tbk-color-main);
 		border-radius: import.spvw(8);
 		text-decoration: none;
-		color: var(--color-base-font);
+		color: var(--tbk-color-base-font);
 		@include import.mqMin(import.$tabletPortrait) {
 			width: 32%;
 			border-radius: 16px;
@@ -31,7 +31,7 @@
 			height: 0;
 			padding-bottom: 56.25%;
 			&.is-no-image {
-				background-color: var(--color-gray);
+				background-color: var(--tbk-color-gray);
 				border-radius: import.spvw(8) import.spvw(8) 0 0;
 				@include import.mqMin(import.$tabletPortrait) {
 					border-radius: 16px 16px 0 0;
@@ -44,7 +44,7 @@
 					transform: translateY(-50%);
 					width: 100%;
 					text-align: center;
-					color: var(--color-base-font) ;
+					color: var(--tbk-color-base-font) ;
 					font-family: 'Material Icons';
 					font-size: 2.5rem;
 				}

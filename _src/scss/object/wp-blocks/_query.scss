@@ -5,9 +5,9 @@
 			&:not(.is-flex-container) {
 				li {
 					padding: 20px 0;
-					border-bottom: solid 1px var(--color-gray);
+					border-bottom: solid 1px var(--tbk-color-border);
 					&:first-child {
-						border-top: solid 1px var(--color-gray);
+						border-top: solid 1px var(--tbk-color-border);
 					}
 					> *:first-child {
 						margin-top: 0!important;
@@ -22,7 +22,7 @@
 					}
 				}
 				&:not([style]) a {
-					color: var(--color-base-font);
+					color: var(--tbk-color-base-font);
 				}
 			}
 			.is-thumbnail {
@@ -35,9 +35,9 @@
 						align-items: center;
 						aspect-ratio: 3/2;
 						width: 100%;
-						background-color: var(--color-light-gray);
-						border: solid 1px var(--color-gray);
-						color: var(--color-gray);
+						background-color: var( --tbk-color-sub  );
+						border: solid 1px var( --tbk-color-border );
+						color: var( --tbk-color-sub-font );
 						font-size: 2rem;
 					}
 				}

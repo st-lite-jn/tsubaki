@@ -4,17 +4,17 @@
 		table {
 			thead {
 				tr {
-					border-bottom: solid 2px var(--color-base-font) ;
+					border-bottom: solid 2px var(--tbk-color-border) ;
 				}
 			}
 			tbody {
 				tr {
-					border-bottom: dotted 1px var(--color-base-font) ;
+					border-bottom: dotted 1px var(--tbk-color-border) ;
 				}
 			}
 			tfoot {
 				tr {
-					border-top: solid 2px var(--color-base-font) ;
+					border-top: solid 2px var(--tbk-color-border) ;
 				}
 			}
 			th,td {
@@ -30,7 +30,7 @@
 				tbody{
 					tr {
 						&:nth-child(odd) {
-							background-color:var(--color-main);
+							background-color:var(--tbk-color-acc);
 						}
 					}
 				}

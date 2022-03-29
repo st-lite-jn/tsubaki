@@ -3,7 +3,7 @@
 <head>
 <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class("wp-body"); ?>>
 <div id="wrapper">
 	<header id="header" class="l-header ">
 		<div class="l-container">

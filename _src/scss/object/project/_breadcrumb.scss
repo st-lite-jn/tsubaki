@@ -4,18 +4,14 @@
 	display: flex;
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
-	overflow: hidden;
-	background-color: var(--color-base);
-	border-top: solid 1px var(--color-light-gray);
 	white-space: nowrap;
-	text-overflow: ellipsis;
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
 	> *:not(:first-child) {
 		&::before {
-			display: inline-block;
+			display: block;
 			content: "\e5cc";
 			margin-right: 0.4em;
 			margin-left: 0.4em;
@@ -23,14 +19,17 @@
 		}
 	}
 	&__list {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
-		color: var(--color-base-font) ;
-		text-decoration: none;
+		color: var(--tbk-color-base-font) ;
+		text-overflow: ellipsis;
 		font-size: .75rem;
 	}
 	&__item {
-		color: var(--color-base-font);
 		text-decoration: none;
+		color: var(--tbk-color-base-font);
+		span {
+			color: var(--tbk-color-link);
+		}
 	}
 }

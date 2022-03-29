@@ -5,28 +5,24 @@
 */
 .p-content-header-wrapper {
 	position: relative;
-	height: 0;
-	padding-bottom: 61.803398876%;
-	background-color: var(--colo-main);
-	@include import.mqMin(import.$tabletPortrait) {
-		padding-bottom: 33.33333%;
-	}
+	display: flex;
+	align-items: center;
+	background-color: var(--tbk-color-main);
+	min-height: 33.33333vw;
 }
 .p-content-header {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 1;
-	color: var(--color-white);
+	color: var(--tbk-color-main-font);
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
+	z-index: 100;
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-top: 16px;
 		padding-bottom: 16px;
 	}
 	&__label {
-		font-size: 2rem;
+		font-size: 1.75rem;
 	}
 	&__meta {
 		display: flex;
@@ -66,12 +62,12 @@
 			display: inline-block;
 			text-decoration: none;
 			margin: 0 .5em 0 0;
-			color: var(--color-white);
+			color: var(--tbk-color-main-font);
 			&.is-cat {
 				padding: import.spvw(4) import.spvw(8);
-				background-color: var(--color-acc);
+				background-color: var(--tbk-color-acc);
 				border-radius: import.spvw(10);
-				color: var(--color-white);
+				color: var(--tbk-color-acc-font);
 				font-size: .75rem;
 				transition: .5s;
 				@include import.mqMin(import.$tabletPortrait) {
@@ -83,7 +79,7 @@
 				}
 			}
 			&.is-tag {
-				font-size: .5rem;
+				font-size: .75rem;
 				font-weight: bold;
 				&:hover {
 					text-decoration: underline;
@@ -100,11 +96,16 @@
 	}
 }
 .p-content-header-visual {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top : 0;
+	overflow: hidden;
 	&__img {
-		position: absolute;
-		left: 0;
+		display: block;
+		filter: brightness(70%);
+		object-fit: cover;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 	}
 }
