@@ -30,7 +30,8 @@
 				tbody{
 					tr {
 						&:nth-child(odd) {
-							background-color:var(--tbk-color-acc);
+							background-color:var(--tbk-color-sub);
+							color: var(--tbk-color-sub-font );
 						}
 					}
 				}

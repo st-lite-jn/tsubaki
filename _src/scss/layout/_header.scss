@@ -2,7 +2,7 @@
 
 .l-header {
 	transition: .5s;
-	background-color: var(--tbk-color-base);
+	background-color: var(--tbk-color-main);
 	width: 100%;
 	z-index: 9900;
 	@include import.mqMin(import.$tabletPortrait) {
@@ -52,7 +52,7 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
-		background-color: var(--tbk-color-base);
+		background-color: var(--tbk-color-main);
 		text-align: center;
 		@include import.mqMin(import.$tabletPortrait) {
 			width: 44px;
@@ -83,12 +83,12 @@
 	}
 }
 .l-header-utility-ico {
-	fill:var(--tbk-color-base-font)  !important;
-	stroke:var(--tbk-color-base-font)  !important;
+	fill:var(--tbk-color-main-font)  !important;
+	stroke:var(--tbk-color-main-font)  !important;
 }
 .l-header-utility-ico--close {
 	display: none;
-	stroke: var(--tbk-color-base) !important;
+	stroke: var(--tbk-color-main) !important;
 }
 
 

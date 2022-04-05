@@ -30,7 +30,7 @@
 	}
 ?>
 <header class="p-content-header-wrapper">
-	<div class="p-content-header">
+	<div class="p-content-header <?php if($featured_img):?>is-featured-img<?php endif;?>">
 		<section class="l-container">
 			<h1 class="p-content-header__label u-dalay-fadein-up"><?php echo $tsbk_title['content-label']; ?></h1>
 	<?php if(is_single()):?>
@@ -51,7 +51,7 @@
 			<?php endif;?>
 			<?php if(isset($tag_terms)):?>
 				<?php foreach($tag_terms as $tag_term):?>
-					<a href="<?php echo get_tag_link($tag_term->term_id);?>" class="p-content-header__tax__item is-tag"><?php echo $tag_term->name;?></a>
+					<a href="<?php echo get_tag_link($tag_term->term_id);?>" class="p-content-header__tax__item is-tag <?php if($featured_img):?>is-featured-img<?php endif;?>"><?php echo $tag_term->name;?></a>
 				<?php endforeach; ?>
 			<?php endif;?>
 			</div>

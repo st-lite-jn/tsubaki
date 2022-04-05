@@ -3,21 +3,21 @@ $white : #ffffff;
 $gray : #666666;
 :root {
 
-	--tbk-color-base : #ffffff;
-	--tbk-color-base-font : #1f1235;
+	--tbk-color-base : #222222;
+	--tbk-color-base-font : #ffffff;
 
-	--tbk-color-main : #A29FE1;
-	--tbk-color-main-font : #ffffff;
+	--tbk-color-main : #8C272B;
+	--tbk-color-main-font : #e8d4d5;
 
-	--tbk-color-acc : #9fe1c3;
-	--tbk-color-acc-font : #262d20;
+	--tbk-color-sub : #f8e7ef;
+	--tbk-color-sub-font : #322e30;
 
-	--tbk-color-link : #0076bd;
+	--tbk-color-acc : #a95d60;
+	--tbk-color-acc-font : #f8f2f2;
+
+	--tbk-color-link : #8e8da9;
 
 	--tbk-color-border : #cccccc;
-
-	--tbk-color-sub : #eeeeee;
-	--tbk-color-sub-font : #303030;
 
 	--tbk-color-white :#{$white};
 	--tbk-color-gray : #{$gray};

@@ -17,6 +17,9 @@
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
 	z-index: 100;
+	&.is-featured-img {
+		color: var(--tbk-color-white);
+	}
 	@include import.mqMin(import.$tabletPortrait) {
 		padding-top: 16px;
 		padding-bottom: 16px;
@@ -81,6 +84,9 @@
 			&.is-tag {
 				font-size: .75rem;
 				font-weight: bold;
+				&.is-featured-img {
+					color: var(--tbk-color-white);
+				}
 				&:hover {
 					text-decoration: underline;
 				}

@@ -2,7 +2,7 @@
 @include import.wpBlocks {
 	.wp-block-code {
 		background-color: var(--tbk-color-sub);
-		border: solid 1px var(--tbk-color-gray);
+		border: solid 1px var(--tbk-color-border);
 		padding: import.spvw(8);
 		color: var(--tbk-color-sub-font);
 		font-size: 1rem;
