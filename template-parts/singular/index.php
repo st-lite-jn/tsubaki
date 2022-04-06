@@ -25,6 +25,8 @@
 <?php if ( is_active_sidebar( 'singular-content-bottom-widget' ) ):?>
 <div class="editor-styles-wrapper u-mt--40 l-container">
 <?php dynamic_sidebar( 'singular-content-bottom-widget' ); ?>
+</div>
+<?php endif;?>
 <?php
 if( is_single() ) {
 	comments_template();
