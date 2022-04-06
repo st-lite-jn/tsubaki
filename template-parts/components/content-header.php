@@ -72,3 +72,8 @@
 	</figure>
 	<?php endif;?>
 </header>
+<?php if ( is_active_sidebar( 'singular-title-widget' ) ):?>
+<div class="editor-styles-wrapper u-mt--40 l-container">
+<?php dynamic_sidebar( 'singular-title-widget' ); ?>
+</div>
+<?php endif;?>

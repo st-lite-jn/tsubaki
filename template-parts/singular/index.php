@@ -1,5 +1,5 @@
 <article itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
-	<?php require TEMPLATEPATH . "/template-parts/components/content-header.php";?>
+	<?php get_template_part( 'template-parts/components/content-header' ); ?>
 	<div class="l-container u-mt--40">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
@@ -22,6 +22,9 @@
 		<?php endif; ?>
 	</div>
 </article>
+<?php if ( is_active_sidebar( 'singular-content-bottom-widget' ) ):?>
+<div class="editor-styles-wrapper u-mt--40 l-container">
+<?php dynamic_sidebar( 'singular-content-bottom-widget' ); ?>
 <?php
 if( is_single() ) {
 	comments_template();
