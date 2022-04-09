@@ -2,22 +2,22 @@ $black : #000000;
 $white : #ffffff;
 $gray : #666666;
 :root {
-
-	--tbk-color-base : #222222;
-	--tbk-color-base-font : #ffffff;
-
+	//ベースカラー
+	--tbk-color-base : #230a0b;
+	--tbk-color-base-font : #d3cece;
+	//メインカラー
 	--tbk-color-main : #8C272B;
 	--tbk-color-main-font : #e8d4d5;
+	//サブカラー
+	--tbk-color-sub : #461415;
+	--tbk-color-sub-font : #dad0d0;
 
-	--tbk-color-sub : #f8e7ef;
-	--tbk-color-sub-font : #322e30;
+	--tbk-color-acc : #278c89;
+	--tbk-color-acc-font : #e9f4f3;
 
-	--tbk-color-acc : #a95d60;
-	--tbk-color-acc-font : #f8f2f2;
+	--tbk-color-link : #5d86a9;
 
-	--tbk-color-link : #8e8da9;
-
-	--tbk-color-border : #cccccc;
+	--tbk-color-border : #d9cecf;
 
 	--tbk-color-white :#{$white};
 	--tbk-color-gray : #{$gray};

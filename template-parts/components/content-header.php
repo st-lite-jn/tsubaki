@@ -29,7 +29,7 @@
 		list($cat_terms,$tag_terms) = tsbk_get_pid_terms(get_the_ID());
 	}
 ?>
-<header class="p-content-header-wrapper">
+<header class="p-content-header-wrapper <?php if($featured_img):?>is-featured-img<?php endif;?>">
 	<div class="p-content-header <?php if($featured_img):?>is-featured-img<?php endif;?>">
 		<section class="l-container">
 			<h1 class="p-content-header__label u-dalay-fadein-up"><?php echo $tsbk_title['content-label']; ?></h1>

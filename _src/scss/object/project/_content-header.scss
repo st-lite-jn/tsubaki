@@ -7,13 +7,16 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	background-color: var(--tbk-color-main);
-	min-height: 33.33333vw;
+	background-color: var(--tbk-color-sub);
+	min-height: 10vw;
+	&.is-featured-img {
+		min-height: 33.33333vw;
+	}
 }
 .p-content-header {
 	position: relative;
 	width: 100%;
-	color: var(--tbk-color-main-font);
+	color: var(--tbk-colo-sub-font);
 	padding-top: import.spvw(8);
 	padding-bottom: import.spvw(8);
 	z-index: 100;
