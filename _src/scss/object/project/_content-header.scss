@@ -23,7 +23,7 @@
 	&.is-featured-img {
 		color: var(--tbk-color-white);
 	}
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		padding-top: 16px;
 		padding-bottom: 16px;
 	}
@@ -76,7 +76,7 @@
 				color: var(--tbk-color-acc-font);
 				font-size: .75rem;
 				transition: .5s;
-				@include import.mqMin(import.$tabletPortrait) {
+				@include import.mqMin(import.$displayPortrait) {
 					border-radius: 10px;
 					padding: 4px 8px;
 				}
@@ -99,7 +99,7 @@
 	&__lead {
 		margin-top: import.spvw(8);
 		font-weight: bold;
-		@include import.mqMin(import.$tabletPortrait) {
+		@include import.mqMin(import.$displayPortrait) {
 			margin-top: 16px;
 		}
 	}

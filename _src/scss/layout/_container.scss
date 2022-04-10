@@ -1,7 +1,11 @@
 @use '../foundation/import';
 
 .l-container {
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMax(import.$displaySmart) {
+		padding-right: import.spvw(16);
+		padding-left: import.spvw(16);
+	}
+	@include import.mqMin(import.$displayPortrait) {
 		padding-left: 24px;
 		padding-right: 24px;
 	}
@@ -10,8 +14,5 @@
 		padding-left: calc((100% - 1160px) / 2);
 		padding-right: calc((100% - 1160px) / 2);
 	}
-	@include import.mqMax(import.$smartPhone) {
-		padding-right: import.spvw(16);
-		padding-left: import.spvw(16);
-	}
+
 }

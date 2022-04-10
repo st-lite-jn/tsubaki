@@ -5,11 +5,11 @@
 	background-color: var(--tbk-color-main);
 	width: 100%;
 	z-index: 9900;
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
-	@include import.mqMax(import.$smartPhone) {
+	@include import.mqMax(import.$displaySmart) {
 		padding-top: import.spvw(4);
 		padding-bottom: import.spvw(4);
 	}
@@ -30,10 +30,10 @@
 			opacity: 0;
 			pointer-events: none;
 		}
-		@include import.mqMin(import.$tabletPortrait) {
+		@include import.mqMin(import.$displayPortrait) {
 			width: 160px;
 		}
-		@include import.mqMax(import.$smartPhone) {
+		@include import.mqMax(import.$displaySmart) {
 			width: import.spvw(160);
 		}
 	}
@@ -54,12 +54,12 @@
 		border-radius: 50%;
 		background-color: var(--tbk-color-main);
 		text-align: center;
-		@include import.mqMin(import.$tabletPortrait) {
+		@include import.mqMin(import.$displayPortrait) {
 			width: 44px;
 			height: 44px;
 			margin-left: 12px;
 		}
-		@include import.mqMax(import.$smartPhone) {
+		@include import.mqMax(import.$displaySmart) {
 			width: import.spvw(40);
 			height: import.spvw(40);
 			margin-left: import.spvw(10);
@@ -73,11 +73,11 @@
 	}
 }
 .l-header-utility-ico , .l-header-utility-ico--close {
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		width: 17.6px;
 		height: 17.6px;
 	}
-	@include import.mqMax(import.$smartPhone) {
+	@include import.mqMax(import.$displaySmart) {
 		width: import.spvw(17.6);
 		height: import.spvw(17.6);
 	}

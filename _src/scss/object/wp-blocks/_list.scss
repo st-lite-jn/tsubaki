@@ -17,7 +17,7 @@
 			font-size: 1rem;
 			li {
 				margin-top: import.spvw(4);
-				@include import.mqMin(import.$tabletPortrait) {
+				@include import.mqMin(import.$displayPortrait) {
 					margin-top: 8px;
 				}
 				&:first-child {
@@ -25,7 +25,7 @@
 				}
 				ul , ol {
 					margin-top: import.spvw(4);
-					@include import.mqMin(import.$tabletPortrait) {
+					@include import.mqMin(import.$displayPortrait) {
 						margin-top: 8px;
 					}
 				}

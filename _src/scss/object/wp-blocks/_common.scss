@@ -2,12 +2,12 @@
 
 @include import.wpBlocks {
 	margin-top: import.spvw(20);
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		margin-top: 40px;
 	}
 	> * {
 		margin-top: import.spvw(20);
-		@include import.mqMin(import.$tabletPortrait) {
+		@include import.mqMin(import.$displayPortrait) {
 			margin-top: 40px;
 		}
 		&:first-child {
@@ -20,7 +20,7 @@
 			margin-bottom: 0;
 			text-align: center;
 			font-size: .5rem;
-			@include import.mqMin(import.$tabletPortrait) {
+			@include import.mqMin(import.$displayPortrait) {
 				margin-top: 8px;
 			}
 		}

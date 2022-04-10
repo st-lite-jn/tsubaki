@@ -6,7 +6,7 @@
 		padding: import.spvw(8);
 		color: var(--tbk-color-sub-font);
 		font-size: 1rem;
-		@include import.mqMin(import.$tabletPortrait) {
+		@include import.mqMin(import.$displayPortrait) {
 			padding: 16px;
 		}
 	}

@@ -20,7 +20,7 @@ $exclusion_class : ".wp-block-post-title,.wp-block-site-title,.is-style-center";
 		&.is-style-border {
 			border-left: solid 8px var(--tbk-color-acc);
 			padding: import.spvw(4) import.spvw(8);
-			@include import.mqMin(import.$tabletPortrait) {
+			@include import.mqMin(import.$displayPortrait) {
 				padding: 8px 16px;
 			}
 		}

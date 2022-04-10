@@ -19,7 +19,7 @@
 			}
 			th,td {
 				padding: import.spvw(4);
-				@include import.mqMin(import.$tabletPortrait) {
+				@include import.mqMin(import.$displayPortrait) {
 					padding: 8px;
 				}
 			}

@@ -4,7 +4,7 @@
 	position: relative;
 	min-height: import.spvw(80);
 	@include import.baseColorBlock(var(--tbk-color-base), var(--tbk-color-light-gray), var(--tbk-color-base-font) );
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		min-height: 96px;
 	}
 	&__label {

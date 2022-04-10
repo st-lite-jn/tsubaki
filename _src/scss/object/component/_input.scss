@@ -7,7 +7,7 @@ textarea {
 	border-radius: 8px;
 	color: var(--tbk-color-main-font);
 	font-size: 1rem;
-	@include import.mqMin(import.$tabletPortrait) {
+	@include import.mqMin(import.$displayPortrait) {
 		padding: 8px;
 	}
 	&::placeholder {

@@ -1,6 +1,6 @@
 @use '../foundation/import';
 
-@include import.mqMin(import.$tabletPortrait) {
+@include import.mqMin(import.$displayPortrait) {
     .l-col {
         display: flex;
         flex-wrap: nowrap;

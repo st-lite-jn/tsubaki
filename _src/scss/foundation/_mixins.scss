@@ -36,15 +36,7 @@
 	background-repeat: repeat;
 	color: $color3;
 }
-//container
-@mixin baseContainer {
-	box-sizing: border-box;
-	max-width: $fwxga;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: $paddingWide;
-	padding-right: $paddingWide;
-}
+
 //デフォルトのアニメーション時間
 @mixin transitionDefalt {
 	transition: all $transition $easing;
