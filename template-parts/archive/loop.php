@@ -19,7 +19,7 @@
 		<div class="p-card__body">
 			<?php if($cat_terms):?>
 				<?php foreach($cat_terms as $cat_term):?>
-			<p class="c-label-cat"><?php echo $cat_term->name;?></p>
+			<p class="p-card__body__cat"><?php echo $cat_term->name;?></p>
 				<?php break; endforeach; ?>
 			<?php endif;?>
 			<p class="p-card__body__title"><?php echo get_the_title(get_the_ID());?></p>

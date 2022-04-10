@@ -31,7 +31,7 @@
 			height: 0;
 			padding-bottom: 56.25%;
 			&.is-no-image {
-				background-color: var(--tbk-color-gray);
+				background-color: var(--tbk-color-sub);
 				border-radius: import.spvw(8) import.spvw(8) 0 0;
 				@include import.mqMin(import.$displayPortrait) {
 					border-radius: 16px 16px 0 0;
@@ -44,7 +44,7 @@
 					transform: translateY(-50%);
 					width: 100%;
 					text-align: center;
-					color: var(--tbk-color-base-font) ;
+					color: var(--tbk-color-sub-font) ;
 					font-family: 'Material Icons';
 					font-size: 2.5rem;
 				}
@@ -68,6 +68,9 @@
 			}
 			> *:first-child {
 				margin-top: 0;
+			}
+			&__cat {
+				@include import.catLabel;
 			}
 			&__title {
 				margin-top: import.spvw(4);

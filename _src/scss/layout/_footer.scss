@@ -5,8 +5,8 @@
 .l-footer {
 	padding-top: import.spvw(16);
 	padding-bottom: import.spvw(16);
-	background-color: var(--tbk-color-main);
-	color: var(--tbk-color-main-font);
+	background-color: var(--tbk-color-sub);
+	color: var(--tbk-color-sub-font);
 	@include import.mqMin(import.$displayPortrait) {
 		padding-top: 32px;
 		padding-bottom: 32px;
@@ -25,7 +25,7 @@
 	text-align: center;
 	&__item {
 		display: inline-block;
-		color: var(--tbk-color-main-font);
+		color: var(--tbk-color-sub-font);
 		@include import.mqMin(import.$displayPortrait) {
 			margin-right: 8px;
 			margin-left: 8px;

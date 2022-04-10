@@ -1,3 +1,5 @@
+@use './functions' as functions;
+@use './display' as display;
 //メディアクエリ
 @mixin mqMax($break-point) {
 	@media screen and (max-width: $break-point) {
@@ -36,7 +38,18 @@
 	background-repeat: repeat;
 	color: $color3;
 }
-
+@mixin catLabel {
+	display: inline-block;
+	padding: functions.spvw(4) functions.spvw(8);
+	background-color: var(--tbk-color-acc);
+	border-radius: functions.spvw(10);
+	color: var(--tbk-color-acc-font);
+	font-size: .75rem;
+	@include mqMin(display.$displayPortrait) {
+		border-radius: 10px;
+		padding: 4px 8px;
+	}
+}
 //デフォルトのアニメーション時間
 @mixin transitionDefalt {
 	transition: all $transition $easing;

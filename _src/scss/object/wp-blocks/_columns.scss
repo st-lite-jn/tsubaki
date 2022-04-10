@@ -3,7 +3,7 @@
 	.wp-block-columns {
 		margin-bottom: 0;
 		@media (max-width: 781px) {
-			margin-top: 0;
+			margin-top: 0 !important;
 		}
 		.wp-block-column {
 			margin-bottom: 0;
@@ -28,6 +28,19 @@
 				}
 				&:first-child {
 					margin-top: 0 !important;
+				}
+			}
+		}
+	}
+	.wp-block-group__inner-container {
+		.wp-block-columns {
+			.wp-block-column {
+				margin-bottom: 0;
+				@media (max-width: 781px) {
+					margin-top: import.spvw(16);
+					@include import.mqMin(import.$displayPortrait) {
+						margin-top: 16px;
+					}
 				}
 			}
 		}

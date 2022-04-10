@@ -3,7 +3,6 @@
  *
  * Template Name: アーカイブのテンプレート
 */
-
 ?>
 <?php
 get_header();
