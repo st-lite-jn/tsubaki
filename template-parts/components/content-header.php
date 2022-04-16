@@ -13,14 +13,13 @@
 		'decoding'=>'async'
 	];
 	$featured_img = false;
-	if(!is_404() && !is_archive() && get_post_thumbnail_id( get_the_ID() )) {
-		$featured_img = wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false , $args_featured );
-	} else if( is_home() && get_post_thumbnail_id( get_option( 'page_for_posts' ) ) ) {
+	if( is_home() && get_post_thumbnail_id( get_option( 'page_for_posts' ) ) ) {
 		$featured_img = wp_get_attachment_image( get_post_thumbnail_id( get_option( 'page_for_posts' ) ) , 'large' , false , $args_featured );
+	}else if (!is_404() && !is_archive() && get_post_thumbnail_id( get_the_ID() )) {
+		$featured_img = wp_get_attachment_image( get_post_thumbnail_id(get_the_ID()) , 'large' , false , $args_featured );
 	} else {
 		$featured_img = false;
 	}
-
 	/**
 	 * 制作者名取得
 	 */
