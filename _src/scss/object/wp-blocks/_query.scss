@@ -42,11 +42,11 @@
 					}
 				}
 				.wp-block-post-featured-image {
+					overflow: hidden;
+					transition: .5s;
 					a {
 						display: inline;
 					}
-					overflow: hidden;
-					transition: .5s;
 					img {
 						aspect-ratio: 3 / 2;
 						width: 100%;
