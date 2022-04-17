@@ -1,9 +1,9 @@
-import {gnavToggle , gnavPosition} from "./_gnav";
-import {searchToggle , searchPosition} from "./_search";
-import {headerFixed} from "./_header";
-import {animations} from "./_animations";
-import {wpEmbedVideo} from "./_wp-embed";
-import {wpQueryThumnail} from "./_wp-query";
+import {gnavToggle , gnavPosition} from "./modules/_gnav";
+import {searchToggle , searchPosition} from "./modules/_search";
+import {headerFixed} from "./modules/_header";
+import {animations} from "./modules/_animations";
+import {wpEmbedVideo} from "./modules/_wp-embed";
+import {wpQueryThumnail} from "./modules/_wp-query";
 
 /**
  * 関数の発火処理

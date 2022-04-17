@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./_src/js/_animations.js":
-/*!********************************!*\
-  !*** ./_src/js/_animations.js ***!
-  \********************************/
+/***/ "./_src/js/modules/_animations.js":
+/*!****************************************!*\
+  !*** ./_src/js/modules/_animations.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -42,10 +42,10 @@ const animations = {
 
 /***/ }),
 
-/***/ "./_src/js/_bg-layer.js":
-/*!******************************!*\
-  !*** ./_src/js/_bg-layer.js ***!
-  \******************************/
+/***/ "./_src/js/modules/_bg-layer.js":
+/*!**************************************!*\
+  !*** ./_src/js/modules/_bg-layer.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -80,10 +80,10 @@ const bgLayer = (e) => {
 
 /***/ }),
 
-/***/ "./_src/js/_gnav.js":
-/*!**************************!*\
-  !*** ./_src/js/_gnav.js ***!
-  \**************************/
+/***/ "./_src/js/modules/_gnav.js":
+/*!**********************************!*\
+  !*** ./_src/js/modules/_gnav.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -91,9 +91,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "gnavToggle": () => (/* binding */ gnavToggle),
 /* harmony export */   "gnavPosition": () => (/* binding */ gnavPosition)
 /* harmony export */ });
-/* harmony import */ var _screen_fixed__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_screen-fixed */ "./_src/js/_screen-fixed.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_header */ "./_src/js/_header.js");
-/* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/_bg-layer.js");
+/* harmony import */ var _screen_fixed__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_screen-fixed */ "./_src/js/modules/_screen-fixed.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_header */ "./_src/js/modules/_header.js");
+/* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/modules/_bg-layer.js");
 
 
 
@@ -143,10 +143,10 @@ const gnavPosition = () => {
 
 /***/ }),
 
-/***/ "./_src/js/_header.js":
-/*!****************************!*\
-  !*** ./_src/js/_header.js ***!
-  \****************************/
+/***/ "./_src/js/modules/_header.js":
+/*!************************************!*\
+  !*** ./_src/js/modules/_header.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -183,10 +183,10 @@ const headerFixed = () => {
 
 /***/ }),
 
-/***/ "./_src/js/_screen-fixed.js":
-/*!**********************************!*\
-  !*** ./_src/js/_screen-fixed.js ***!
-  \**********************************/
+/***/ "./_src/js/modules/_screen-fixed.js":
+/*!******************************************!*\
+  !*** ./_src/js/modules/_screen-fixed.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -224,10 +224,10 @@ class ScreenFixed {
 
 /***/ }),
 
-/***/ "./_src/js/_search.js":
-/*!****************************!*\
-  !*** ./_src/js/_search.js ***!
-  \****************************/
+/***/ "./_src/js/modules/_search.js":
+/*!************************************!*\
+  !*** ./_src/js/modules/_search.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -235,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "searchToggle": () => (/* binding */ searchToggle),
 /* harmony export */   "searchPosition": () => (/* binding */ searchPosition)
 /* harmony export */ });
-/* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/_bg-layer.js");
+/* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/modules/_bg-layer.js");
 
 
 const searchToggle = () => {
@@ -274,10 +274,10 @@ const searchPosition = () => {
 
 /***/ }),
 
-/***/ "./_src/js/_wp-embed.js":
-/*!******************************!*\
-  !*** ./_src/js/_wp-embed.js ***!
-  \******************************/
+/***/ "./_src/js/modules/_wp-embed.js":
+/*!**************************************!*\
+  !*** ./_src/js/modules/_wp-embed.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -302,10 +302,10 @@ const wpEmbedVideo = () => {
 
 /***/ }),
 
-/***/ "./_src/js/_wp-query.js":
-/*!******************************!*\
-  !*** ./_src/js/_wp-query.js ***!
-  \******************************/
+/***/ "./_src/js/modules/_wp-query.js":
+/*!**************************************!*\
+  !*** ./_src/js/modules/_wp-query.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -393,12 +393,12 @@ var __webpack_exports__ = {};
   !*** ./_src/js/main.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _gnav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_gnav */ "./_src/js/_gnav.js");
-/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_search */ "./_src/js/_search.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_header */ "./_src/js/_header.js");
-/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_animations */ "./_src/js/_animations.js");
-/* harmony import */ var _wp_embed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_wp-embed */ "./_src/js/_wp-embed.js");
-/* harmony import */ var _wp_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_wp-query */ "./_src/js/_wp-query.js");
+/* harmony import */ var _modules_gnav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/_gnav */ "./_src/js/modules/_gnav.js");
+/* harmony import */ var _modules_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/_search */ "./_src/js/modules/_search.js");
+/* harmony import */ var _modules_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/_header */ "./_src/js/modules/_header.js");
+/* harmony import */ var _modules_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/_animations */ "./_src/js/modules/_animations.js");
+/* harmony import */ var _modules_wp_embed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/_wp-embed */ "./_src/js/modules/_wp-embed.js");
+/* harmony import */ var _modules_wp_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/_wp-query */ "./_src/js/modules/_wp-query.js");
 
 
 
@@ -411,17 +411,17 @@ __webpack_require__.r(__webpack_exports__);
  */
 //最初の HTML 文書の読み込みと解析が完了したとき、スタイルシート、画像、サブフレームの読み込みが完了するのを待たずに発火
 window.addEventListener('DOMContentLoaded', () => {
-    (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
-    (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
-    (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavToggle)();
-    (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchToggle)();
-    (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
-    (0,_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
-	(0,_wp_query__WEBPACK_IMPORTED_MODULE_5__.wpQueryThumnail)();
+    (0,_modules_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
+    (0,_modules_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
+    (0,_modules_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavToggle)();
+    (0,_modules_search__WEBPACK_IMPORTED_MODULE_1__.searchToggle)();
+    (0,_modules_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
+    (0,_modules_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
+	(0,_modules_wp_query__WEBPACK_IMPORTED_MODULE_5__.wpQueryThumnail)();
 });
 //ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
 window.addEventListener('load', () => {
-    _animations__WEBPACK_IMPORTED_MODULE_3__.animations.delayFadeinUp();
+    _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.delayFadeinUp();
 });
 
 //画面をリサイズしたときに発火
@@ -430,15 +430,15 @@ let queue = null,
 window.addEventListener( 'resize', () => {
     clearTimeout( queue );
     queue = setTimeout(() => {
-        (0,_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
-        (0,_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
-        (0,_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
+        (0,_modules_gnav__WEBPACK_IMPORTED_MODULE_0__.gnavPosition)();
+        (0,_modules_search__WEBPACK_IMPORTED_MODULE_1__.searchPosition)();
+        (0,_modules_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
     }, wait);
 },false);
 
 //画面をスクロール時に実行
 window.addEventListener( 'scroll' , () => {
-    (0,_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
+    (0,_modules_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
 });
 
 //要素をホバーしたらバウンスする処理を発火
@@ -454,10 +454,10 @@ const bounceOff = {
 	elasticity: 0
 }
 $bounceTargets.forEach($target =>{
-	$target.addEventListener('mouseenter', _animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('touchstart', _animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('mouseleave', _animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
-	$target.addEventListener('touchend', _animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
+	$target.addEventListener('mouseenter', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
+	$target.addEventListener('touchstart', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
+	$target.addEventListener('mouseleave', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
+	$target.addEventListener('touchend', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
 });
 
 })();
