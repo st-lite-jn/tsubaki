@@ -13,30 +13,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "animations": () => (/* binding */ animations)
 /* harmony export */ });
 
-const animations = {
-	hoverBounce (event) {
-		anime.remove(event.currentTarget);
-		anime({
-			targets: event.currentTarget,
-			scale: this.scale,
-			duration: this.duration,
-			elasticity: this.elasticity
+const elementsObserver = new IntersectionObserver( entries => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0) {
+				entry.target.classList.add("is-ignition");
+				elementsObserver.unobserve(entry.target);
+			}
 		});
-	},
-	delayFadeinUp () {
-		anime({
-			targets: ".u-dalay-fadein-up",
-			keyframes:[
-				{opacity : 0 ,translateY:40},
-				{opacity : 1,translateY:0}
-			],
-			duration: 2000,
-			easing: 'easeOutCirc',
-			delay: anime.stagger(200, {start: 0})
+	}, {
+	rootMargin: '-100px 0px'
+});
+
+const animations = {
+	observeIgnition (targets) {
+		targets.forEach(target => {
+			elementsObserver.observe(target);
 		})
 	}
 }
-
 
 
 
@@ -418,11 +412,10 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
     (0,_modules_wp_embed__WEBPACK_IMPORTED_MODULE_4__.wpEmbedVideo)();
 	(0,_modules_wp_query__WEBPACK_IMPORTED_MODULE_5__.wpQueryThumnail)();
+	const $targets = document.querySelectorAll('.is-target');
+	_modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.observeIgnition($targets);
 });
-//ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
-window.addEventListener('load', () => {
-    _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.delayFadeinUp();
-});
+
 
 //画面をリサイズしたときに発火
 let queue = null,
@@ -441,24 +434,6 @@ window.addEventListener( 'scroll' , () => {
     (0,_modules_header__WEBPACK_IMPORTED_MODULE_2__.headerFixed)();
 });
 
-//要素をホバーしたらバウンスする処理を発火
-const $bounceTargets = document.querySelectorAll(".u-hover-bounce");
-const bounceOn = {
-	scale: 1.1,
-	duration: 1000,
-	elasticity: 50
-}
-const bounceOff = {
-	scale: 1,
-	duration: 500,
-	elasticity: 0
-}
-$bounceTargets.forEach($target =>{
-	$target.addEventListener('mouseenter', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('touchstart', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('mouseleave', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
-	$target.addEventListener('touchend', _modules_animations__WEBPACK_IMPORTED_MODULE_3__.animations.hoverBounce.bind(bounceOff));
-});
 
 })();
 

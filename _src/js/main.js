@@ -17,11 +17,10 @@ window.addEventListener('DOMContentLoaded', () => {
     headerFixed();
     wpEmbedVideo();
 	wpQueryThumnail();
+	const $targets = document.querySelectorAll('.is-target');
+	animations.observeIgnition($targets);
 });
-//ページ全体が、スタイルシートや画像などのすべての依存するリソースを含めて読み込まれたときに発火
-window.addEventListener('load', () => {
-    animations.delayFadeinUp();
-});
+
 
 //画面をリサイズしたときに発火
 let queue = null,
@@ -40,21 +39,3 @@ window.addEventListener( 'scroll' , () => {
     headerFixed();
 });
 
-//要素をホバーしたらバウンスする処理を発火
-const $bounceTargets = document.querySelectorAll(".u-hover-bounce");
-const bounceOn = {
-	scale: 1.1,
-	duration: 1000,
-	elasticity: 50
-}
-const bounceOff = {
-	scale: 1,
-	duration: 500,
-	elasticity: 0
-}
-$bounceTargets.forEach($target =>{
-	$target.addEventListener('mouseenter', animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('touchstart', animations.hoverBounce.bind(bounceOn));
-	$target.addEventListener('mouseleave', animations.hoverBounce.bind(bounceOff));
-	$target.addEventListener('touchend', animations.hoverBounce.bind(bounceOff));
-});

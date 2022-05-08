@@ -37,9 +37,9 @@
 <header class="p-content-header-wrapper <?php if($featured_img):?>is-featured-img<?php endif;?>">
 	<div class="p-content-header <?php if($featured_img):?>is-featured-img<?php endif;?>">
 		<section class="l-container">
-			<h1 class="p-content-header__label u-dalay-fadein-up"><?php echo $tsbk_title['content-label']; ?></h1>
+			<h1 class="p-content-header__label is-target u-fadein-up"><?php echo $tsbk_title['content-label']; ?></h1>
 	<?php if(is_single()):?>
-		<div class="p-content-header__meta u-mt--8 u-dalay-fadein-up">
+		<div class="p-content-header__meta u-mt--8 is-target u-fadein-up">
 			<time datetime="<?php echo get_the_time("Y-m-d"); ?>" class="p-content-header__meta__item is-published"><?php echo get_the_time("Y.m.d"); ?></time>
 			<time datetime="<?php echo get_the_modified_date("Y-m-d"); ?>" class="p-content-header__meta__item is-modified"><?php echo get_the_modified_date("Y.m.d"); ?></time>
 			<p class="p-content-header__meta__item is-author">
@@ -48,7 +48,7 @@
 		</div>
 
 		<?php if( isset($cat_terms) || isset($tag_terms) ):?>
-			<div class="p-content-header__tax u-mt--8 u-dalay-fadein-up">
+			<div class="p-content-header__tax u-mt--8 is-target u-fadein-up">
 			<?php if( isset($cat_terms) ):?>
 				<?php foreach($cat_terms as $cat_term):?>
 				<a href="<?php echo get_tag_link($cat_term->term_id);?>" class="p-content-header__tax__item is-cat"><?php echo $cat_term->name;?></a>
@@ -65,7 +65,7 @@
 	<?php endif;?>
 
 	<?php if(is_page() && has_excerpt()):?>
-		<div class="p-content-header__lead u-dalay-fadein-up">
+		<div class="p-content-header__lead is-target u-fadein-up">
 		<p><?php echo get_the_excerpt();?></p>
 		</div>
 	<?php endif; ?>

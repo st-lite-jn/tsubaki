@@ -2,7 +2,12 @@
 /*
 * アニメーションを行う要素の初期状態を定義
 */
-.u-dalay-fadein-up,
 .u-fadein-up {
-    opacity: 0;
+	opacity: 0;
+	transform: translateY(50px);
+	&.is-ignition {
+		transition: 1s;
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

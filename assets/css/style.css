@@ -1442,9 +1442,14 @@ a.button.is-outlined:hover, .editor-styles-wrapper a.button.post-page-numbers.cu
 /*
 * アニメーションを行う要素の初期状態を定義
 */
-.u-dalay-fadein-up,
 .u-fadein-up {
   opacity: 0;
+  transform: translateY(50px);
+}
+.u-fadein-up.is-ignition {
+  transition: 1s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .u-al--right {
