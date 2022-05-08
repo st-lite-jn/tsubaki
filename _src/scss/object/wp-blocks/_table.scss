@@ -38,4 +38,11 @@
 			}
 		}
 	}
+	&.is-selected {
+		table {
+			th,td {
+				outline: var(--tbk-color-base-font) dashed thin;
+			}
+		}
+	}
 }

@@ -1,9 +1,10 @@
 @use '../../foundation/import';
+$spvw : import.spvw(32);
 @include import.wpBlocks {
 	.wp-block-gallery {
-		.blocks-gallery-grid {
-			margin-left: 0;
-			margin-bottom: -1em;
+		margin-top: calc(  #{$spvw} - 16px) ;
+		@include import.mqMin(import.$displayPortrait) {
+			margin-top: calc( 40px - 16px );
 		}
 	}
 }

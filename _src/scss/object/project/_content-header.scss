@@ -28,7 +28,7 @@
 		padding-bottom: 16px;
 	}
 	&__label {
-		font-size: 1.75rem;
+		font-size: var(--wp--preset--font-size--x-large);
 	}
 	&__meta {
 		display: flex;

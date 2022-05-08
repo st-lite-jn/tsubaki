@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+// ==========================================================================
+// Foundation
+// ==========================================================================
+@use "foundation/colors";
+@use "foundation/preset-font-size";
+
+// ==========================================================================
+// WP Blocks
+// ==========================================================================
+@use "object/wp-blocks/common";
+
 //テキスト
 @use "object/wp-blocks/heading";
 @use "object/wp-blocks/paragraph";
@@ -35,3 +46,9 @@
 
 //グループ
 @use "object/wp-blocks/group";
+
+
+.editor-styles-wrapper {
+	background-color : var( --tbk-color-base );
+	color : var(--tbk-color-base-font );
+}

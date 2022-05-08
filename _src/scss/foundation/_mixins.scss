@@ -106,7 +106,7 @@
 }
 
 @mixin wpBlocks {
-	.editor-styles-wrapper {
+	.editor-styles-wrapper , .is-root-container {
 		@content;
 	}
 }

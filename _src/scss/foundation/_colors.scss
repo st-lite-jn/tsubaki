@@ -3,24 +3,23 @@ $white : #ffffff;
 $gray : #666666;
 :root {
 	//ベースカラー
-	--tbk-color-base : #230a0b;
-	--tbk-color-base-font : #d3cece;
+	--tbk-color-base : #ffffff;
+	--tbk-color-base-font : #333333;
 	//メインカラー
-	--tbk-color-main : #8C272B;
-	--tbk-color-main-font : #e8d4d5;
+	--tbk-color-main : #d7d7d7;
+	--tbk-color-main-font : #333333;
 	//サブカラー
-	--tbk-color-sub : #461415;
-	--tbk-color-sub-font : #dad0d0;
+	--tbk-color-sub : #e2e2e2;
+	--tbk-color-sub-font : #333333;
 
-	--tbk-color-acc : #278c89;
-	--tbk-color-acc-font : #e9f4f3;
+	--tbk-color-acc : #004D9F;
+	--tbk-color-acc-font : #ffffff;
 
-	--tbk-color-link : #5d86a9;
+	--tbk-color-link : #003366;
 
-	--tbk-color-border : #d9cecf;
+	--tbk-color-border : #999999;
 
 	--tbk-color-white :#{$white};
 	--tbk-color-gray : #{$gray};
 	--tbk-color-black : #{$black};
-	--tbk-color-light-gray :#eeeeee;
 }
