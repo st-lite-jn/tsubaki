@@ -17,10 +17,10 @@
 		width: 49%;
 		margin-top: 2%;
 		box-shadow: 0 4px 2px #000000;
-		background-color: var(--tbk-color-main);
+		background-color: var(--tsbk-color-main);
 		border-radius: import.spvw(8);
 		text-decoration: none;
-		color: var(--tbk-color-base-font);
+		color: var(--tsbk-color-base-font);
 		@include import.mqMin(import.$displayPortrait) {
 			width: 32%;
 			border-radius: 16px;
@@ -31,7 +31,7 @@
 			height: 0;
 			padding-bottom: 56.25%;
 			&.is-no-image {
-				background-color: var(--tbk-color-sub);
+				background-color: var(--tsbk-color-sub);
 				border-radius: import.spvw(8) import.spvw(8) 0 0;
 				@include import.mqMin(import.$displayPortrait) {
 					border-radius: 16px 16px 0 0;
@@ -44,7 +44,7 @@
 					transform: translateY(-50%);
 					width: 100%;
 					text-align: center;
-					color: var(--tbk-color-sub-font) ;
+					color: var(--tsbk-color-sub-font) ;
 					font-family: 'Material Icons';
 					font-size: 2.5rem;
 				}

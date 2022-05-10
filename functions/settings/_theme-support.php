@@ -8,6 +8,13 @@
 */
 // add_filter( 'use_block_editor_for_post', '__return_false' );
 
+/**
+ * コアのブロックパターンをすべて無効化
+ */
+add_action( 'init', function() {
+	remove_theme_support( 'core-block-patterns' );
+}, 9 );
+
 /*
 * アイキャッチ画像を有効化
 */
@@ -20,7 +27,6 @@ add_action( 'after_setup_theme', 'tsbk_twpp_setup_theme' );
 * 固定ページの抜粋を有効化
 */
 add_post_type_support( 'page', 'excerpt' );
-
 
 /*
 * テーマカスタマイザーのカスタムロゴ機能を有効化

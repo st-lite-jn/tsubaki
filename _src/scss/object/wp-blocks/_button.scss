@@ -2,23 +2,23 @@
 .button {
 	display: inline-block;
 	padding: import.spvw(8) import.spvw(20);
-	background: linear-gradient(90deg, var(--tbk-color-white) 0%, var(--tbk-color-white) 50%, var(--tbk-color-link) 50% ,var(--tbk-color-link) 100%);
+	background: linear-gradient(90deg, var(--tsbk-color-white) 0%, var(--tsbk-color-white) 50%, var(--tsbk-color-link) 50% ,var(--tsbk-color-link) 100%);
 	background-position: 100% 0%;
 	background-size: 200%;
-	border : solid 1px var(--tbk-color-link);
+	border : solid 1px var(--tsbk-color-link);
 	border-radius: 8px;
 	text-decoration: none;
 	text-align: center;
-	color: var(--tbk-color-white);
+	color: var(--tsbk-color-white);
 	font-size: 1rem;
 	@include import.mqMin(import.$displayPortrait) {
 		padding: 8px 16px;
 	}
 	&.is-outlined {
-		background: linear-gradient(90deg, var(--tbk-color-link) 0% ,var(--tbk-color-link) 50%, var(--tbk-color-white) 50%, var(--tbk-color-white) 100%);
+		background: linear-gradient(90deg, var(--tsbk-color-link) 0% ,var(--tsbk-color-link) 50%, var(--tsbk-color-white) 50%, var(--tsbk-color-white) 100%);
 		background-position: 100% 50%;
 		background-size: 200%;
-		color: var(--tbk-color-link);
+		color: var(--tsbk-color-link);
 	}
 	&--mini {
 		@extend .button;
@@ -34,12 +34,12 @@ a,button,input {
 	&.button {
 		&:hover {
 			animation : hoverBgColor ease .5s both;
-			color: var(--tbk-color-link);
+			color: var(--tsbk-color-link);
 		}
 		&.is-outlined {
 			&:hover {
 				animation : hoverBgColor ease .5s both;
-				color: var(--tbk-color-white);
+				color: var(--tsbk-color-white);
 			}
 		}
 	}

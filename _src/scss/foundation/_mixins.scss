@@ -41,9 +41,9 @@
 @mixin catLabel {
 	display: inline-block;
 	padding: functions.spvw(4) functions.spvw(8);
-	background-color: var(--tbk-color-acc);
+	background-color: var(--tsbk-color-acc);
 	border-radius: functions.spvw(10);
-	color: var(--tbk-color-acc-font);
+	color: var(--tsbk-color-acc-font);
 	font-size: .75rem;
 	@include mqMin(display.$displayPortrait) {
 		border-radius: 10px;

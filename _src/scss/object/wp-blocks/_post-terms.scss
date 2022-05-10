@@ -11,9 +11,9 @@
 		a {
 			padding: import.spvw(4) import.spvw(8);
 			margin-right: 1em;
-			background-color: var(--tbk-color-acc);
+			background-color: var(--tsbk-color-acc);
 			border-radius: import.spvw(10);
-			color: var(--tbk-color-acc-font);
+			color: var(--tsbk-color-acc-font);
 			font-size: .75rem;
 			transition: .5s;
 			@include import.mqMin(import.$displayPortrait) {
@@ -30,7 +30,7 @@
 	}
 	&.is-tag {
 		a {
-			color: var(--tbk-color-base-font);
+			color: var(--tsbk-color-base-font);
 			font-size: .75rem;
 			font-weight: bold;
 			&:hover {

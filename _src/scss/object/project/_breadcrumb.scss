@@ -21,15 +21,15 @@
 	&__list {
 		display: flex;
 		align-items: center;
-		color: var(--tbk-color-base-font) ;
+		color: var(--tsbk-color-base-font) ;
 		text-overflow: ellipsis;
 		font-size: .75rem;
 	}
 	&__item {
 		text-decoration: none;
-		color: var(--tbk-color-base-font);
+		color: var(--tsbk-color-base-font);
 		span {
-			color: var(--tbk-color-link);
+			color: var(--tsbk-color-link);
 		}
 	}
 }

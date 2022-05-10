@@ -6,8 +6,8 @@ html {
 	}
 }
 body {
-	background-color: var(--tbk-color-base);
-	color: var(--tbk-color-base-font);
+	background-color: var(--tsbk-color-base);
+	color: var(--tsbk-color-base-font);
 	font-family: 'Noto Sans JP', sans-serif;
 }
 img {
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6,strong,b {
 }
 a {
 	text-decoration: underline;
-	color : var(--tbk-color-link);
+	color : var(--tsbk-color-link);
 	&:hover {
 		text-decoration: none;
 	}

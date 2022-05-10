@@ -18,7 +18,7 @@ $exclusion_class : ".wp-block-post-title,.wp-block-site-title,.is-style-center";
 	h1,h2,h3,h4,h5,h6 {
 		//ボーダーライン
 		&.is-style-border {
-			border-left: solid 8px var(--tbk-color-acc);
+			border-left: solid 8px var(--tsbk-color-acc);
 			padding: import.spvw(4) import.spvw(8);
 			@include import.mqMin(import.$displayPortrait) {
 				padding: 8px 16px;
@@ -41,7 +41,7 @@ $exclusion_class : ".wp-block-post-title,.wp-block-site-title,.is-style-center";
 				right: auto;
 				bottom: 0;
 				left: 50%;
-				background-color: var(--tbk-color-acc);
+				background-color: var(--tsbk-color-acc);
 				transform: translateX(-50%);
 			}
 		}

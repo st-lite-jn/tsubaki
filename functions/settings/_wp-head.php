@@ -28,7 +28,7 @@ remove_action('admin_print_styles', 'print_emoji_styles');// 絵文字に関す�
  * headに要素を追記
  */
 function tsbk_add_wp_head () {
-	$home_url = home_url();
+	$includes_url = includes_url();
 	$theme_file_url = get_template_directory_uri();
 	//テーマのバージョンを取得
 	$theme_version = wp_get_theme() -> get( 'Version' );
@@ -37,9 +37,9 @@ function tsbk_add_wp_head () {
 	echo "
 <link rel='preload' href='{$theme_file_url}/assets/js/main.js?ver={$theme_version}' as='script' />
 <link rel='preload' href='{$theme_file_url}/assets/css/style.css?ver={$theme_version}' as='style' />
-<link rel='preload' href='{$home_url}/wp-includes/css/dist/block-library/style.min.css?ver={$wp_version}' as='style' />
+<link rel='preload' href='{$includes_url}css/dist/block-library/style.min.css?ver={$wp_version}' as='style' />
 <link rel='preload' href='https://fonts.googleapis.com/icon?family=Material+Icons%7CMaterial+Icons+Outlined&display=swap' as='style' />
-<link rel='preload' href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap' as='font' />
+<link rel='preload' href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap' as='style' />
 <link rel='preconnect' href='https://fonts.googleapis.com' />
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
 	";

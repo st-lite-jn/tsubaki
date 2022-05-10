@@ -3,7 +3,7 @@
 	get_header();
 	get_template_part('template-parts/components/content' , 'header' );
 ?>
-<div class="l-container">
+<div class="l-container editor-styles-wrapper">
 <?php if(!get_search_query()):?>
 	<div class="u-al--center u-pt--80">
 		<p>検索ワードを入力してください。</p>

@@ -7,7 +7,7 @@
 	top: 0;
 	bottom: 0;
 	max-height: 100vh;
-	background-color: var(--tbk-color-base);
+	background-color: var(--tsbk-color-base);
 	vertical-align: middle;
 	z-index: 9850;
 	overflow-y: scroll;
@@ -96,9 +96,9 @@
 		&__item {
 			position: relative;
 			a {
-				border-bottom: dashed 1px var(--tbk-color-base-font) ;
+				border-bottom: dashed 1px var(--tsbk-color-base-font) ;
 				line-height: 1.33;
-				color: var(--tbk-color-base-font) ;
+				color: var(--tsbk-color-base-font) ;
 				font-weight: 600;
 				font-size: 1.25rem;
 				@include import.mqMin(import.$displayPortrait){

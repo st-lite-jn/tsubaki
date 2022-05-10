@@ -7,7 +7,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	background-color: var(--tbk-color-sub);
+	background-color: var(--tsbk-color-main);
 	min-height: 20vw;
 	&.is-featured-img {
 		min-height: 33.33333vw;
@@ -16,12 +16,12 @@
 .p-content-header {
 	position: relative;
 	width: 100%;
-	color: var(--tbk-colo-sub-font);
+	color: var(--tsbk-colo-main-font);
 	padding-top: import.spvw(16);
 	padding-bottom: import.spvw(16);
 	z-index: 100;
 	&.is-featured-img {
-		color: var(--tbk-color-white);
+		color: var(--tsbk-color-main-font);
 	}
 	@include import.mqMin(import.$displayPortrait) {
 		padding-top: 16px;
@@ -68,7 +68,7 @@
 			display: inline-block;
 			text-decoration: none;
 			margin: 0 .5em 0 0;
-			color: var(--tbk-color-main-font);
+			color: var(--tsbk-color-main-font);
 			&.is-cat {
 				@include import.catLabel;
 				transition: .5s;
@@ -80,7 +80,7 @@
 				font-size: .75rem;
 				font-weight: bold;
 				&.is-featured-img {
-					color: var(--tbk-color-white);
+					color: var(--tsbk-color-main-font);
 				}
 				&:hover {
 					text-decoration: underline;

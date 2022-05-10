@@ -2,7 +2,7 @@
 
 .l-header {
 	transition: .5s;
-	background-color: var(--tbk-color-base);
+	background-color: var(--tsbk-color-base);
 	width: 100%;
 	z-index: 9900;
 	@include import.mqMin(import.$displayPortrait) {
@@ -16,7 +16,7 @@
 	&.is-scrolled {
 		position: fixed;
 		top: 0;
-		box-shadow: 0 1px 5px 0 var(--tbk-color-black);
+		box-shadow: 0 1px 5px 0 var(--tsbk-color-black);
 	}
 	.l-container {
 		display: flex;
@@ -52,9 +52,9 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
-		background-color: var(--tbk-color-acc);
+		background-color: var(--tsbk-color-acc);
 		text-align: center;
-		color: var(--tbk-color-acc-font);
+		color: var(--tsbk-color-acc-font);
 		@include import.mqMin(import.$displayPortrait) {
 			width: 44px;
 			height: 44px;
@@ -84,12 +84,12 @@
 	}
 }
 .l-header-utility-ico {
-	fill:var(--tbk-color-acc-font)  !important;
-	stroke:var(--tbk-color-acc-font)  !important;
+	fill:var(--tsbk-color-acc-font)  !important;
+	stroke:var(--tsbk-color-acc-font)  !important;
 }
 .l-header-utility-ico--close {
 	display: none;
-	stroke: var(--tbk-color-acc-font) !important;
+	stroke: var(--tsbk-color-acc-font) !important;
 }
 
 

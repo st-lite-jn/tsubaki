@@ -286,7 +286,7 @@ add_action( 'customize_register', 'tsbk_tc_general' );
 
 
 /**
- * 一般設定のカラー設定を格納する関数
+ * 一般設定のカラー設定した場合にインライン出力する処理
  */
 if( !function_exists( 'tsbk_tc_custom_color_style' ) ):
 function tsbk_tc_custom_color_style( ) {
@@ -310,49 +310,51 @@ function tsbk_tc_custom_color_style( ) {
 			"main-font" =>  get_theme_mod( 'tsbk_setting_color-main-font' ),
 			"acc" => get_theme_mod( 'tsbk_setting_color-acc' ),
 			"acc-font" => get_theme_mod( 'tsbk_setting_color-acc-font' ),
-			"sub" => get_theme_mod( 'tsbk_setting_color-acc' ),
-			"sub-font" => get_theme_mod( 'tsbk_setting_color-acc-font' ),
+			"sub" => get_theme_mod( 'tsbk_setting_color-sub' ),
+			"sub-font" => get_theme_mod( 'tsbk_setting_color-sub-font' ),
 			"link" =>  get_theme_mod( 'tsbk_setting_color-link' ),
 			"border" => get_theme_mod( 'tsbk_setting_color-border' )
 		];
-
-		$cutom_color_style .= "<style>:root{";
+		$cutom_color_style .= ":root{";
 		if( !empty( $colors['base'] ) ){
-			$cutom_color_style .= "	--tbk-color-base : {$colors['base']} ;";
+			$cutom_color_style .= "--tsbk-color-base : {$colors['base']} ;";
 		}
 		if( !empty( $colors['base-font'] ) ) {
-			$cutom_color_style .= "	--tbk-color-base-font : {$colors['base-font']} ;";
+			$cutom_color_style .= "--tsbk-color-base-font : {$colors['base-font']} ;";
 		}
 		if( !empty( $colors['main'] ) ) {
-			$cutom_color_style .= "	--tbk-color-main : {$colors['main']} ;";
+			$cutom_color_style .= "	--tsbk-color-main : {$colors['main']} ;";
 		}
 		if( !empty( $colors['main-font'] ) ) {
-			$cutom_color_style .= "	--tbk-color-main-font : {$colors['main-font']} ;";
+			$cutom_color_style .= "--tsbk-color-main-font : {$colors['main-font']} ;";
 		}
 		if( !empty( $colors['acc'] ) ) {
-			$cutom_color_style .= "	--tbk-color-acc : {$colors['acc']} ;";
+			$cutom_color_style .= "--tsbk-color-acc : {$colors['acc']} ;";
 		}
 		if( !empty( $colors['acc-font'] ) ) {
-			$cutom_color_style .= "	--tbk-color-acc-font : {$colors['acc-font']} ;";
+			$cutom_color_style .= "--tsbk-color-acc-font : {$colors['acc-font']} ;";
 		}
 		if( !empty( $colors['sub'] ) ) {
-			$cutom_color_style .= "	--tbk-color-sub : {$colors['sub']} ;";
+			$cutom_color_style .= "--tsbk-color-sub : {$colors['sub']} ;";
 		}
 		if( !empty( $colors['sub-font'] ) ) {
-			$cutom_color_style .= "	--tbk-color-sub-font : {$colors['sub-font']} ;";
+			$cutom_color_style .= "--tsbk-color-sub-font : {$colors['sub-font']} ;";
 		}
 		if( !empty( $colors['link'] ) ) {
-			$cutom_color_style .= "	--tbk-color-link : {$colors['link']} ;";
+			$cutom_color_style .= "--tsbk-color-link : {$colors['link']} ;";
 		}
 		if( !empty( $colors['border'] ) ) {
-			$cutom_color_style .= "	--tbk-color-border : {$colors['border']} ;";
+			$cutom_color_style .= "--tsbk-color-border : {$colors['border']} ;";
 		}
-		$cutom_color_style .= "}</style>";
+		$cutom_color_style .= "}";
+
+	if($cutom_color_style):
+		wp_register_style( 'custom-color', false );
+		wp_enqueue_style( 'custom-color' , false, '1.0', 'all' );
+		wp_add_inline_style( 'custom-color' , $cutom_color_style);
 	endif;
-	echo $cutom_color_style;
+endif;
 }
 endif;
-add_action( 'wp_head', 'tsbk_tc_custom_color_style' );
-add_action( 'admin_head', 'tsbk_tc_custom_color_style' );
-
-
+add_action( 'enqueue_block_editor_assets', 'tsbk_tc_custom_color_style' , 11 , 1 );
+add_action( 'wp_enqueue_scripts' , 'tsbk_tc_custom_color_style' , 11 ,1 );
