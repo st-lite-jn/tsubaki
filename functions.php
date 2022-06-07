@@ -8,7 +8,8 @@ $tsbk_funcs_globs = array_merge(
 	glob(__DIR__ . '/functions/theme-customizers/*.php'),
 	glob(__DIR__ . '/functions/custom-blocks/*.php'),
 	glob(__DIR__ . '/functions/block-patterns/*.php'),
-	glob(__DIR__ . '/functions/block-styles/*.php'),
+	glob(__DIR__ . '/functions/resister-block-styles/*.php'),
+	glob(__DIR__ . '/functions/unresister-block-styles/*.php'),
 );
 foreach($tsbk_funcs_globs as $tsbk_funcs_glob) {
 	include $tsbk_funcs_glob;
