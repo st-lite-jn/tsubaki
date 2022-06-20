@@ -55,43 +55,6 @@
 	transition: all $transition $easing;
 }
 
-//Flexbox
-@mixin flexNowrapSb {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	flex-shrink:0;
-}
-@mixin flexWrapSb {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	flex-shrink:0;
-}
-@mixin flexNowrapCenter {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
-	flex-shrink:0;
-}
-@mixin flexWrapCenter {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	flex-shrink:0;
-}
-@mixin flexNowrapFs {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	flex-shrink:0;
-}
-@mixin flexWrapFs {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	flex-shrink:0;
-}
 //clearfix
 @mixin clearfix {
 	zoom: 1;
@@ -110,3 +73,24 @@
 		@content;
 	}
 }
+
+@mixin marginTopLarge {
+	margin-top: functions.spvw(72);
+	@include mqMin(display.$displayPortrait) {
+		margin-top: 80px;
+	}
+}
+@mixin marginTopMiddle {
+	margin-top: functions.spvw(32);
+	@include mqMin(display.$displayPortrait) {
+		margin-top: 40px;
+	}
+}
+@mixin marginTopSmall {
+	margin-top: functions.spvw(8);
+	@include mqMin(display.$displayPortrait) {
+		margin-top: 16px;
+	}
+}
+
+

@@ -10,7 +10,6 @@ const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
 // production モード以外の場合、変数 enabledSourceMap は true
 const enabledSourceMap = process.env.NODE_ENV !== 'production';
 
-
 const entryPoints = {
 	js: {
 	  main : "./_src/js/main.js",
@@ -77,9 +76,11 @@ module.exports = {
 			filename: "css/[name].css",
 		}),
 	],
-	//source-map タイプのソースマップを出力
+
+	//source-map タイプのソースマップを出力する
 	devtool: "source-map",
-	// node_modules を監視（watch）対象から除外
+
+	// node_modules を監視（watch）対象から除外する
 	watchOptions: {
 		ignored: /node_modules/  //正規表現で指定
 	},

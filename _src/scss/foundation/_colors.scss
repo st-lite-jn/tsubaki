@@ -2,17 +2,20 @@ $black : #000000;
 $white : #ffffff;
 $gray : #666666;
 :root {
+
 	//ベースカラー
 	--tsbk-color-base : #ffffff;
 	--tsbk-color-base-font : #333333;
+
 	//メインカラー
 	--tsbk-color-main : #d7d7d7;
-	--tsbk-color-main-font : #333333;
+	--tsbk-color-main-font : #ffffff;
 
 	//サブカラー
 	--tsbk-color-sub : #e2e2e2;
 	--tsbk-color-sub-font : #333333;
 
+	//アクセントカラー
 	--tsbk-color-acc : #004D9F;
 	--tsbk-color-acc-font : #ffffff;
 
@@ -23,4 +26,5 @@ $gray : #666666;
 	--tsbk-color-white :#{$white};
 	--tsbk-color-gray : #{$gray};
 	--tsbk-color-black : #{$black};
+
 }

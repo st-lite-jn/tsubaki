@@ -2,45 +2,15 @@
 @include import.wpBlocks {
 	.wp-block-columns {
 		margin-bottom: 0;
-		@media (max-width: 781px) {
-			margin-top: 0 !important;
+		gap: import.spvw(24);
+		@include import.mqMin(import.$displayPortrait) {
+			gap: 32px;
 		}
 		.wp-block-column {
-			margin-bottom: 0;
-			@media (max-width: 781px) {
-				margin-top: import.spvw(20);
-				@include import.mqMin(import.$displayPortrait) {
-					margin-top: 40px;
-				}
-			}
-			@media (min-width: 600px) and (max-width: 781px) {
-				&:not(:only-child) {
-					flex-basis: calc(50% - .5em)!important;
-				}
-				&:nth-child(2n) {
-					margin-left: 1em;
-				}
-			}
 			> * {
-				margin-top: import.spvw(32);
-				@include import.mqMin(import.$displayPortrait) {
-					margin-top: 40px;
-				}
+				@include import.marginTopMiddle;
 				&:first-child {
 					margin-top: 0 !important;
-				}
-			}
-		}
-	}
-	.wp-block-group__inner-container {
-		.wp-block-columns {
-			.wp-block-column {
-				margin-bottom: 0;
-				@media (max-width: 781px) {
-					margin-top: import.spvw(16);
-					@include import.mqMin(import.$displayPortrait) {
-						margin-top: 16px;
-					}
 				}
 			}
 		}

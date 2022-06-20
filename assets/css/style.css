@@ -215,7 +215,7 @@ progress {
   --tsbk-color-base: #ffffff;
   --tsbk-color-base-font: #333333;
   --tsbk-color-main: #d7d7d7;
-  --tsbk-color-main-font: #333333;
+  --tsbk-color-main-font: #ffffff;
   --tsbk-color-sub: #e2e2e2;
   --tsbk-color-sub-font: #333333;
   --tsbk-color-acc: #004D9F;
@@ -277,6 +277,10 @@ a:hover {
 
 ul, ol {
   list-style: none;
+}
+
+#wpadminbar {
+  position: fixed !important;
 }
 
 #wrapper {
@@ -970,31 +974,11 @@ ul, ol {
 
 .editor-styles-wrapper .wp-block-columns, .is-root-container .wp-block-columns {
   margin-bottom: 0;
+  gap: 5.6074766355vw;
 }
-@media (max-width: 781px) {
+@media screen and (min-width: 768px) {
   .editor-styles-wrapper .wp-block-columns, .is-root-container .wp-block-columns {
-    margin-top: 0 !important;
-  }
-}
-.editor-styles-wrapper .wp-block-columns .wp-block-column, .is-root-container .wp-block-columns .wp-block-column {
-  margin-bottom: 0;
-}
-@media (max-width: 781px) {
-  .editor-styles-wrapper .wp-block-columns .wp-block-column, .is-root-container .wp-block-columns .wp-block-column {
-    margin-top: 4.6728971963vw;
-  }
-}
-@media screen and (max-width: 781px) and (min-width: 768px) {
-  .editor-styles-wrapper .wp-block-columns .wp-block-column, .is-root-container .wp-block-columns .wp-block-column {
-    margin-top: 40px;
-  }
-}
-@media (min-width: 600px) and (max-width: 781px) {
-  .editor-styles-wrapper .wp-block-columns .wp-block-column:not(:only-child), .is-root-container .wp-block-columns .wp-block-column:not(:only-child) {
-    flex-basis: calc(50% - .5em) !important;
-  }
-  .editor-styles-wrapper .wp-block-columns .wp-block-column:nth-child(2n), .is-root-container .wp-block-columns .wp-block-column:nth-child(2n) {
-    margin-left: 1em;
+    gap: 32px;
   }
 }
 .editor-styles-wrapper .wp-block-columns .wp-block-column > *, .is-root-container .wp-block-columns .wp-block-column > * {
@@ -1007,19 +991,6 @@ ul, ol {
 }
 .editor-styles-wrapper .wp-block-columns .wp-block-column > *:first-child, .is-root-container .wp-block-columns .wp-block-column > *:first-child {
   margin-top: 0 !important;
-}
-.editor-styles-wrapper .wp-block-group__inner-container .wp-block-columns .wp-block-column, .is-root-container .wp-block-group__inner-container .wp-block-columns .wp-block-column {
-  margin-bottom: 0;
-}
-@media (max-width: 781px) {
-  .editor-styles-wrapper .wp-block-group__inner-container .wp-block-columns .wp-block-column, .is-root-container .wp-block-group__inner-container .wp-block-columns .wp-block-column {
-    margin-top: 3.738317757vw;
-  }
-}
-@media screen and (max-width: 781px) and (min-width: 768px) {
-  .editor-styles-wrapper .wp-block-group__inner-container .wp-block-columns .wp-block-column, .is-root-container .wp-block-group__inner-container .wp-block-columns .wp-block-column {
-    margin-top: 16px;
-  }
 }
 
 .wp-block-post-terms {
@@ -1374,16 +1345,23 @@ a.button.is-outlined:hover, .editor-styles-wrapper a.button.post-page-numbers.cu
 }
 
 .editor-styles-wrapper .wp-block-group__inner-container > *, .is-root-container .wp-block-group__inner-container > * {
-  margin-top: 3.738317757vw;
-  margin-bottom: 0;
+  margin-top: 7.476635514vw;
 }
 @media screen and (min-width: 768px) {
   .editor-styles-wrapper .wp-block-group__inner-container > *, .is-root-container .wp-block-group__inner-container > * {
-    margin-top: 16px;
+    margin-top: 40px;
   }
 }
 .editor-styles-wrapper .wp-block-group__inner-container > *:first-child, .is-root-container .wp-block-group__inner-container > *:first-child {
   margin-top: 0 !important;
+}
+.editor-styles-wrapper .wp-block-group.is-style-row-gap-small .wp-block-group__inner-container > *, .is-root-container .wp-block-group.is-style-row-gap-small .wp-block-group__inner-container > * {
+  margin-top: 1.8691588785vw;
+}
+@media screen and (min-width: 768px) {
+  .editor-styles-wrapper .wp-block-group.is-style-row-gap-small .wp-block-group__inner-container > *, .is-root-container .wp-block-group.is-style-row-gap-small .wp-block-group__inner-container > * {
+    margin-top: 16px;
+  }
 }
 
 .editor-styles-wrapper a:not(.wp-block-social-link-anchor)[target=_blank]::after, .is-root-container a:not(.wp-block-social-link-anchor)[target=_blank]::after {
