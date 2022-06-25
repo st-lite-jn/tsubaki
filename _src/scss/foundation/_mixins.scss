@@ -69,7 +69,7 @@
 }
 
 @mixin wpBlocks {
-	.editor-styles-wrapper , .is-root-container {
+	.editor-styles-wrapper {
 		@content;
 	}
 }

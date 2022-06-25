@@ -1,0 +1,16 @@
+@use '../foundation/import';
+@include import.wpBlocks {
+	.wp-block-group {
+		> * {
+			@include import.marginTopMiddle;
+			&:first-child {
+				margin-top: 0 !important;
+			}
+		}
+		&.is-style-row-gap-small {
+			> * {
+				@include import.marginTopSmall;
+			}
+		}
+	}
+}

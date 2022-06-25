@@ -1,4 +1,4 @@
-@use '../../foundation/import';
+@use '../foundation/import';
 @include import.wpBlocks {
 	.wp-block-code {
 		background-color: var(--tsbk-color-sub);

@@ -1,6 +1,14 @@
-@use '../../foundation/import';
+@use '../foundation/import';
 @include import.wpBlocks {
 	.wp-block-query {
+		.wp-block-columns {
+			&:not([class*="wp-container-"]) {
+				gap: 1rem;
+			}
+			.wp-block-column {
+				margin-top: 0 !important;
+			}
+		}
 		.wp-block-post-template {
 			&:not(.is-flex-container) {
 				li {

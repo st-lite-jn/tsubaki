@@ -1,4 +1,4 @@
-@use '../../foundation/import';
+@use '../foundation/import';
 
 @include import.wpBlocks {
 	margin-top: import.spvw(20);
@@ -6,8 +6,8 @@
 		margin-top: 40px;
 	}
 	> * {
-		margin-top: import.spvw(32);
 		margin-bottom: 0;
+		margin-top: import.spvw(32);
 		@include import.mqMin(import.$displayPortrait) {
 			margin-top: 40px;
 		}

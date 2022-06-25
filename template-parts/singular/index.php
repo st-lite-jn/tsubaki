@@ -1,6 +1,6 @@
 <article itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
 	<?php get_template_part( 'template-parts/components/content-header' ); ?>
-	<div class="l-container u-mt--40">
+	<div class="u-margin-top--large">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
 			<div class="editor-styles-wrapper" itemprop="mainEntityOfPage">
@@ -23,7 +23,7 @@
 	</div>
 </article>
 <?php if ( is_active_sidebar( 'singular-content-bottom-widget' ) ):?>
-<div class="editor-styles-wrapper u-mt--40 l-container">
+<div class="editor-styles-wrapper u-margin-top--large">
 <?php dynamic_sidebar( 'singular-content-bottom-widget' ); ?>
 </div>
 <?php endif;?>
