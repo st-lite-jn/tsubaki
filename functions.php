@@ -14,3 +14,5 @@ $tsbk_funcs_globs = array_merge(
 foreach($tsbk_funcs_globs as $tsbk_funcs_glob) {
 	include $tsbk_funcs_glob;
 }
+
+include __DIR__ .  "/custom-blocks/custom-blocks.php";
