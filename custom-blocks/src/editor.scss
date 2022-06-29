@@ -4,6 +4,13 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-custom-blocks {
-	border: 1px dotted #f00;
+ .is-selected {
+	outline: auto;
+ }
+.wp-block-create-block-custom-editor  {
+	&.is-custom-editor {
+		&.is-border {
+			border: solid 1px #f00;
+		}
+	}
 }

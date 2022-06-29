@@ -1,16 +1,27 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/custom-blocks",
+	"name": "create-block/custom-editor",
 	"version": "0.1.0",
-	"title": "Custom Blocks",
+	"title": "カスタムエディター",
 	"category":"text",
 	"icon": "smiley",
-	"description": "Example static block scaffolded with Create Block tool.",
+	"description": "カスタム機能付きのエディターです",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "custom-blocks",
+	"attributes": {
+		"style":{
+			"type":"string",
+			"default":"normal"
+		},
+		"content":{
+			"type":"string",
+			"source": "html",
+			"selector": "p"
+		}
+	},
+	"textdomain": "custom-editor",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
