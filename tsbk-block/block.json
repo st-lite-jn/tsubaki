@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion" : 2,
+	"name":"tsbk-block/firstblock",
+	"title": "My First Block",
+	"description":"My first block",
+	"category":"text",
+	"icon": "documentf",
+	"textdomain": "firstblock",
+    "editorScript": "file:./build/index.js"
+
+}
