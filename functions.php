@@ -14,6 +14,6 @@ foreach($tsbk_funcs_globs as $tsbk_funcs_glob) {
 	include $tsbk_funcs_glob;
 }
 
-include __DIR__ .  "/custom-blocks/custom-blocks.php";
+include __DIR__ .  "/boilerplate/boilerplate.php";
 
 include __DIR__ .  "/tsbk-block/tsbkblock.php";
