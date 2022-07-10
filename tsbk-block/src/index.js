@@ -1,12 +1,10 @@
-// var registerBlockType = wp.blocks.registerBlockType;
-import { registerBlockType } from "@wordpress/blocks"
+import { registerBlockType } from "@wordpress/blocks";
+import Edit from "./edit";
+import Save from "./save";
+import "./style.scss";
 
 
 registerBlockType( "tsbk-block/firstblock" , {
-  edit: function () {
-   return <p className="class wp-block">Edit JSX</p>
-  },
-  save: function () {
-	return <p className="class">Save JSX</p>
-  },
+	edit: Edit,
+	save: Save
 });
