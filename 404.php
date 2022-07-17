@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php require TEMPLATEPATH . "/template-parts/components/content-header.php";?>
-<div class="l-container">
+<div class="c-container">
 	<p class="u-al--center u-pt--80 u-pb--80">お探しのページが見つかりませんでした。<br>
 	お手数ですが、URLを確認し、もう一度リクエストを試すか、<br>
 	以下のボタンからサイトのホームにアクセスしてください。</p>

@@ -36,7 +36,7 @@
 ?>
 <header class="p-content-header-wrapper <?php if($featured_img):?>is-featured-img<?php endif;?>">
 	<div class="p-content-header <?php if($featured_img):?>is-featured-img<?php endif;?>">
-		<section class="l-container">
+		<section class="c-container">
 			<h1 class="p-content-header__label is-target u-fadein-up"><?php echo $tsbk_title['content-label']; ?></h1>
 	<?php if(is_single()):?>
 		<div class="p-content-header__meta u-mt--8 is-target u-fadein-up">
@@ -78,7 +78,7 @@
 	<?php endif;?>
 </header>
 <?php if ( is_active_sidebar( 'singular-title-widget' ) ):?>
-<div class="editor-styles-wrapper u-mt--40 l-container">
+<div class="wp-front-blocks c-container">
 <?php dynamic_sidebar( 'singular-title-widget' ); ?>
 </div>
 <?php endif;?>

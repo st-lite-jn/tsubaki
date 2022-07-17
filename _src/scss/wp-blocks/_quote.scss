@@ -1,11 +1,11 @@
 @use '../foundation/import';
-@include import.wpBlocks {
-	.wp-block-quote {
-		border-left: 4px solid currentColor;
-		padding-left: 1em;
-		cite {
-			display: block;
-			margin-top: 1em;
-		}
+
+.wp-block-quote {
+	border-left: 4px solid currentColor;
+	padding-left: 1em;
+	cite {
+		display: block;
+		margin-top: 1em;
 	}
 }
+

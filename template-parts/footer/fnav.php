@@ -14,7 +14,7 @@
 	);
 ?>
 <div class="l-fnav">
-	<div class="l-container">
+	<div class="c-container">
 	<?php wp_nav_menu($fnav_args); ?>
 	</div>
 </div>

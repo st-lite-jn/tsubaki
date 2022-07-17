@@ -6,7 +6,7 @@
 <body <?php body_class("wp-body"); ?>>
 <div id="wrapper">
 	<header id="header" class="l-header ">
-		<div class="l-container">
+		<div class="c-container">
 			<?php
 				get_template_part( 'template-parts/header/logo');
 				get_template_part( 'template-parts/header/utility' );

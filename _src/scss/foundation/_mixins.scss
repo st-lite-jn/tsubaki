@@ -45,7 +45,7 @@
 	border-radius: functions.spvw(10);
 	color: var(--tsbk-color-acc-font);
 	font-size: .75rem;
-	@include mqMin(display.$displayPortrait) {
+	@include mqMin(display.$dpTabPt) {
 		border-radius: 10px;
 		padding: 4px 8px;
 	}
@@ -73,22 +73,39 @@
 		@content;
 	}
 }
+@mixin container {
+	box-sizing: border-box;
+	padding-right: functions.spvw(16);
+	padding-left: functions.spvw(16);
+	@include mqMin(display.$dpTabPt) {
+		padding-right: 36px;
+		padding-left: 36px;
+	}
+	@include mqMin(display.$dpWide) {
+		max-width: 1366px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-left: 36px;
+		padding-right: 36px;
+	}
+}
+
 
 @mixin marginTopLarge {
 	margin-top: functions.spvw(72);
-	@include mqMin(display.$displayPortrait) {
+	@include mqMin(display.$dpTabPt) {
 		margin-top: 80px;
 	}
 }
 @mixin marginTopMiddle {
 	margin-top: functions.spvw(32);
-	@include mqMin(display.$displayPortrait) {
+	@include mqMin(display.$dpTabPt) {
 		margin-top: 40px;
 	}
 }
 @mixin marginTopSmall {
 	margin-top: functions.spvw(8);
-	@include mqMin(display.$displayPortrait) {
+	@include mqMin(display.$dpTabPt) {
 		margin-top: 16px;
 	}
 }

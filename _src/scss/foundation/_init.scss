@@ -1,7 +1,7 @@
 @use './import';
 html {
 	font-size: import.spvw(16);
-	@include import.mqMin(import.$displayPortrait) {
+	@include import.mqMin(import.$dpTabPt) {
 		font-size: 16px;
 	}
 }

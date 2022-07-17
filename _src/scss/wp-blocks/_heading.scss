@@ -1,4 +1,5 @@
 @use '../foundation/import';
+
 h1,h2,h3,h4,h5,h6 {
 	font-weight: bold;
 }
@@ -19,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 	&.is-style-border {
 		border-left: solid 8px var(--tsbk-color-acc);
 		padding: import.spvw(4) import.spvw(8);
-		@include import.mqMin(import.$displayPortrait) {
+		@include import.mqMin(import.$dpTabPt) {
 			padding: 8px 16px;
 		}
 	}
