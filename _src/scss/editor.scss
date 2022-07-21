@@ -9,8 +9,8 @@
 // ==========================================================================
 // WP Blocks
 // ==========================================================================
-@use "wp-blocks/common";
 
+@use "wp-blocks/editor-style";
 //テキスト
 @use "wp-blocks/heading";
 @use "wp-blocks/paragraph";
@@ -44,7 +44,5 @@
 @use "wp-blocks/link";
 
 
-.editor-styles-wrapper {
-	background-color : var( --tsbk-color-base );
-	color : var(--tsbk-color-base-font );
-}
+
+

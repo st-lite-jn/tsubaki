@@ -2,7 +2,7 @@
 
 .l-main {
 	padding-bottom: import.spvw(40);
-	@include import.mqMin(import.$displayPortrait){
+	@include import.mqMin(import.$dpTabPt){
 		padding-bottom: 80px;
 	}
 }

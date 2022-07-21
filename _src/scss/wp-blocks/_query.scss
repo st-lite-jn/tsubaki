@@ -1,73 +1,73 @@
 @use '../foundation/import';
-@include import.wpBlocks {
-	.wp-block-query {
-		.wp-block-columns {
-			&:not([class*="wp-container-"]) {
-				gap: 1rem;
-			}
-			.wp-block-column {
-				margin-top: 0 !important;
+
+.wp-block-query {
+	.wp-block-columns {
+		&:not([class*="wp-container-"]) {
+			gap: 1rem;
+		}
+		.wp-block-column {
+			margin-top: 0 !important;
+		}
+	}
+	.wp-block-post-template {
+		&:not(.is-flex-container) {
+			li {
+				padding: 20px 0;
+				border-bottom: solid 1px var(--tsbk-color-border);
+				&:first-child {
+					border-top: solid 1px var(--tsbk-color-border);
+				}
+				> *:first-child {
+					margin-top: 0!important;
+				}
 			}
 		}
-		.wp-block-post-template {
-			&:not(.is-flex-container) {
-				li {
-					padding: 20px 0;
-					border-bottom: solid 1px var(--tsbk-color-border);
-					&:first-child {
-						border-top: solid 1px var(--tsbk-color-border);
-					}
-					> *:first-child {
-						margin-top: 0!important;
-					}
+		.wp-block-post-title {
+			a {
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
 				}
 			}
-			.wp-block-post-title {
+			&:not([style]) a {
+				color: var(--tsbk-color-base-font);
+			}
+		}
+		.is-thumbnail {
+			.is-noimage {
+				display: block;
+				height: 100%;
+				span {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					aspect-ratio: 3/2;
+					width: 100%;
+					background-color: var( --tsbk-color-sub  );
+					border: solid 1px var( --tsbk-color-border );
+					color: var( --tsbk-color-sub-font );
+					font-size: 2rem;
+				}
+			}
+			.wp-block-post-featured-image {
+				overflow: hidden;
+				transition: .5s;
 				a {
-					text-decoration: none;
-					&:hover{
-						text-decoration: underline;
-					}
+					display: inline;
 				}
-				&:not([style]) a {
-					color: var(--tsbk-color-base-font);
-				}
-			}
-			.is-thumbnail {
-				.is-noimage {
-					display: block;
-					height: 100%;
-					span {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						aspect-ratio: 3/2;
-						width: 100%;
-						background-color: var( --tsbk-color-sub  );
-						border: solid 1px var( --tsbk-color-border );
-						color: var( --tsbk-color-sub-font );
-						font-size: 2rem;
-					}
-				}
-				.wp-block-post-featured-image {
-					overflow: hidden;
+				img {
+					aspect-ratio: 3 / 2;
+					width: 100%;
+					object-fit: cover;
 					transition: .5s;
-					a {
-						display: inline;
-					}
+				}
+				&:hover {
 					img {
-						aspect-ratio: 3 / 2;
-						width: 100%;
-						object-fit: cover;
-						transition: .5s;
-					}
-					&:hover {
-						img {
-							transform: scale(1.2);
-						}
+						transform: scale(1.2);
 					}
 				}
 			}
 		}
 	}
 }
+

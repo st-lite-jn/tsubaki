@@ -1,12 +1,11 @@
 @use '../foundation/import';
-@include import.wpBlocks {
-	.wp-block-embed {
+
+.wp-block-embed {
+	margin-bottom: 0;
+	iframe {
+		width: 100%;
+	}
+	figcaption {
 		margin-bottom: 0;
-		iframe {
-			width: 100%;
-		}
-		figcaption {
-			margin-bottom: 0;
-		}
 	}
 }

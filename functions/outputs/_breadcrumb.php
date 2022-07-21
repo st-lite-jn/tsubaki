@@ -16,7 +16,7 @@ if(!function_exists('tsbk_output_breadcrumb')) {
 
 	//共通のclass要素
 	$dom_class_wrapper = "p-breadcrumb-wrapper";
-	$dom_class_parent = "p-breadcrumb l-container";
+	$dom_class_parent = "p-breadcrumb c-container";
 	$dom_class_child = "p-breadcrumb__list";
 	$dom_class_item = "p-breadcrumb__item";
 

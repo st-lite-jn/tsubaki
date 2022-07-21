@@ -1,5 +1,5 @@
 <?php if ( post_password_required() ) return;?>
-<div id="comments" class="editor-styles-wrapper l-container">
+<div id="comments" class="wp-front-blocks c-container">
 	<?php if( have_comments() ):?>
 	<h3>この投稿へのコメント</h3>
 	<div class="p-comment-wrapper">

@@ -16,7 +16,7 @@
 			color: var(--tsbk-color-acc-font);
 			font-size: .75rem;
 			transition: .5s;
-			@include import.mqMin(import.$displayPortrait) {
+			@include import.mqMin(import.$dpTabPt) {
 				border-radius: 10px;
 				padding: 4px 8px;
 			}

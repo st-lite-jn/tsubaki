@@ -1,39 +1,38 @@
 @use '../foundation/import';
-@include import.wpBlocks {
-	.wp-block-table {
-		width: 100%;
-		table {
-			thead {
-				tr {
-					border-bottom: solid 2px var(--tsbk-color-border) ;
-				}
-			}
-			tbody {
-				tr {
-					border-bottom: dotted 1px var(--tsbk-color-border) ;
-				}
-			}
-			tfoot {
-				tr {
-					border-top: solid 2px var(--tsbk-color-border) ;
-				}
-			}
-			th,td {
-				padding: import.spvw(4);
-				@include import.mqMin(import.$displayPortrait) {
-					padding: 8px;
-				}
+
+.wp-block-table {
+	width: 100%;
+	table {
+		thead {
+			tr {
+				border-bottom: solid 2px var(--tsbk-color-border) ;
 			}
 		}
-		&.is-style-stripes {
-			border-bottom: none;
-			table {
-				tbody{
-					tr {
-						&:nth-child(odd) {
-							background-color:var(--tsbk-color-sub);
-							color: var(--tsbk-color-sub-font );
-						}
+		tbody {
+			tr {
+				border-bottom: dotted 1px var(--tsbk-color-border) ;
+			}
+		}
+		tfoot {
+			tr {
+				border-top: solid 2px var(--tsbk-color-border) ;
+			}
+		}
+		th,td {
+			padding: import.spvw(4);
+			@include import.mqMin(import.$dpTabPt) {
+				padding: 8px;
+			}
+		}
+	}
+	&.is-style-stripes {
+		border-bottom: none;
+		table {
+			tbody{
+				tr {
+					&:nth-child(odd) {
+						background-color:var(--tsbk-color-sub);
+						color: var(--tsbk-color-sub-font );
 					}
 				}
 			}
@@ -47,3 +46,4 @@
 		}
 	}
 }
+

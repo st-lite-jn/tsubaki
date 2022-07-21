@@ -4,7 +4,7 @@
 <?php
 	get_template_part('template-parts/components/content' , 'header' );
 ?>
-<div class="l-container editor-styles-wrapper" itemprop="mainEntityOfPage">
+<div class="c-container wp-front-blocks" itemprop="mainEntityOfPage">
 <?php
 $paged = get_query_var('paged') ? intval( get_query_var( 'paged' ) ) : 1;
 $args = [

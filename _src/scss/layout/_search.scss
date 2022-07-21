@@ -6,13 +6,13 @@
 	z-index: 9100;
 	width: 100%;
 	padding-top: import.spvw(16);
-	@include import.mqMin(import.$displayPortrait) {
+	@include import.mqMin(import.$dpTabPt) {
 		padding-top: 32px;
 	}
 	&.is-opened {
 		display: block;
 	}
-	.l-container {
+	.c-container {
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: space-between;

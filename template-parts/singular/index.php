@@ -1,9 +1,9 @@
 <article itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
 	<?php get_template_part( 'template-parts/components/content-header' ); ?>
-	<div class="u-margin-top--large">
+	<div class="">
 		<?php if ( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
-			<div class="editor-styles-wrapper" itemprop="mainEntityOfPage">
+			<div class="wp-front-blocks c-container" itemprop="mainEntityOfPage">
 				<?php the_content();?>
 				<?php
 					//ページ区切り
@@ -23,7 +23,7 @@
 	</div>
 </article>
 <?php if ( is_active_sidebar( 'singular-content-bottom-widget' ) ):?>
-<div class="editor-styles-wrapper u-margin-top--large">
+<div class="wp-front-blocks c-container">
 <?php dynamic_sidebar( 'singular-content-bottom-widget' ); ?>
 </div>
 <?php endif;?>
