@@ -758,21 +758,21 @@ ul, ol {
     margin-top: 80px;
   }
 }
-.wp-front-blocks > * {
-  margin-bottom: 0;
+.wp-front-blocks * + * {
   margin-top: 7.476635514vw;
 }
 @media screen and (min-width: 768px) {
-  .wp-front-blocks > * {
+  .wp-front-blocks * + * {
     margin-top: 40px;
   }
 }
-.wp-front-blocks > *:first-child {
-  margin-top: 0;
+.wp-front-blocks h1 + *, .wp-front-blocks h2 + *, .wp-front-blocks h3 + *, .wp-front-blocks h4 + *, .wp-front-blocks h5 + *, .wp-front-blocks h6 + * {
+  margin-top: 1.8691588785vw;
 }
-.wp-front-blocks p {
-  line-height: 1.75;
-  font-size: 1rem;
+@media screen and (min-width: 768px) {
+  .wp-front-blocks h1 + *, .wp-front-blocks h2 + *, .wp-front-blocks h3 + *, .wp-front-blocks h4 + *, .wp-front-blocks h5 + *, .wp-front-blocks h6 + * {
+    margin-top: 16px;
+  }
 }
 .wp-front-blocks p + p {
   margin-top: 1em;
@@ -837,6 +837,11 @@ h1.is-style-center::after, h2.is-style-center::after, h3.is-style-center::after,
   left: 50%;
   background-color: var(--tsbk-color-acc);
   transform: translateX(-50%);
+}
+
+p {
+  line-height: 1.75;
+  font-size: 1rem;
 }
 
 ul:not([class]), ul.wp-block-list {
@@ -2885,20 +2890,33 @@ textarea::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.8691588785vw;
   padding-top: 3.738317757vw;
   padding-bottom: 3.738317757vw;
+  margin-top: 16.8224299065vw;
+}
+@media screen and (min-width: 768px) {
+  .p-pagination {
+    margin-top: 80px;
+  }
 }
 @media screen and (max-width: 767px) {
   .p-pagination {
     flex-wrap: wrap;
   }
   .p-pagination__navigation {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin-top: 1.8691588785vw;
   }
+}
+@media screen and (max-width: 767px) and (min-width: 768px) {
+  .p-pagination__navigation {
+    margin-top: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
   .p-pagination__navigation.is-wide {
     width: 60%;
     display: block;
@@ -2906,9 +2924,11 @@ textarea::placeholder {
 }
 @media screen and (min-width: 768px) {
   .p-pagination {
-    margin-top: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
+  }
+  .p-pagination__navigation {
+    margin-top: 0;
   }
 }
 .p-pagination .button, .p-pagination .button--reverse {

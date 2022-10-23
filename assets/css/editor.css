@@ -135,6 +135,11 @@ h1.is-style-center::after, h2.is-style-center::after, h3.is-style-center::after,
   transform: translateX(-50%);
 }
 
+p {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
 ul:not([class]), ul.wp-block-list {
   list-style-type: circle;
 }
