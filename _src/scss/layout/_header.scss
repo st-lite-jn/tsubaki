@@ -25,7 +25,8 @@
 	}
 	&__heading {
 		width: 200px;
-		transition: .5s;
+		margin: 0;
+		line-height: 1;
 		&.is-invalid {
 			opacity: 0;
 			pointer-events: none;
@@ -36,6 +37,18 @@
 		@include import.mqMax(import.$dpMobile) {
 			width: import.spvw(160);
 		}
+		img {
+			line-height: 1;
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			height: import.spvw(40);
+			@include import.mqMin(import.$dpTabPt) {
+				max-height: 44px;
+			}
+		}
+
+
 	}
 	&__nav {
 		display: flex;

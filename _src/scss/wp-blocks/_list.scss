@@ -15,10 +15,7 @@ ul , ol {
 		padding-left: 1em;
 		font-size: 1rem;
 		li {
-			margin-top: import.spvw(4);
-			@include import.mqMin(import.$dpTabPt) {
-				margin-top: 8px;
-			}
+			@include import.mtS;
 			&:first-child {
 				margin-top: 0;
 			}

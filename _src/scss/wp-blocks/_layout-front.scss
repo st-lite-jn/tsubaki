@@ -5,14 +5,14 @@
 	@include import.mqMin(import.$dpTabPt) {
 		margin-top: 80px;
 	}
-	* {
+	> * {
 		+ * {
-			@include import.marginTopMiddle;
+			@include import.mtM;
 		}
 	}
 	h1,h2,h3,h4,h5,h6 {
 		+ * {
-			@include import.marginTopSmall;
+			@include import.mtS;
 		}
 	}
 	p {

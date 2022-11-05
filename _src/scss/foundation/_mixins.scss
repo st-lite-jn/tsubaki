@@ -90,20 +90,25 @@
 	}
 }
 
-
-@mixin marginTopLarge {
+@mixin mtXL {
 	margin-top: functions.spvw(72);
 	@include mqMin(display.$dpTabPt) {
 		margin-top: 80px;
 	}
 }
-@mixin marginTopMiddle {
-	margin-top: functions.spvw(32);
+@mixin mtL {
+	margin-top: functions.spvw(48);
 	@include mqMin(display.$dpTabPt) {
-		margin-top: 40px;
+		margin-top: 60px;
 	}
 }
-@mixin marginTopSmall {
+@mixin mtM {
+	margin-top: functions.spvw(24);
+	@include mqMin(display.$dpTabPt) {
+		margin-top: 32px;
+	}
+}
+@mixin mtS {
 	margin-top: functions.spvw(8);
 	@include mqMin(display.$dpTabPt) {
 		margin-top: 16px;

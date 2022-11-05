@@ -153,11 +153,11 @@ ul:not([class]), ul.wp-block-list, ol:not([class]), ol.wp-block-list {
   font-size: 1rem;
 }
 ul:not([class]) li, ul.wp-block-list li, ol:not([class]) li, ol.wp-block-list li {
-  margin-top: 0.9345794393vw;
+  margin-top: 1.8691588785vw;
 }
 @media screen and (min-width: 768px) {
   ul:not([class]) li, ul.wp-block-list li, ol:not([class]) li, ol.wp-block-list li {
-    margin-top: 8px;
+    margin-top: 16px;
   }
 }
 ul:not([class]) li:first-child, ul.wp-block-list li:first-child, ol:not([class]) li:first-child, ol.wp-block-list li:first-child {
