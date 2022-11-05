@@ -74,6 +74,31 @@ const bgLayer = (e) => {
 
 /***/ }),
 
+/***/ "./_src/js/modules/_elements.js":
+/*!**************************************!*\
+  !*** ./_src/js/modules/_elements.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "uniqueEl": () => (/* binding */ uniqueEl)
+/* harmony export */ });
+/**
+ * 一意の要素を取得
+ */
+const uniqueEl = {
+	wrapper : document.getElementById("wrapper"),
+	header : document.getElementById("header"),
+	gnavBtn : document.getElementById("gnavBtn"),
+	gnav : document.getElementById("gnav"),
+	searchBtn : document.getElementById("searchBtn"),
+	searchForm : document.getElementById("searchForm")
+}
+
+
+/***/ }),
+
 /***/ "./_src/js/modules/_gnav.js":
 /*!**********************************!*\
   !*** ./_src/js/modules/_gnav.js ***!
@@ -88,6 +113,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _screen_fixed__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_screen-fixed */ "./_src/js/modules/_screen-fixed.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_header */ "./_src/js/modules/_header.js");
 /* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/modules/_bg-layer.js");
+/* harmony import */ var _elements__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_elements */ "./_src/js/modules/_elements.js");
+
 
 
 
@@ -95,10 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 //グローバルナビゲーションの開閉処理
 const gnavToggle = () => {
 	const screenFixed = new _screen_fixed__WEBPACK_IMPORTED_MODULE_0__.ScreenFixed();
-	const $gnavBtn = document.getElementById("gnavBtn");
-	const $gnav = document.getElementById("gnav");
-
-	$gnavBtn.addEventListener('click', (e) => {
+	_elements__WEBPACK_IMPORTED_MODULE_3__.uniqueEl.gnavBtn.addEventListener('click', (e) => {
 		let $bgLayer = document.querySelector(".l-bg-layer");
 		if($bgLayer) {
 			$bgLayer.parentNode.removeChild(document.querySelector(".l-bg-layer"));
@@ -114,8 +138,8 @@ const gnavToggle = () => {
 		if(document.getElementById("searchBtn").textContent === "close"){document.getElementById("searchBtn").textContent = "search";};
 		e.currentTarget.textContent = e.currentTarget.textContent === "close" ? "menu ": "close";
 		e.currentTarget.classList.toggle("is-opened");
-		$gnav.classList.toggle("is-opened");
-		if($gnav.classList.contains("is-opened")) {
+		_elements__WEBPACK_IMPORTED_MODULE_3__.uniqueEl.gnav.classList.toggle("is-opened");
+		if(_elements__WEBPACK_IMPORTED_MODULE_3__.uniqueEl.gnav.classList.contains("is-opened")) {
 			screenFixed.fixed();
 			(0,_header__WEBPACK_IMPORTED_MODULE_1__.headerFixed)();
 		} else {
@@ -125,12 +149,11 @@ const gnavToggle = () => {
 	});
 }
 const gnavPosition = () => {
-	const $gnav = document.getElementById("gnav");
-	const headerHeight = document.getElementById("header").offsetHeight;
+	const headerHeight = _elements__WEBPACK_IMPORTED_MODULE_3__.uniqueEl.header.offsetHeight;
 	//WordPressの管理バーが表示されている場合は高さを取得
 	//表示されていない場合は0を代入
 	const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
-	$gnav.style.paddingTop = `${headerHeight + wpadminbarHeight}px`;
+	_elements__WEBPACK_IMPORTED_MODULE_3__.uniqueEl.gnav.style.paddingTop = `${headerHeight + wpadminbarHeight}px`;
 }
 
 
@@ -147,28 +170,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "headerFixed": () => (/* binding */ headerFixed)
 /* harmony export */ });
+/* harmony import */ var _elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_elements */ "./_src/js/modules/_elements.js");
+
+
 //ヘッダー固定
 const headerFixed = () => {
-	const $header = document.getElementById("header");
-	const $wrapper = document.getElementById("wrapper");
-	const $gnav = document.getElementById("gnav");
-
 	//WordPressの管理バーが表示されている場合は高さを取得
 	//表示されていない場合は0を代入
 	const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
 
-	let headerHeight = $header.offsetHeight;
+	let headerHeight = _elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.header.offsetHeight;
 	let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
-	if(!$gnav.classList.contains("is-opened")) {
+	if(!_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.gnav.classList.contains("is-opened")) {
 		if( scrollPosition >= headerHeight) {
-			$header.classList.add("is-scrolled");
-			$header.style.top = wpadminbarHeight + "px";
-			$wrapper.style.paddingTop = headerHeight + "px";
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.header.classList.add("is-scrolled");
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.header.style.top = wpadminbarHeight + "px";
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.paddingTop = headerHeight + "px";
 		} else {
-			$header.classList.remove("is-scrolled");
-			$header.style.top = null;
-			$wrapper.style.paddingTop = null;
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.header.classList.remove("is-scrolled");
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.header.style.top = null;
+			_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.paddingTop = null;
 		}
 	}
 }
@@ -187,6 +209,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ScreenFixed": () => (/* binding */ ScreenFixed)
 /* harmony export */ });
+/* harmony import */ var _elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_elements */ "./_src/js/modules/_elements.js");
+
 /**
  * 画面の高さを固定化する処理
  */
@@ -198,17 +222,17 @@ class ScreenFixed {
 		//WordPressの管理バーが表示されている場合は高さを取得
 		const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
 		this.scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-		document.getElementById("wrapper").style.position = "fixed";
-		document.getElementById("wrapper").style.width = "100%";
-		document.getElementById("wrapper").style.zIndex = `1`;
-		document.getElementById("wrapper").style.top = `-${this.scrollPosition - wpadminbarHeight}px`;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.position = "fixed";
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.width = "100%";
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.zIndex = `1`;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.top = `-${this.scrollPosition - wpadminbarHeight}px`;
 	}
 	reset () {
 		//スタイルシートを削除
-		document.getElementById("wrapper").style.position = null;
-		document.getElementById("wrapper").style.width = null;
-		document.getElementById("wrapper").style.zIndex = null;
-		document.getElementById("wrapper").style.top = null;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.position = null;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.width = null;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.zIndex = null;
+		_elements__WEBPACK_IMPORTED_MODULE_0__.uniqueEl.wrapper.style.top = null;
 		//記憶したスクロール位置に移動
 		document.scrollingElement.scrollTop = this.scrollPosition;
 	}
@@ -230,25 +254,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "searchPosition": () => (/* binding */ searchPosition)
 /* harmony export */ });
 /* harmony import */ var _bg_layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_bg-layer */ "./_src/js/modules/_bg-layer.js");
+/* harmony import */ var _elements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_elements */ "./_src/js/modules/_elements.js");
+
 
 
 const searchToggle = () => {
 	if(document.querySelector(".l-bg-layer")) {
 		document.querySelector(".l-bg-layer").parentNode.removeChild(document.querySelector(".l-bg-layer"));
 	}
-	const $searchBtn = document.getElementById("searchBtn");
-	const $searchForm = document.getElementById("searchForm");
-	let headerHeight = document.getElementById("header").offsetHeight;
-	$searchBtn.addEventListener("click", (e) => {
+	_elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.searchBtn.addEventListener("click", (e) => {
 		let $isOpenElements = document.querySelectorAll("is-opened");
 		$isOpenElements.forEach((isOpenElement)=>{
 			isOpenElement.classList.remove("is-opened");
 		});
 		(0,_bg_layer__WEBPACK_IMPORTED_MODULE_0__.bgLayer)(e.currentTarget);
-		if(document.getElementById("gnavBtn").textContent === "close"){document.getElementById("gnavBtn").textContent = "menu";};
+		if(_elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.gnavBtn.textContent === "close"){ _elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.gnavBtn.textContent = "menu";};
 		e.currentTarget.textContent = e.currentTarget.textContent === "close" ? "search" : "close";
 		e.currentTarget.classList.toggle("is-opened");
-		$searchForm.classList.toggle("is-opened");
+		_elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.searchForm.classList.toggle("is-opened");
 	});
 }
 
@@ -259,9 +282,8 @@ const searchPosition = () => {
 	//WordPressの管理バーが表示されている場合は高さを取得
 	//表示されていない場合は0を代入
 	const wpadminbarHeight = document.getElementById('wpadminbar') ? document.getElementById('wpadminbar').offsetHeight : 0 ;
-	const $searchForm = document.getElementById("searchForm");
-	const headerHeight = document.getElementById("header").offsetHeight;
-	$searchForm.style.top = `{headerHeight} + {wpadminbarHeight}px`;
+	const headerHeight = _elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.header.offsetHeight;
+	_elements__WEBPACK_IMPORTED_MODULE_1__.uniqueEl.searchForm.style.top = `${ headerHeight } + ${ wpadminbarHeight }px`;
 }
 
 
