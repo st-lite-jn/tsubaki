@@ -1,10 +1,6 @@
 @use '../foundation/import';
 
-.wp-front-blocks {
-	margin-top: import.spvw(64);
-	@include import.mqMin(import.$dpTabPt) {
-		margin-top: 80px;
-	}
+.wp-front-blocks , .is-layout-flow {
 	> * {
 		+ * {
 			@include import.mtM;
@@ -16,20 +12,21 @@
 		}
 	}
 	p {
-		 + p {
-			margin-top: 1em;
-		 }
+		+ p {
+			@include import.mtXS;
+		}
 	}
-
 	figure {
+		margin-bottom: 0;
 		figcaption {
-			margin-top: import.spvw(6);
 			margin-bottom: 0;
+			@include import.mtXS;
 			text-align: center;
 			font-size: .5rem;
-			@include import.mqMin(import.$dpTabPt) {
-				margin-top: 8px;
-			}
 		}
 	}
 }
+.wp-front-blocks {
+	@include import.mtXL;
+}
+

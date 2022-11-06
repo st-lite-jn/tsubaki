@@ -1,5 +1,8 @@
 @use '../foundation/import';
 body {
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 100%;
 	background-color : var( --tsbk-color-base );
 	color : var(--tsbk-color-base-font );
 	@include import.container;
@@ -36,4 +39,16 @@ body {
 			}
 		}
 	}
+}
+
+.wp-block {
+	overflow: hidden;
+	max-width: none !important;
+	width: auto;
+}
+.editor-post-title {
+	@include import.containerEditorBlock;
+}
+.is-root-container {
+	@include import.containerEditorBlock;
 }
