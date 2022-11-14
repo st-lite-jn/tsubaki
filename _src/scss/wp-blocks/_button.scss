@@ -1,10 +1,8 @@
 @use '../foundation/import';
 .button {
 	display: inline-block;
-	padding: import.spvw(8) import.spvw(20);
-	background: linear-gradient(90deg, var(--tsbk-color-white) 0%, var(--tsbk-color-white) 50%, var(--tsbk-color-link) 50% ,var(--tsbk-color-link) 100%);
-	background-position: 100% 0%;
-	background-size: 200%;
+	padding: import.spvw(8) import.spvw(12);
+	background: var(--tsbk-color-link);
 	border : solid 1px var(--tsbk-color-link);
 	border-radius: 8px;
 	text-decoration: none;
@@ -15,9 +13,7 @@
 		padding: 8px 16px;
 	}
 	&.is-outlined {
-		background: linear-gradient(90deg, var(--tsbk-color-link) 0% ,var(--tsbk-color-link) 50%, var(--tsbk-color-white) 50%, var(--tsbk-color-white) 100%);
-		background-position: 100% 50%;
-		background-size: 200%;
+		background: var(--tsbk-color-white);
 		color: var(--tsbk-color-link);
 	}
 	&--mini {
@@ -33,12 +29,12 @@
 a,button,input {
 	&.button {
 		&:hover {
-			animation : hoverBgColor ease .5s both;
+			background: var(--tsbk-color-white);
 			color: var(--tsbk-color-link);
 		}
 		&.is-outlined {
 			&:hover {
-				animation : hoverBgColor ease .5s both;
+				background: var(--tsbk-color-link);
 				color: var(--tsbk-color-white);
 			}
 		}
@@ -72,14 +68,5 @@ a,button,input {
 	&.current {
 		@extend .button;
 		@extend .is-outlined;
-	}
-}
-
-@keyframes hoverBgColor {
-	0% {
-		background-position: 100% 0%;
-	}
-	100% {
-		background-position: 0% 0%;
 	}
 }

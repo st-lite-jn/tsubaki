@@ -1,5 +1,9 @@
 @use '../foundation/import';
-.wp-block-query {
+@use './button';
+/**
+ブロックパターンで追加したクエリグループのテンプレート
+**/
+.wp-tsbk-query {
 	.wp-block-columns {
 		margin-bottom: 0;
 		&.is-layout-flex {
@@ -70,6 +74,32 @@
 					}
 				}
 			}
+		}
+	}
+	.wp-block-query-pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include import.mtL;
+		@include import.mqMax(import.$dpMobile) {
+			flex-wrap: wrap !important;
+		}
+		.page-numbers , .wp-block-query-pagination-previous ,.wp-block-query-pagination-next {
+			@extend .button;
+			&.current {
+				@extend .is-outlined
+			}
+		}
+		.wp-block-query-pagination-numbers, .wp-block-query-pagination-previous , .wp-block-query-pagination-next {
+			margin: 0;
+		}
+		.wp-block-query-pagination-previous ,.wp-block-query-pagination-next {
+			@include import.mqMax(import.$dpMobile) {
+				width: 100%;
+			}
+		}
+		.wp-block-query-pagination-numbers {
+			margin: 0;
 		}
 	}
 }

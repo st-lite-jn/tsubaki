@@ -875,26 +875,26 @@ ol:not([class]), ol.wp-block-list {
 }
 
 ul:not([class]), ul.wp-block-list, ol:not([class]), ol.wp-block-list {
-  padding-left: 1em;
+  padding-left: 1.5em;
   font-size: 1rem;
 }
 ul:not([class]) li, ul.wp-block-list li, ol:not([class]) li, ol.wp-block-list li {
-  margin-top: 2.8037383178vw;
+  margin-top: 0.9345794393vw;
 }
 @media screen and (min-width: 768px) {
   ul:not([class]) li, ul.wp-block-list li, ol:not([class]) li, ol.wp-block-list li {
-    margin-top: 16px;
+    margin-top: 8px;
   }
 }
 ul:not([class]) li:first-child, ul.wp-block-list li:first-child, ol:not([class]) li:first-child, ol.wp-block-list li:first-child {
   margin-top: 0;
 }
 ul:not([class]) li ul, ul:not([class]) li ol, ul.wp-block-list li ul, ul.wp-block-list li ol, ol:not([class]) li ul, ol:not([class]) li ol, ol.wp-block-list li ul, ol.wp-block-list li ol {
-  margin-top: 0.9345794393vw;
+  margin-top: 2.8037383178vw;
 }
 @media screen and (min-width: 768px) {
   ul:not([class]) li ul, ul:not([class]) li ol, ul.wp-block-list li ul, ul.wp-block-list li ol, ol:not([class]) li ul, ol:not([class]) li ol, ol.wp-block-list li ul, ol.wp-block-list li ol {
-    margin-top: 8px;
+    margin-top: 16px;
   }
 }
 ul.wp-block-archives, ul.wp-block-post-template, ol.wp-block-archives, ol.wp-block-post-template {
@@ -1031,16 +1031,14 @@ ul.wp-block-archives, ul.wp-block-post-template, ol.wp-block-archives, ol.wp-blo
   }
 }
 
-.button, .post-page-numbers.current, .wp-block-file .wp-block-file__button,
+.button, .wp-tsbk-query .wp-block-query-pagination .page-numbers, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-previous, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-next, .post-page-numbers.current, .wp-block-file .wp-block-file__button,
 .comment-reply-link,
 .post-page-numbers,
 .form-submit .submit, .wp-block-buttons .is-style-outline > .wp-block-button__link:not(.has-background),
 .wp-block-buttons .wp-block-button__link.is-style-outline:not(.has-background), .wp-block-buttons .wp-block-button__link:not(.has-background), .button--mini {
   display: inline-block;
-  padding: 1.8691588785vw 4.6728971963vw;
-  background: linear-gradient(90deg, var(--tsbk-color-white) 0%, var(--tsbk-color-white) 50%, var(--tsbk-color-link) 50%, var(--tsbk-color-link) 100%);
-  background-position: 100% 0%;
-  background-size: 200%;
+  padding: 1.8691588785vw 2.8037383178vw;
+  background: var(--tsbk-color-link);
   border: solid 1px var(--tsbk-color-link);
   border-radius: 8px;
   text-decoration: none;
@@ -1049,7 +1047,7 @@ ul.wp-block-archives, ul.wp-block-post-template, ol.wp-block-archives, ol.wp-blo
   font-size: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .button, .post-page-numbers.current, .wp-block-file .wp-block-file__button,
+  .button, .wp-tsbk-query .wp-block-query-pagination .page-numbers, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-previous, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-next, .post-page-numbers.current, .wp-block-file .wp-block-file__button,
 .comment-reply-link,
 .post-page-numbers,
 .form-submit .submit, .wp-block-buttons .is-style-outline > .wp-block-button__link:not(.has-background),
@@ -1057,15 +1055,13 @@ ul.wp-block-archives, ul.wp-block-post-template, ol.wp-block-archives, ol.wp-blo
     padding: 8px 16px;
   }
 }
-.button.is-outlined, .wp-block-file .is-outlined.wp-block-file__button,
+.button.is-outlined, .wp-tsbk-query .wp-block-query-pagination .is-outlined.page-numbers, .wp-tsbk-query .wp-block-query-pagination .is-outlined.wp-block-query-pagination-previous, .wp-tsbk-query .wp-block-query-pagination .is-outlined.wp-block-query-pagination-next, .wp-tsbk-query .wp-block-query-pagination .page-numbers.current, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-previous.current, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-next.current, .wp-block-file .is-outlined.wp-block-file__button,
 .is-outlined.comment-reply-link,
 .is-outlined.post-page-numbers,
 .post-page-numbers.current,
 .form-submit .is-outlined.submit, .wp-block-buttons .is-outlined.wp-block-button__link:not(.has-background), .wp-block-buttons .wp-block-button__link.post-page-numbers.current:not(.has-background), .wp-block-buttons .is-style-outline > .wp-block-button__link:not(.has-background),
 .wp-block-buttons .wp-block-button__link.is-style-outline:not(.has-background), .is-outlined.button--mini {
-  background: linear-gradient(90deg, var(--tsbk-color-link) 0%, var(--tsbk-color-link) 50%, var(--tsbk-color-white) 50%, var(--tsbk-color-white) 100%);
-  background-position: 100% 50%;
-  background-size: 200%;
+  background: var(--tsbk-color-white);
   color: var(--tsbk-color-link);
 }
 .button--mini {
@@ -1078,47 +1074,75 @@ ul.wp-block-archives, ul.wp-block-post-template, ol.wp-block-archives, ol.wp-blo
   }
 }
 
-a.button:hover, .wp-block-file a.wp-block-file__button:hover,
+a.button:hover, .wp-tsbk-query .wp-block-query-pagination a.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination a.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination a.wp-block-query-pagination-next:hover, .wp-block-file a.wp-block-file__button:hover,
 a.comment-reply-link:hover,
 a.post-page-numbers:hover,
-.form-submit a.submit:hover, .wp-block-buttons a.wp-block-button__link:hover:not(.has-background), a.button--mini:hover, button.button:hover, .wp-block-file button.wp-block-file__button:hover,
+.form-submit a.submit:hover, .wp-block-buttons a.wp-block-button__link:hover:not(.has-background), a.button--mini:hover, button.button:hover, .wp-tsbk-query .wp-block-query-pagination button.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination button.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination button.wp-block-query-pagination-next:hover, .wp-block-file button.wp-block-file__button:hover,
 button.comment-reply-link:hover,
 button.post-page-numbers:hover,
-.form-submit button.submit:hover, .wp-block-buttons button.wp-block-button__link:hover:not(.has-background), button.button--mini:hover, input.button:hover, .wp-block-file input.wp-block-file__button:hover,
+.form-submit button.submit:hover, .wp-block-buttons button.wp-block-button__link:hover:not(.has-background), button.button--mini:hover, input.button:hover, .wp-tsbk-query .wp-block-query-pagination input.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination input.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination input.wp-block-query-pagination-next:hover, .wp-block-file input.wp-block-file__button:hover,
 input.comment-reply-link:hover,
 input.post-page-numbers:hover,
 .form-submit input.submit:hover, .wp-block-buttons input.wp-block-button__link:hover:not(.has-background), input.button--mini:hover {
-  animation: hoverBgColor ease 0.5s both;
+  background: var(--tsbk-color-white);
   color: var(--tsbk-color-link);
 }
-a.button.is-outlined:hover, .wp-block-file a.is-outlined.wp-block-file__button:hover,
+a.button.is-outlined:hover, .wp-tsbk-query .wp-block-query-pagination a.is-outlined.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination a.is-outlined.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination a.is-outlined.wp-block-query-pagination-next:hover, .wp-tsbk-query .wp-block-query-pagination a.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination a.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination a.wp-block-query-pagination-next.current:hover, .wp-block-file a.is-outlined.wp-block-file__button:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination a.wp-block-file__button.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file a.wp-block-file__button.page-numbers.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination a.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file a.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination a.wp-block-file__button.wp-block-query-pagination-next.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file a.wp-block-file__button.wp-block-query-pagination-next.current:hover,
 a.is-outlined.comment-reply-link:hover,
+.wp-tsbk-query .wp-block-query-pagination a.comment-reply-link.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination a.comment-reply-link.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination a.comment-reply-link.wp-block-query-pagination-next.current:hover,
 a.is-outlined.post-page-numbers:hover,
+.wp-tsbk-query .wp-block-query-pagination a.post-page-numbers.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination a.post-page-numbers.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination a.post-page-numbers.wp-block-query-pagination-next.current:hover,
 a.post-page-numbers.current:hover,
-.form-submit a.is-outlined.submit:hover, .wp-block-buttons a.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .is-style-outline > a.wp-block-button__link:hover:not(.has-background),
-.wp-block-buttons a.wp-block-button__link.is-style-outline:hover:not(.has-background), a.is-outlined.button--mini:hover, button.button.is-outlined:hover, .wp-block-file button.is-outlined.wp-block-file__button:hover,
+.form-submit a.is-outlined.submit:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination a.submit.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit a.submit.page-numbers.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination a.submit.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit a.submit.wp-block-query-pagination-previous.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination a.submit.wp-block-query-pagination-next.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit a.submit.wp-block-query-pagination-next.current:hover, .wp-block-buttons a.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination a.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons a.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination a.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons a.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination a.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons a.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-block-buttons .is-style-outline > a.wp-block-button__link:hover:not(.has-background),
+.wp-block-buttons a.wp-block-button__link.is-style-outline:hover:not(.has-background), a.is-outlined.button--mini:hover, .wp-tsbk-query .wp-block-query-pagination a.button--mini.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination a.button--mini.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination a.button--mini.wp-block-query-pagination-next.current:hover, button.button.is-outlined:hover, .wp-tsbk-query .wp-block-query-pagination button.is-outlined.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination button.is-outlined.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination button.is-outlined.wp-block-query-pagination-next:hover, .wp-tsbk-query .wp-block-query-pagination button.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination button.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination button.wp-block-query-pagination-next.current:hover, .wp-block-file button.is-outlined.wp-block-file__button:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination button.wp-block-file__button.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file button.wp-block-file__button.page-numbers.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination button.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file button.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination button.wp-block-file__button.wp-block-query-pagination-next.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file button.wp-block-file__button.wp-block-query-pagination-next.current:hover,
 button.is-outlined.comment-reply-link:hover,
+.wp-tsbk-query .wp-block-query-pagination button.comment-reply-link.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination button.comment-reply-link.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination button.comment-reply-link.wp-block-query-pagination-next.current:hover,
 button.is-outlined.post-page-numbers:hover,
+.wp-tsbk-query .wp-block-query-pagination button.post-page-numbers.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination button.post-page-numbers.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination button.post-page-numbers.wp-block-query-pagination-next.current:hover,
 button.post-page-numbers.current:hover,
-.form-submit button.is-outlined.submit:hover, .wp-block-buttons button.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .is-style-outline > button.wp-block-button__link:hover:not(.has-background),
-.wp-block-buttons button.wp-block-button__link.is-style-outline:hover:not(.has-background), button.is-outlined.button--mini:hover, input.button.is-outlined:hover, .wp-block-file input.is-outlined.wp-block-file__button:hover,
+.form-submit button.is-outlined.submit:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination button.submit.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit button.submit.page-numbers.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination button.submit.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit button.submit.wp-block-query-pagination-previous.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination button.submit.wp-block-query-pagination-next.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit button.submit.wp-block-query-pagination-next.current:hover, .wp-block-buttons button.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination button.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons button.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination button.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons button.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination button.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons button.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-block-buttons .is-style-outline > button.wp-block-button__link:hover:not(.has-background),
+.wp-block-buttons button.wp-block-button__link.is-style-outline:hover:not(.has-background), button.is-outlined.button--mini:hover, .wp-tsbk-query .wp-block-query-pagination button.button--mini.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination button.button--mini.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination button.button--mini.wp-block-query-pagination-next.current:hover, input.button.is-outlined:hover, .wp-tsbk-query .wp-block-query-pagination input.is-outlined.page-numbers:hover, .wp-tsbk-query .wp-block-query-pagination input.is-outlined.wp-block-query-pagination-previous:hover, .wp-tsbk-query .wp-block-query-pagination input.is-outlined.wp-block-query-pagination-next:hover, .wp-tsbk-query .wp-block-query-pagination input.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination input.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination input.wp-block-query-pagination-next.current:hover, .wp-block-file input.is-outlined.wp-block-file__button:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination input.wp-block-file__button.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file input.wp-block-file__button.page-numbers.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination input.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file input.wp-block-file__button.wp-block-query-pagination-previous.current:hover, .wp-block-file .wp-tsbk-query .wp-block-query-pagination input.wp-block-file__button.wp-block-query-pagination-next.current:hover, .wp-tsbk-query .wp-block-query-pagination .wp-block-file input.wp-block-file__button.wp-block-query-pagination-next.current:hover,
 input.is-outlined.comment-reply-link:hover,
+.wp-tsbk-query .wp-block-query-pagination input.comment-reply-link.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination input.comment-reply-link.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination input.comment-reply-link.wp-block-query-pagination-next.current:hover,
 input.is-outlined.post-page-numbers:hover,
+.wp-tsbk-query .wp-block-query-pagination input.post-page-numbers.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination input.post-page-numbers.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination input.post-page-numbers.wp-block-query-pagination-next.current:hover,
 input.post-page-numbers.current:hover,
-.form-submit input.is-outlined.submit:hover, .wp-block-buttons input.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .is-style-outline > input.wp-block-button__link:hover:not(.has-background),
-.wp-block-buttons input.wp-block-button__link.is-style-outline:hover:not(.has-background), input.is-outlined.button--mini:hover {
-  animation: hoverBgColor ease 0.5s both;
+.form-submit input.is-outlined.submit:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination input.submit.page-numbers.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit input.submit.page-numbers.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination input.submit.wp-block-query-pagination-previous.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit input.submit.wp-block-query-pagination-previous.current:hover,
+.form-submit .wp-tsbk-query .wp-block-query-pagination input.submit.wp-block-query-pagination-next.current:hover,
+.wp-tsbk-query .wp-block-query-pagination .form-submit input.submit.wp-block-query-pagination-next.current:hover, .wp-block-buttons input.is-outlined.wp-block-button__link:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination input.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons input.wp-block-button__link.page-numbers.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination input.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons input.wp-block-button__link.wp-block-query-pagination-previous.current:hover:not(.has-background), .wp-block-buttons .wp-tsbk-query .wp-block-query-pagination input.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-tsbk-query .wp-block-query-pagination .wp-block-buttons input.wp-block-button__link.wp-block-query-pagination-next.current:hover:not(.has-background), .wp-block-buttons .is-style-outline > input.wp-block-button__link:hover:not(.has-background),
+.wp-block-buttons input.wp-block-button__link.is-style-outline:hover:not(.has-background), input.is-outlined.button--mini:hover, .wp-tsbk-query .wp-block-query-pagination input.button--mini.page-numbers.current:hover, .wp-tsbk-query .wp-block-query-pagination input.button--mini.wp-block-query-pagination-previous.current:hover, .wp-tsbk-query .wp-block-query-pagination input.button--mini.wp-block-query-pagination-next.current:hover {
+  background: var(--tsbk-color-link);
   color: var(--tsbk-color-white);
 }
 
-@keyframes hoverBgColor {
-  0% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
 .wp-block-separator {
   margin-top: 5.6074766355vw;
 }
@@ -1205,44 +1229,47 @@ ul.wp-block-categories-list ul {
   font-size: 0.875rem;
 }
 
-.wp-block-query .wp-block-columns {
+/**
+ブロックパターンで追加したクエリグループのテンプレート
+**/
+.wp-tsbk-query .wp-block-columns {
   margin-bottom: 0;
 }
-.wp-block-query .wp-block-columns.is-layout-flex {
+.wp-tsbk-query .wp-block-columns.is-layout-flex {
   gap: 1rem;
 }
-.wp-block-query .wp-block-columns .wp-block-column {
+.wp-tsbk-query .wp-block-columns .wp-block-column {
   margin-top: 0 !important;
 }
-.wp-block-query .wp-block-post {
+.wp-tsbk-query .wp-block-post {
   margin-top: 0;
 }
-.wp-block-query .wp-block-post-template:not(.is-flex-container) li {
+.wp-tsbk-query .wp-block-post-template:not(.is-flex-container) li {
   padding: 2.8037383178vw 0;
   border-bottom: solid 1px var(--tsbk-color-border);
 }
 @media screen and (min-width: 768px) {
-  .wp-block-query .wp-block-post-template:not(.is-flex-container) li {
+  .wp-tsbk-query .wp-block-post-template:not(.is-flex-container) li {
     padding: 20px 0;
   }
 }
-.wp-block-query .wp-block-post-template:not(.is-flex-container) li:first-child {
+.wp-tsbk-query .wp-block-post-template:not(.is-flex-container) li:first-child {
   border-top: solid 1px var(--tsbk-color-border);
 }
-.wp-block-query .wp-block-post-template .wp-block-post-title a {
+.wp-tsbk-query .wp-block-post-template .wp-block-post-title a {
   text-decoration: none;
 }
-.wp-block-query .wp-block-post-template .wp-block-post-title a:hover {
+.wp-tsbk-query .wp-block-post-template .wp-block-post-title a:hover {
   text-decoration: underline;
 }
-.wp-block-query .wp-block-post-template .wp-block-post-title:not([style]) a {
+.wp-tsbk-query .wp-block-post-template .wp-block-post-title:not([style]) a {
   color: var(--tsbk-color-base-font);
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .is-noimage {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .is-noimage {
   display: block;
   height: 100%;
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .is-noimage span {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .is-noimage span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1253,21 +1280,48 @@ ul.wp-block-categories-list ul {
   color: var(--tsbk-color-sub-font);
   font-size: 2rem;
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image {
   overflow: hidden;
   transition: 0.5s;
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image a {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image a {
   display: inline;
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image img {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image img {
   aspect-ratio: 3/2;
   width: 100%;
   object-fit: cover;
   transition: 0.5s;
 }
-.wp-block-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image:hover img {
+.wp-tsbk-query .wp-block-post-template .is-thumbnail .wp-block-post-featured-image:hover img {
   transform: scale(1.2);
+}
+.wp-tsbk-query .wp-block-query-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 11.214953271vw;
+}
+@media screen and (min-width: 768px) {
+  .wp-tsbk-query .wp-block-query-pagination {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wp-tsbk-query .wp-block-query-pagination {
+    flex-wrap: wrap !important;
+  }
+}
+.wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-numbers, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-previous, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-next {
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-previous, .wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-next {
+    width: 100%;
+  }
+}
+.wp-tsbk-query .wp-block-query-pagination .wp-block-query-pagination-numbers {
+  margin: 0;
 }
 
 .wp-block-embed {

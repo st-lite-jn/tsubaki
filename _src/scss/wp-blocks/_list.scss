@@ -12,18 +12,15 @@ ol {
 }
 ul , ol {
 	&:not([class]) ,&.wp-block-list {
-		padding-left: 1em;
+		padding-left: 1.5em;
 		font-size: 1rem;
 		li {
-			@include import.mtS;
+			@include import.mtXS;
 			&:first-child {
 				margin-top: 0;
 			}
 			ul , ol {
-				margin-top: import.spvw(4);
-				@include import.mqMin(import.$dpTabPt) {
-					margin-top: 8px;
-				}
+				@include import.mtS;
 			}
 		}
 	}
